@@ -76,6 +76,11 @@ main{max-width:940px;margin:auto;padding:36px 22px 28px;text-align:center}.hero{
  .cafe{margin-top:8px;padding:9px}
  footer{font-size:9px}
 }
+
+/* Ver.10: restore animated aurora and twinkling stars above the page background.
+   Ver.9 accidentally placed .sky behind the opaque body via z-index:-1. */
+.sky{z-index:0;pointer-events:none}
+main{position:relative;z-index:1}
 </style>
 </head>
 <body>
