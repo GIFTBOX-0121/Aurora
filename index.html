@@ -48,6 +48,32 @@ main{max-width:940px;margin:auto;padding:36px 22px 28px;text-align:center}.hero{
  .cafe{padding:8px}
  footer{margin-top:6px}
 }
+
+/* Ver.9: comfortable, balanced mobile layout */
+@media (max-width:600px){
+  main{justify-content:flex-start;padding:clamp(3px,.6dvh,7px) 18px max(8px,env(safe-area-inset-bottom));gap:0}
+  .hero{margin-bottom:clamp(17px,3dvh,27px)}
+  .star-drawing{width:clamp(48px,7dvh,64px);height:clamp(45px,6.6dvh,60px);margin-bottom:2px}
+  .menu{flex:0 0 auto;grid-template-rows:repeat(2,auto);gap:clamp(14px,2.4dvh,22px)}
+  .card{height:clamp(112px,16dvh,140px);min-height:0;padding:clamp(16px,2.5dvh,22px) 12px}
+  .card h2{margin-top:7px}
+  .cafe{margin-top:clamp(14px,2.3dvh,21px)}
+  footer{margin-top:auto;padding-top:clamp(9px,1.8dvh,18px)}
+  /* Aurora spans the entire screen, including both edges. */
+  .sky{inset:0;height:100dvh;background:linear-gradient(180deg,#071124 0%,#0b1430 50%,#071022 100%)}
+  .sky::before{background:radial-gradient(ellipse 100% 60% at 8% 0%,rgba(71,214,193,.38),transparent 76%),radial-gradient(ellipse 110% 60% at 100% 5%,rgba(148,105,240,.39),transparent 76%),radial-gradient(ellipse 110% 65% at 0% 100%,rgba(96,113,255,.4),transparent 78%),radial-gradient(ellipse 100% 65% at 100% 100%,rgba(67,219,188,.38),transparent 78%)}
+  .aurora-field{inset:-10% -35%;opacity:.9;filter:blur(23px)}
+  .curtain{top:-5%;height:110%;width:45%;filter:blur(24px)}
+}
+@media (max-width:600px) and (max-height:700px){
+  .hero{margin-bottom:clamp(8px,1.7dvh,14px)}
+  .star-drawing{width:43px;height:40px}
+  .menu{gap:clamp(8px,1.5dvh,12px)}
+  .card{height:clamp(90px,15dvh,110px);padding:12px}
+  .card h2{font-size:clamp(25px,7vw,33px)}
+  .cafe{margin-top:clamp(8px,1.5dvh,12px)}
+  footer{padding-top:5px}
+}
 </style>
 </head>
 <body>
