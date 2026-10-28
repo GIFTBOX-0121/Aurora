@@ -1,68 +1,92 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080c22"><title>Aurora | STARGLOW 1st Album | UNOFFICIAL</title><style>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080c22">
+<title>Aurora | STARGLOW 1st Album | UNOFFICIAL</title>
+<style>
 :root{color-scheme:dark;--ink:#f6f5ff;--muted:#b4b8d5;--line:rgba(210,215,255,.18);--glass:rgba(17,22,50,.62);--bright:#c5bbff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:#050819;min-height:100vh;line-height:1.8;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:-25%;z-index:-2;background:radial-gradient(ellipse at 15% 20%,rgba(35,109,169,.34),transparent 42%),radial-gradient(ellipse at 78% 10%,rgba(108,63,171,.38),transparent 42%),radial-gradient(ellipse at 50% 85%,rgba(46,90,143,.24),transparent 48%);animation:aurora 17s ease-in-out infinite alternate}
 body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(1px 1px at 14% 12%,#fff 99%,transparent),radial-gradient(1px 1px at 73% 28%,#fff 99%,transparent),radial-gradient(2px 2px at 86% 76%,#d4d6ff 99%,transparent),radial-gradient(1px 1px at 28% 68%,#fff 99%,transparent),radial-gradient(1px 1px at 52% 42%,#fff 99%,transparent);background-size:330px 410px;opacity:.55;animation:twinkle 5s ease-in-out infinite alternate}
 @keyframes aurora{to{transform:translate(7%,5%) rotate(7deg)}}@keyframes twinkle{to{opacity:.2}}
-a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
-.wrap{width:min(100% - 32px,760px);margin:auto}.topnav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:12px;letter-spacing:.15em;color:#d7d9f5}.topnav a{border-bottom:1px solid #aab0d5;padding-bottom:3px}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}.wrap{width:min(100% - 32px,760px);margin:auto}.topnav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:12px;letter-spacing:.15em;color:#d7d9f5}.topnav a{border-bottom:1px solid #aab0d5;padding-bottom:3px}
 .hero{text-align:center;padding:38px 0 34px}.eyebrow{letter-spacing:.26em;font-size:11px;color:#c6c9e4;font-weight:700}.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(47px,10vw,84px);line-height:1.05;font-weight:400;margin:18px 0 10px;letter-spacing:.03em;text-shadow:0 0 34px rgba(177,151,255,.45)}.hero .subtitle{font-size:12px;letter-spacing:.17em;color:#d3d5ee}.hero .desc{color:#c8cbe5;font-size:13px;margin-top:24px}
-.art{height:210px;border:1px solid rgba(216,218,255,.28);border-radius:18px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 20% 25%,rgba(117,209,227,.28),transparent 42%),radial-gradient(ellipse at 80% 35%,rgba(177,119,240,.32),transparent 43%),linear-gradient(145deg,#0b1b3a,#231b47 55%,#0b1a35);position:relative;box-shadow:0 16px 60px rgba(0,0,0,.18)}.art:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,rgba(221,220,255,.14) 50%,transparent 75%);transform:skewX(-20deg);animation:shine 9s linear infinite}@keyframes shine{from{translate:-130%}to{translate:130%}}.art span{font-family:Georgia,serif;font-size:36px;letter-spacing:.1em;text-shadow:0 0 28px #b7a2ff}
-.section{margin:46px 0}.section h2{font-size:18px;letter-spacing:.14em;margin:0 0 4px;font-weight:700}.section .jp{font-size:11px;color:#adb3d4;margin:0 0 18px}.rule{height:1px;background:linear-gradient(90deg,transparent,#a4a9d0,transparent);margin:38px 0}.card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:21px;margin:12px 0;backdrop-filter:blur(12px);box-shadow:0 9px 30px rgba(0,0,0,.08)}.card h3{margin:0 0 10px;font-size:16px}.muted{color:var(--muted)}.small{font-size:12px}.pill{display:inline-block;font-size:10px;letter-spacing:.1em;padding:3px 10px;border:1px solid #7f85ac;border-radius:30px;color:#e3e2ff}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid rgba(210,215,255,.38);background:rgba(142,139,211,.14);color:#fff;border-radius:10px;padding:11px 16px;display:inline-block;text-align:center;font-size:12px;font-weight:700}.btn:hover{background:rgba(142,139,211,.28)}.btn:disabled{opacity:.5;cursor:not-allowed}.textlink{font-size:12px;text-decoration:underline;text-underline-offset:5px;color:#d9d4ff}.date{font-size:11px;color:#a9b5de;letter-spacing:.12em}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid .card{margin:0}.check{display:flex;align-items:flex-start;gap:10px;font-size:13px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.09)}.check:last-child{border:0}.check input{width:19px;height:19px;accent-color:#b4a5ff;margin-top:3px}.check:has(input:checked) span{color:#a6b3cc}.progress{height:6px;border-radius:10px;background:#353958;overflow:hidden;margin-top:15px}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#78b3d7,#c9a2f3);transition:width .3s}.notice{border-left:3px solid #bcb3ff;padding:4px 0 4px 14px;font-size:12px;color:#d4d4eb}.links{display:flex;gap:9px;flex-wrap:wrap}.footer{text-align:center;color:#a8abc9;font-size:11px;padding:48px 0 65px;letter-spacing:.12em}.empty{font-size:13px;color:#b5b8d1}.modal{border:1px solid #71799f;border-radius:20px;background:#111831;color:#fff;width:min(92vw,560px);max-height:84vh;overflow:auto;padding:26px;box-shadow:0 25px 80px #0009}.modal::backdrop{background:#020512c9;backdrop-filter:blur(5px)}.close{float:right;background:none;color:#fff;border:0;font-size:25px}.count{font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;color:#e1d7ff}.tag{font-size:10px;color:#b6c7ec}.track{padding:9px 0;border-bottom:1px solid #ffffff18;font-size:13px}.track:last-child{border:0}
-@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding-top:25px}.art{height:165px}.art span{font-size:29px}.card{padding:17px}.section{margin:36px 0}}
+.art{border:1px solid rgba(216,218,255,.28);border-radius:18px;overflow:hidden;background:#07132d;position:relative;box-shadow:0 16px 60px rgba(0,0,0,.18)}.art img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}.art:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 25%,rgba(221,220,255,.12) 50%,transparent 75%);transform:skewX(-20deg);animation:shine 9s linear infinite;pointer-events:none}@keyframes shine{from{translate:-130%}to{translate:130%}}
+.section{margin:46px 0}.section h2{font-size:18px;letter-spacing:.14em;margin:0 0 4px;font-weight:700}.section .jp{font-size:11px;color:#adb3d4;margin:0 0 18px}.rule{height:1px;background:linear-gradient(90deg,transparent,#a4a9d0,transparent);margin:38px 0}.card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:21px;margin:12px 0;backdrop-filter:blur(12px);box-shadow:0 9px 30px rgba(0,0,0,.08)}.card h3{margin:0 0 10px;font-size:16px}.muted{color:var(--muted)}.small{font-size:12px}.pill{display:inline-block;font-size:10px;letter-spacing:.1em;padding:3px 10px;border:1px solid #7f85ac;border-radius:30px;color:#e3e2ff}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.btn{border:1px solid rgba(210,215,255,.38);background:rgba(142,139,211,.14);color:#fff;border-radius:10px;padding:11px 16px;display:inline-block;text-align:center;font-size:12px;font-weight:700}.btn:hover{background:rgba(142,139,211,.28)}.textlink{font-size:12px;text-decoration:underline;text-underline-offset:5px;color:#d9d4ff}.date{font-size:11px;color:#a9b5de;letter-spacing:.12em}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid .card{margin:0}.edition-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;margin-bottom:14px;background:#080c22}.check{display:flex;align-items:flex-start;gap:10px;font-size:13px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.09)}.check:last-child{border:0}.check input{width:19px;height:19px;accent-color:#b4a5ff;margin-top:3px}.check:has(input:checked) span{color:#a6b3cc}.progress{height:6px;border-radius:10px;background:#353958;overflow:hidden;margin-top:15px}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#78b3d7,#c9a2f3);transition:width .3s}.notice{border-left:3px solid #bcb3ff;padding:4px 0 4px 14px;font-size:12px;color:#d4d4eb}.links{display:flex;gap:9px;flex-wrap:wrap}.footer{text-align:center;color:#a8abc9;font-size:11px;padding:48px 0 65px;letter-spacing:.12em}.empty{font-size:13px;color:#b5b8d1}.modal{border:1px solid #71799f;border-radius:20px;background:#111831;color:#fff;width:min(92vw,620px);max-height:84vh;overflow:auto;padding:26px;box-shadow:0 25px 80px #0009}.modal::backdrop{background:#020512c9;backdrop-filter:blur(5px)}.close{float:right;background:none;color:#fff;border:0;font-size:25px}.count{font-variant-numeric:tabular-nums;font-size:22px;font-weight:700;color:#e1d7ff}.track{padding:9px 0;border-bottom:1px solid #ffffff18;font-size:13px}.track:last-child{border:0}.tracklist{columns:2;column-gap:28px;margin:0;padding-left:22px;font-size:12px}.tracklist li{break-inside:avoid;margin:0 0 4px}.status{font-size:10px;font-weight:800;letter-spacing:.08em;border-radius:20px;padding:4px 9px;display:inline-block;background:#2a315c;color:#e5e8ff}.ended{background:#303242;color:#9fa5bf}.campaign-prize{font-size:13px;padding:10px 0;border-bottom:1px solid #ffffff18}.campaign-prize:last-child{border:0}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding-top:25px}.card{padding:17px}.section{margin:36px 0}.tracklist{columns:1}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
-</style></head><body>
+</style>
+</head>
+<body>
 <div class="wrap">
 <header class="topnav"><a href="index.html">← AURORA HOME</a><span>UNOFFICIAL</span></header>
 <main>
-<section class="hero"><div class="eyebrow">STARGLOW 1st ALBUM</div><h1>Aurora</h1><div class="subtitle">1ST ALBUM SPECIAL PAGE</div></section>
-<div class="art" aria-label="アルバム画像の仮置き"><span>Aurora ✧</span></div>
-<section class="section" style="text-align:center"><div class="eyebrow">RELEASE DATE</div><div id="releaseDate" style="font-size:21px;font-weight:700;margin:8px 0">2026.11.18 WED</div><div id="releaseCountdown" class="count" aria-live="off"></div></section>
+<section class="hero"><div class="eyebrow">STARGLOW 1st ALBUM</div><h1>Aurora</h1><div class="subtitle">1ST ALBUM SPECIAL PAGE</div><p class="desc">2026.11.18 RELEASE<br>全14曲収録・全6形態</p></section>
+<div class="art"><img src="https://starglow-sp.com/Aurora/image/jacket/product01.jpg" alt="STARGLOW 1st Album Aurora"></div>
+<section class="section" style="text-align:center"><div class="eyebrow">RELEASE DATE</div><div style="font-size:21px;font-weight:700;margin:8px 0">2026.11.18 WED</div><div id="releaseCountdown" class="count" aria-live="off"></div><div class="links" style="justify-content:center;margin-top:16px"><a class="btn" href="https://starglow.lnk.to/Aurora" target="_blank" rel="noopener noreferrer">予約・購入 ↗</a><a class="btn" href="https://starglow-sp.com/Aurora/" target="_blank" rel="noopener noreferrer">公式特設 ↗</a></div></section>
 <div class="rule"></div>
-<section class="section" id="news"><h2>LATEST NEWS</h2><p class="jp">最新のお知らせ</p><div id="newsList"></div><p class="small muted">公式NEWSの自動取得は今後実装予定。現在は手動登録の情報のみ表示します。</p></section>
-<section class="section" id="editions"><h2>ALBUM EDITIONS</h2><p class="jp">形態・価格・収録内容</p><div id="editionsList" class="grid"></div><div class="row" style="margin-top:14px"><button class="btn" id="compareBtn" type="button">形態比較を見る ↗</button><a class="textlink" href="https://starglow-sp.com/Aurora/" target="_blank" rel="noopener">公式特設サイト ↗</a></div></section>
-<section class="section" id="benefits"><h2>STORE BENEFITS</h2><p class="jp">店舗別購入特典</p><div id="benefitsList"></div></section>
-<section class="section" id="campaign"><h2>DOWNLOAD CAMPAIGN</h2><p class="jp">ダウンロード・応募キャンペーン</p><div id="campaignList"></div></section>
-<section class="section" id="check"><h2>MY CHECKLIST</h2><p class="jp">自分だけの進捗メモ（この端末に保存）</p><div class="card"><div class="row"><strong>キャンペーン進捗</strong><span id="checkCount" class="small muted">0 / 0</span></div><div class="progress"><div id="progressFill"></div></div><div id="checkList"></div></div><p class="small muted">チェック内容はブラウザ内に保存されます。端末やブラウザを変更すると引き継がれません。</p></section>
-<section class="section" id="stream"><h2>STREAMING & DOWNLOAD</h2><p class="jp">配信・購入リンク</p><div id="streamLinks" class="links"></div></section>
-<section class="section" id="sns"><h2>OFFICIAL SNS</h2><p class="jp">STARGLOW公式アカウント</p><div id="snsLinks" class="links"></div></section>
-</main><footer class="footer">UNOFFICIAL FAN SITE<br>本サイトは非公式ファンサイトです。公式運営とは関係ありません。</footer>
+<section class="section"><h2>LATEST NEWS</h2><p class="jp">Aurora関連のお知らせ</p><div id="newsList"></div></section>
+<section class="section"><h2>TRACK LIST</h2><p class="jp">全14曲</p><div class="card"><ol id="trackList" class="tracklist"></ol></div></section>
+<section class="section"><h2>ALBUM EDITIONS</h2><p class="jp">全6形態・価格・収録内容</p><div id="editionsList" class="grid"></div><div class="row" style="margin-top:14px"><button class="btn" id="compareBtn" type="button">形態比較を見る ↗</button><a class="textlink" href="https://starglow-sp.com/Aurora/" target="_blank" rel="noopener noreferrer">公式特設サイト ↗</a></div></section>
+<section class="section"><h2>STORE BENEFITS</h2><p class="jp">購入特典</p><div class="card"><h3>『Aurora』アクリルミニキーホルダー</h3><p class="small">全5種よりランダム1種 / H 約40mm × W 約32mm</p><p class="small muted">全店舗・ECサイト共通。なくなり次第終了。一部取り扱いのない店舗・ECサイトあり。BMSG MUSIC SHOP限定盤 AVC1-63957/B～C・AVC1-63958/B～Cは対象外。</p></div></section>
+<section class="section"><h2>SERIAL CAMPAIGN</h2><p class="jp">封入シリアル応募抽選特典</p><div class="card"><div class="row"><strong>応募期間</strong><span class="status">11/17 12:00 START</span></div><p class="small">2026.11.17 12:00 ～ 2026.12.21 12:00（全4回）</p><div id="prizeList"></div><div style="margin-top:15px"><a class="textlink" href="https://starglow.tokyo/news/music/1439/" target="_blank" rel="noopener noreferrer">応募特典の公式詳細 ↗</a></div></div><div id="roundList"></div></section>
+<section class="section"><h2>DOWNLOAD CAMPAIGN</h2><p class="jp">アルバム配信・ダウンロード施策</p><div class="card empty">Aurora本体のデジタルキャンペーンは、現時点で公式発表を確認できていません。発表後ここへ追加できます。</div></section>
+<section class="section"><h2>MY CHECKLIST</h2><p class="jp">自分だけの進捗メモ（この端末に保存）</p><div class="card"><div class="row"><strong>Aurora準備</strong><span id="checkCount" class="small muted">0 / 0</span></div><div class="progress"><div id="progressFill"></div></div><div id="checkList"></div></div><p class="small muted">チェック内容はこのブラウザ内だけに保存されます。</p></section>
+<section class="section"><h2>STREAMING & DOWNLOAD</h2><p class="jp">配信・購入リンク</p><div class="links"><a class="btn" href="https://starglow.lnk.to/Aurora" target="_blank" rel="noopener noreferrer">Aurora 予約・購入 ↗</a><a class="btn" href="https://starglow.tokyo/discography/" target="_blank" rel="noopener noreferrer">公式 Discography ↗</a></div><p class="small muted">発売後の配信先は公式リンクの更新に合わせて差し替え可能です。</p></section>
+<section class="section"><h2>OFFICIAL SNS</h2><p class="jp">STARGLOW公式</p><div class="links"><a class="btn" href="https://x.com/starglow_bmsg" target="_blank" rel="noopener noreferrer">X ↗</a><a class="btn" href="https://www.instagram.com/starglow_bmsg" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a class="btn" href="https://www.tiktok.com/@starglow_bmsg" target="_blank" rel="noopener noreferrer">TikTok ↗</a><a class="btn" href="https://www.youtube.com/@starglow_bmsg" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a class="btn" href="https://lin.ee/ZPQ1mHy" target="_blank" rel="noopener noreferrer">LINE ↗</a></div></section>
+</main>
+<footer class="footer">UNOFFICIAL FAN SITE<br>本サイトは非公式ファンサイトです。公式運営とは関係ありません。</footer>
 </div>
-<dialog id="compareModal" class="modal"><button type="button" class="close" aria-label="閉じる" id="closeModal">×</button><h2>ALBUM EDITIONS</h2><p class="small muted">形態比較（内容確認後に更新）</p><div id="compareContent"></div></dialog>
+<dialog id="compareModal" class="modal"><button type="button" class="close" aria-label="閉じる" id="closeModal">×</button><h2>ALBUM EDITIONS</h2><p class="small muted">全6形態比較</p><div id="compareContent"></div></dialog>
 <script>
-// ▼ 情報を更新するときは、原則この DATA だけを書き換える
 const DATA={
  releaseAt:"2026-11-18T00:00:00+09:00",
- news:[], // {date:"2026.10.20",title:"...",url:"https://..."}
- editions:[
-  {name:"初回生産限定盤A",price:"価格確認中",details:["仕様・収録内容を確認後に追加"],url:""},
-  {name:"初回生産限定盤B",price:"価格確認中",details:["仕様・収録内容を確認後に追加"],url:""},
-  {name:"通常盤",price:"価格確認中",details:["仕様・収録内容を確認後に追加"],url:""},
-  {name:"BMSG MUSIC SHOP限定盤",price:"価格確認中",details:["仕様・収録内容を確認後に追加"],url:""}
+ news:[
+  {date:"2026.10.03",title:"1st Album『Aurora』リリース記念 STARGLOW × TOWER RECORDS CAFE 開催決定",url:"https://starglow.tokyo/news/media/1440/"},
+  {date:"2026.10.02",title:"『Aurora』リリース記念 応募抽選特典シリアルコード内容決定",url:"https://starglow.tokyo/news/music/1439/"},
+  {date:"2026.09.22",title:"『Aurora』全14曲のトラックリスト・ジャケットアートワーク公開",url:"https://starglow-sp.com/Aurora/"}
  ],
- benefits:[], // {shop:"店舗名",detail:"特典",url:"https://..."}
- campaigns:[], // {id:"itunes",name:"iTunes",deadline:"...",benefit:"...",downloadUrl:"",applyUrl:""}
- streaming:[], // {name:"Spotify",url:"https://..."}
- sns:[] // {name:"X",url:"https://..."}
+ tracks:["Aurora","Star Wish","Green Light","Slam Dunk","My Job","Good Boys Anthem","Blast Off","1 of 1 - TAIKI / GOICHI","Cherry - RUI / KANON / ADAM","Drivin' My Life","USOTSUKI","Graduation Day","WISHES","Moonchaser"],
+ editions:[
+  {name:"初回盤A",type:"CD + DVD / 初回生産限定",code:"AVCD-63954/B",price:"¥5,060（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product01.jpg",details:["紙ジャケット","トレーディングカードA（全5種類セット）","応募抽選特典シリアルコード","DVD：WISHES Lyric Video / Behind The Scenes、GOTH Dance Performance、各Music Videoほか"]},
+  {name:"初回盤B",type:"CD + DVD / 初回生産限定",code:"AVCD-63955/B",price:"¥5,060（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product02.jpg",details:["紙ジャケット","トレーディングカードB（全5種類セット）","応募抽選特典シリアルコード","DVD：STAR★STUDIO -SPECIAL EDITION-"]},
+  {name:"通常盤",type:"CD",code:"AVCD-63956",price:"¥3,520（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product03.jpg",details:["紙ジャケット","トレーディングカードC（全5種類セット / 初回封入）","応募抽選特典シリアルコード（初回封入）"]},
+  {name:"BMSG MUSIC SHOP限定盤",type:"CD + 2DVD / 初回生産限定",code:"AVC1-63957/B～C",price:"¥8,910（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product04.jpg",details:["デジパック・三方背ケース","フォトブック 52P予定","トレーディングカードD（集合1種）","初回盤A/B映像＋SUMMER SONIC 2026 全7曲＋Photo Shooting Behind The Scenesほか"]},
+  {name:"BMSG MUSIC SHOP限定盤",type:"CD + 2Blu-ray / 初回生産限定",code:"AVC1-63958/B～C",price:"¥8,910（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product04.jpg",details:["デジパック・三方背ケース","フォトブック 52P予定","トレーディングカードD（集合1種）","初回盤A/B映像＋SUMMER SONIC 2026 全7曲＋Photo Shooting Behind The Scenesほか"]},
+  {name:"BMSG MUSIC SHOP限定バンドル",type:"CD + GOODS",code:"AVZ1-63959",price:"¥5,720（税込） / 販売期間終了",image:"https://starglow-sp.com/Aurora/image/jacket/product03.jpg",details:["通常盤CD仕様","トレーディングカードC（全5種類セット）","応募抽選特典シリアルコード","ピンバッジセット（4個入り）＋オリジナル集合トレーディングカード","販売期間：2026/9/16 11:59まで"]}
+ ],
+ prizes:[
+  ["S賞","オンラインユニットトーク会 / 各ユニット250名・合計500名 / RUI・TAIKI・ADAM、KANON・GOICHI / 約45秒ビデオ通話"],
+  ["A賞","Talk Show & Greeting / 札幌・東京・名古屋・大阪・福岡 / 合計4,000名（2部制）"],
+  ["B賞","サイン会 / 札幌・東京・名古屋・大阪・福岡 / 合計1,000名（2部制）"],
+  ["C賞","Arena Tour リハーサル観覧 / 全13公演・各100名 / 合計1,300名"],
+  ["D賞","Arena Tour オフィシャル出待ち / 全14公演・各50名 / 合計700名"],
+  ["E賞","直筆サイン入りジャケットサイズフォトカード / 50名"],
+  ["応募者全員","オリジナル動画コメント"]
+ ],
+ rounds:[
+  ["第1弾","11/17 12:00 ～ 11/20 12:00","11/24 18:00頃"],
+  ["第2弾","11/20 13:00 ～ 11/25 12:00","11/30 18:00頃"],
+  ["第3弾","11/25 13:00 ～ 12/7 12:00","12/11 18:00頃"],
+  ["第4弾","12/7 13:00 ～ 12/21 12:00","12/25 18:00頃"]
+ ],
+ checks:["Auroraを予約した","購入特典を確認した","応募したいシリアル特典を決めた","シリアル応募期間を確認した","11/18 発売日に受け取る / 購入する"]
 };
-const $=s=>document.querySelector(s);
-const safe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const link=(url,label,cls="btn")=>url?.startsWith("https://")?`<a class="${cls}" href="${safe(url)}" target="_blank" rel="noopener noreferrer">${safe(label)}</a>`:"";
+const $=s=>document.querySelector(s);const safe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function render(){
- $("#newsList").innerHTML=DATA.news.length?DATA.news.map(n=>`<article class="card"><div class="date">${safe(n.date)}</div><h3>${safe(n.title)}</h3>${link(n.url,"公式情報を見る →","textlink")}</article>`).join(""):'<div class="card empty">新しい情報は確認・登録後に表示します。</div>';
- $("#editionsList").innerHTML=DATA.editions.map(e=>`<article class="card"><span class="pill">ALBUM</span><h3 style="margin-top:12px">${safe(e.name)}</h3><div class="muted small">${safe(e.price)}</div>${e.details.map(d=>`<div class="track">${safe(d)}</div>`).join("")}${e.url?`<div style="margin-top:14px">${link(e.url,"公式で確認 →")}</div>`:""}</article>`).join("");
- $("#compareContent").innerHTML=DATA.editions.map(e=>`<div class="card"><strong>${safe(e.name)}</strong><p class="small muted">${safe(e.price)}</p>${e.details.map(d=>`<div class="track">${safe(d)}</div>`).join("")}</div>`).join("");
- $("#benefitsList").innerHTML=DATA.benefits.length?DATA.benefits.map(b=>`<div class="card"><h3>${safe(b.shop)}</h3><p class="small">${safe(b.detail)}</p>${link(b.url,"詳細はこちら →","textlink")}</div>`).join(""):'<div class="card empty">購入特典は確認後に追加します。</div>';
- $("#campaignList").innerHTML=DATA.campaigns.length?DATA.campaigns.map(c=>`<div class="card"><h3>${safe(c.name)}</h3><div class="small muted">期限：${safe(c.deadline||"確認中")}</div><p class="small">${safe(c.benefit)}</p><div class="links">${link(c.downloadUrl,"ダウンロード先 ↗")}${link(c.applyUrl,"応募ページ ↗")}</div></div>`).join(""):'<div class="card empty">キャンペーンは公式発表を確認後に追加します。</div>';
- const tasks=DATA.campaigns.flatMap(c=>[{id:c.id+":dl",name:c.name+"｜DL完了"},{id:c.id+":ss",name:c.name+"｜スクショ完了"},{id:c.id+":apply",name:c.name+"｜応募完了"}]);
- const key="aurora-album-checks-v1";let saved={};try{saved=JSON.parse(localStorage.getItem(key)||"{}")}catch{}
- $("#checkList").innerHTML=tasks.length?tasks.map(t=>`<label class="check"><input type="checkbox" data-task="${safe(t.id)}" ${saved[t.id]?"checked":""}><span>${safe(t.name)}</span></label>`).join(""):'<p class="empty">キャンペーン情報を登録すると、ここにチェック項目が表示されます。</p>';
- function update(){const inputs=[...document.querySelectorAll("[data-task]")];const state={};inputs.forEach(i=>state[i.dataset.task]=i.checked);try{localStorage.setItem(key,JSON.stringify(state))}catch{}const done=inputs.filter(i=>i.checked).length;$("#checkCount").textContent=`${done} / ${inputs.length}`;$("#progressFill").style.width=inputs.length?`${done/inputs.length*100}%`:"0%"}
- document.querySelectorAll("[data-task]").forEach(i=>i.addEventListener("change",update));update();
- $("#streamLinks").innerHTML=DATA.streaming.length?DATA.streaming.map(x=>link(x.url,x.name+" ↗")).join(""):'<span class="empty">配信リンクは確認後に追加します。</span>';
- $("#snsLinks").innerHTML=DATA.sns.length?DATA.sns.map(x=>link(x.url,x.name+" ↗")).join(""):'<span class="empty">公式SNSリンクは確認後に追加します。</span>';
+ $("#newsList").innerHTML=DATA.news.map(n=>`<article class="card"><div class="date">${safe(n.date)}</div><h3>${safe(n.title)}</h3><a class="textlink" href="${safe(n.url)}" target="_blank" rel="noopener noreferrer">公式情報を見る →</a></article>`).join("");
+ $("#trackList").innerHTML=DATA.tracks.map(t=>`<li>${safe(t)}</li>`).join("");
+ $("#editionsList").innerHTML=DATA.editions.map(e=>`<article class="card">${e.image?`<img class="edition-img" src="${safe(e.image)}" alt="${safe(e.name)}">`:""}<span class="pill">${safe(e.type)}</span><h3 style="margin-top:12px">${safe(e.name)}</h3><div class="small muted">${safe(e.code)}</div><strong>${safe(e.price)}</strong>${e.details.map(d=>`<div class="track">${safe(d)}</div>`).join("")}<div style="margin-top:14px"><a class="textlink" href="https://starglow.lnk.to/Aurora" target="_blank" rel="noopener noreferrer">予約・購入 ↗</a></div></article>`).join("");
+ $("#compareContent").innerHTML=DATA.editions.map(e=>`<div class="card"><strong>${safe(e.name)}</strong><p class="small muted">${safe(e.type)}<br>${safe(e.code)}<br>${safe(e.price)}</p>${e.details.map(d=>`<div class="track">${safe(d)}</div>`).join("")}</div>`).join("");
+ $("#prizeList").innerHTML=DATA.prizes.map(p=>`<div class="campaign-prize"><strong>${safe(p[0])}</strong><br><span class="small muted">${safe(p[1])}</span></div>`).join("");
+ $("#roundList").innerHTML=DATA.rounds.map(r=>`<div class="card"><strong>${safe(r[0])}</strong><div class="small">応募：${safe(r[1])}</div><div class="small muted">当落：${safe(r[2])}</div></div>`).join("");
+ const key="aurora-album-checks-v2";let saved={};try{saved=JSON.parse(localStorage.getItem(key)||"{}")}catch{};$("#checkList").innerHTML=DATA.checks.map((t,i)=>`<label class="check"><input type="checkbox" data-task="c${i}" ${saved["c"+i]?"checked":""}><span>${safe(t)}</span></label>`).join("");
+ function update(){const inputs=[...document.querySelectorAll("[data-task]")],state={};inputs.forEach(i=>state[i.dataset.task]=i.checked);try{localStorage.setItem(key,JSON.stringify(state))}catch{};const done=inputs.filter(i=>i.checked).length;$("#checkCount").textContent=`${done} / ${inputs.length}`;$("#progressFill").style.width=inputs.length?`${done/inputs.length*100}%`:"0%"}document.querySelectorAll("[data-task]").forEach(i=>i.addEventListener("change",update));update();
 }
-function countdown(){const ms=new Date(DATA.releaseAt)-Date.now();const el=$("#releaseCountdown");if(ms<=0){el.textContent="NOW ON SALE";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.textContent=`発売まで ${d}日 ${String(h).padStart(2,"0")}時間 ${String(m).padStart(2,"0")}分`}
+function countdown(){const ms=new Date(DATA.releaseAt)-Date.now(),el=$("#releaseCountdown");if(ms<=0){el.textContent="AURORA IS HERE.";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.textContent=`発売まで ${d}日 ${String(h).padStart(2,"0")}時間 ${String(m).padStart(2,"0")}分`}
 $("#compareBtn").addEventListener("click",()=>$("#compareModal").showModal());$("#closeModal").addEventListener("click",()=>$("#compareModal").close());$("#compareModal").addEventListener("click",e=>{if(e.target.id==="compareModal")e.target.close()});render();countdown();setInterval(countdown,30000);
-</script></body></html>
+</script>
+</body>
+</html>
