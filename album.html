@@ -48,7 +48,7 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{
 </main>
 <footer class="footer">UNOFFICIAL FAN SITE<br>本サイトは非公式ファンサイトです。公式運営とは関係ありません。</footer>
 </div>
-<dialog id="compareModal" class="modal"><div class="compare-shell"><header class="compare-top"><div class="compare-topline"><div><div class="eyebrow">AURORA / 6 EDITIONS</div><h2>COMPARE MODE</h2></div><button type="button" class="compare-close" aria-label="閉じる" id="closeModal">×</button></div><div class="compare-controls"><div class="compare-swipe">← SWIPE TO COMPARE →</div><button type="button" class="diff-toggle" id="diffToggle" aria-pressed="false"><span class="diff-switch" aria-hidden="true"></span><span>違いだけ見る</span></button></div></header><div id="compareContent" class="compare-scroll"></div></div></dialog>
+<dialog id="compareModal" class="modal"><div class="compare-shell"><header class="compare-top"><div class="compare-topline"><div><div class="eyebrow">AURORA / 6 EDITIONS</div><h2>形態比較</h2></div><button type="button" class="compare-close" aria-label="閉じる" id="closeModal">×</button></div><div class="compare-controls"><div class="compare-swipe">← 横にスワイプして比較 →</div></div></header><div id="compareContent" class="compare-scroll"></div></div></dialog>
 <script>
 const DATA={
  releaseAt:"2026-11-18T00:00:00+09:00",
@@ -62,8 +62,8 @@ const DATA={
   {name:"初回盤A",type:"CD + DVD / 初回生産限定",code:"AVCD-63954/B",price:"¥5,060（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product01.jpg",details:["紙ジャケット","トレーディングカードA（全5種類セット）","応募抽選特典シリアルコード","DVD：WISHES Lyric Video / Behind The Scenes、GOTH Dance Performance、各Music Videoほか"]},
   {name:"初回盤B",type:"CD + DVD / 初回生産限定",code:"AVCD-63955/B",price:"¥5,060（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product02.jpg",details:["紙ジャケット","トレーディングカードB（全5種類セット）","応募抽選特典シリアルコード","DVD：STAR★STUDIO -SPECIAL EDITION-"]},
   {name:"通常盤",type:"CD",code:"AVCD-63956",price:"¥3,520（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product03.jpg",details:["紙ジャケット","トレーディングカードC（全5種類セット / 初回封入）","応募抽選特典シリアルコード（初回封入）"]},
-  {name:"BMSG MUSIC SHOP限定盤",type:"CD + 2DVD / 初回生産限定",code:"AVC1-63957/B～C",price:"¥8,910（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product04.jpg",details:["デジパック・三方背ケース","フォトブック 52P予定","トレーディングカードD（集合1種）","初回盤A/B映像＋SUMMER SONIC 2026 全7曲＋Photo Shooting Behind The Scenesほか"]},
-  {name:"BMSG MUSIC SHOP限定盤",type:"CD + 2Blu-ray / 初回生産限定",code:"AVC1-63958/B～C",price:"¥8,910（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product04.jpg",details:["デジパック・三方背ケース","フォトブック 52P予定","トレーディングカードD（集合1種）","初回盤A/B映像＋SUMMER SONIC 2026 全7曲＋Photo Shooting Behind The Scenesほか"]},
+  {name:"BMSG MUSIC SHOP限定盤",type:"CD + 2DVD / 初回生産限定",code:"AVC1-63957/B～C",price:"¥8,910（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product04.jpg",details:["デジパック・三方背ケース","フォトブック 52P予定","トレーディングカードD（集合1種類封入）","初回盤A/B映像＋SUMMER SONIC 2026 全7曲＋Photo Shooting Behind The Scenesほか"]},
+  {name:"BMSG MUSIC SHOP限定盤",type:"CD + 2Blu-ray / 初回生産限定",code:"AVC1-63958/B～C",price:"¥8,910（税込）",image:"https://starglow-sp.com/Aurora/image/jacket/product04.jpg",details:["デジパック・三方背ケース","フォトブック 52P予定","トレーディングカードD（集合1種類封入）","初回盤A/B映像＋SUMMER SONIC 2026 全7曲＋Photo Shooting Behind The Scenesほか"]},
   {name:"BMSG MUSIC SHOP限定バンドル",type:"CD + GOODS",code:"AVZ1-63959",price:"¥5,720（税込） / 販売期間終了",image:"https://starglow-sp.com/Aurora/image/jacket/product03.jpg",details:["通常盤CD仕様","トレーディングカードC（全5種類セット）","応募抽選特典シリアルコード","ピンバッジセット（4個入り）＋オリジナル集合トレーディングカード","販売期間：2026/9/16 11:59まで"]}
  ],
  prizes:[
@@ -88,12 +88,11 @@ function renderCompare(){
  const e=DATA.editions;
  const cells=(values,cls="")=>values.map(v=>`<div class="compare-cell"><div class="compare-value ${cls}">${v}</div></div>`).join("");
  const row=(label,values,{common=false}={})=>`<div class="compare-row ${common?"common-row":""}"><div class="compare-cell label">${safe(label)}</div>${cells(values)}</div>`;
- const head=`<div class="compare-grid"><div class="compare-cell label compare-head"><span>EDITION</span></div>${e.map((x,i)=>`<div class="compare-cell compare-head"><img class="compare-jacket" src="${safe(x.image)}" alt="${safe(x.name)}"><div class="compare-no">${String(i+1).padStart(2,"0")}</div><div class="compare-name">${safe(i===3?"BMSG限定 DVD":i===4?"BMSG限定 Blu-ray":i===5?"限定バンドル":x.name)}</div><div class="compare-type">${safe(x.code)}</div></div>`).join("")}`;
+ const head=`<div class="compare-grid"><div class="compare-cell label compare-head"><span>形態</span></div>${e.map((x,i)=>`<div class="compare-cell compare-head"><img class="compare-jacket" src="${safe(x.image)}" alt="${safe(x.name)}"><div class="compare-no">${String(i+1).padStart(2,"0")}</div><div class="compare-name">${safe(i===3?"BMSG限定 DVD":i===4?"BMSG限定 Blu-ray":i===5?"限定バンドル":x.name)}</div><div class="compare-type">${safe(x.code)}</div></div>`).join("")}`;
  const rows=[
-  row("PRICE",e.map(x=>`<strong>${safe(x.price.split(" / ")[0])}</strong>${x.price.includes("販売期間終了")?'<span class="sub">販売期間終了</span>':""}`)),
-  row("FORMAT",["CD + DVD","CD + DVD","CD","CD + 2DVD","CD + 2Blu-ray","CD + GOODS"]),
-  row("TRACKS",e.map(()=>`全14曲共通<span class="sub">Aurora ～ Moonchaser</span>`),{common:true}),
-  row("VIDEO",[
+  row("価格",e.map(x=>`<strong>${safe(x.price.split(" / ")[0])}</strong>${x.price.includes("販売期間終了")?'<span class="sub">販売期間終了</span>':""}`)),
+  row("商品形態",["CD + DVD","CD + DVD","CD","CD + 2DVD","CD + 2Blu-ray","CD + GOODS"]),
+  row("映像内容",[
    `WISHES Lyric / Behind<br>GOTH Dance Performance<br>Music Video 6本ほか`,
    `STAR★STUDIO<br>-SPECIAL EDITION-`,
    `<span class="no">—</span>`,
@@ -101,14 +100,14 @@ function renderCompare(){
    `初回盤A + B映像<br>SUMMER SONIC 2026<br>Aurora Photo Shooting Behindほか`,
    `<span class="no">—</span>`
   ]),
-  row("PACKAGE",["紙ジャケット","紙ジャケット","紙ジャケット","デジパック<br>三方背ケース","デジパック<br>三方背ケース","紙ジャケット"]),
-  row("PHOTO BOOK",["—","—","—",`<span class="yes">52P予定</span>`,`<span class="yes">52P予定</span>`,`—`]),
-  row("TRADING CARD",["A / 全5種セット","B / 全5種セット","C / 全5種セット","D / 集合1種","D / 集合1種","C / 全5種セット"]),
-  row("SERIAL",[`<span class="yes">応募シリアルあり</span>`,`<span class="yes">応募シリアルあり</span>`,`<span class="yes">応募シリアルあり</span>`,`—`,`—`,`<span class="yes">応募シリアルあり</span>`]),
-  row("SHOP BENEFIT",[`<span class="yes">アクリルミニキーホルダー対象</span>`,`<span class="yes">アクリルミニキーホルダー対象</span>`,`<span class="yes">アクリルミニキーホルダー対象</span>`,`対象外`,`対象外`,`<span class="yes">アクリルミニキーホルダー対象</span>`]),
-  row("GOODS",[`—`,`—`,`—`,`—`,`—`,`<span class="special">ピンバッジセット 4個入り<br>＋ 集合トレカ</span>`])
+  row("パッケージ",["紙ジャケット","紙ジャケット","紙ジャケット","デジパック<br>三方背ケース","デジパック<br>三方背ケース","紙ジャケット"]),
+  row("フォトブック",["—","—","—",`<span class="yes">52P予定</span>`,`<span class="yes">52P予定</span>`,`—`]),
+  row("封入トレカ",["トレーディングカードA<br>全5種類セット封入","トレーディングカードB<br>全5種類セット封入","トレーディングカードC<br>全5種類セット封入","トレーディングカードD<br>集合1種類封入","トレーディングカードD<br>集合1種類封入","トレーディングカードC<br>全5種類セット封入"]),
+  row("応募シリアル",[`<span class="yes">応募シリアルあり</span>`,`<span class="yes">応募シリアルあり</span>`,`<span class="yes">応募シリアルあり</span>`,`—`,`—`,`<span class="yes">応募シリアルあり</span>`]),
+  row("購入特典",[`<span class="yes">アクリルミニキーホルダー対象</span>`,`<span class="yes">アクリルミニキーホルダー対象</span>`,`<span class="yes">アクリルミニキーホルダー対象</span>`,`対象外`,`対象外`,`<span class="yes">アクリルミニキーホルダー対象</span>`]),
+  row("限定グッズ",[`—`,`—`,`—`,`—`,`—`,`<span class="special">ピンバッジセット 4個入り<br>＋ 集合トレカ</span>`])
  ].join("");
- $("#compareContent").innerHTML=head+rows+`<div class="compare-note">※ TRACKSは全6形態共通。BMSG MUSIC SHOP限定盤（2DVD / 2Blu-ray）は応募抽選特典シリアルコードおよび全店舗・ECサイト共通購入特典の対象外です。</div></div>`;
+ $("#compareContent").innerHTML=head+rows+`<div class="compare-note">※ CD収録14曲は全6形態共通のため比較表では省略しています。BMSG MUSIC SHOP限定盤（2DVD / 2Blu-ray）は応募抽選特典シリアルコードおよび全店舗・ECサイト共通購入特典の対象外です。</div></div>`;
 }
 function render(){
  $("#newsList").innerHTML=DATA.news.map(n=>`<a class="news-item" href="${safe(n.url)}" target="_blank" rel="noopener noreferrer"><div class="date">${safe(n.date)}</div><h3>${safe(n.title)}</h3><span class="news-arrow">↗</span></a>`).join("");
@@ -123,7 +122,7 @@ function render(){
  document.querySelectorAll("[data-task]").forEach(i=>i.addEventListener("change",update));update();
 }
 function countdown(){const ms=new Date(DATA.releaseAt)-Date.now(),el=$("#releaseCountdown");if(ms<=0){el.textContent="AURORA IS HERE.";return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.textContent=`発売まで ${d}日 ${String(h).padStart(2,"0")}時間 ${String(m).padStart(2,"0")}分`}
-$("#compareBtn").addEventListener("click",()=>{$("#compareModal").showModal();$("#compareContent").scrollLeft=0});$("#closeModal").addEventListener("click",()=>$("#compareModal").close());$("#diffToggle").addEventListener("click",e=>{const b=e.currentTarget,on=b.getAttribute("aria-pressed")==="true";b.setAttribute("aria-pressed",String(!on));document.querySelectorAll(".common-row").forEach(r=>r.classList.toggle("is-hidden",!on))});
+$("#compareBtn").addEventListener("click",()=>{$("#compareModal").showModal();$("#compareContent").scrollLeft=0});$("#closeModal").addEventListener("click",()=>$("#compareModal").close());
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("is-visible")}),{threshold:.08});document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 render();countdown();setInterval(countdown,30000);
 </script>
