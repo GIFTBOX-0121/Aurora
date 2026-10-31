@@ -206,6 +206,42 @@ body{font-size:14px}
  .serial-modal{width:calc(100% - 20px);height:92dvh}.serial-modal-body{padding:13px 13px 24px}.serial-modal-top{padding:15px 14px 12px}.serial-modal-top h2{font-size:24px}.serial-round-period{font-size:9px}.serial-round-summary span{font-size:8px}.alloc-prize summary{padding:12px 1px}.alloc-prize summary strong{font-size:11px}.alloc-count{font-size:8px!important}.alloc-toggle{font-size:8px}.alloc-options{padding-left:6px}.alloc-city{grid-template-columns:50px minmax(0,1fr)}.alloc-city-name{font-size:10px}.alloc-row{font-size:10px;min-height:41px}.alloc-row .number-control button{width:27px;height:27px}.alloc-row .number-control input{width:40px;height:27px;font-size:12px}.alloc-official-note{font-size:9px}.serial-modal-note{font-size:8.5px}
 }
 
+
+/* ===== v10 VISUAL / EDITIONS / SERIAL READABILITY ===== */
+.album-hero-art{isolation:isolate;padding:18px 14px 20px 18px}
+.album-hero-art:before{inset:-18% -12% -16% -18%;background:radial-gradient(ellipse at 34% 38%,rgba(90,238,224,.28),transparent 43%),radial-gradient(ellipse at 78% 30%,rgba(194,126,255,.32),transparent 46%),conic-gradient(from 210deg at 48% 52%,transparent 0 18%,rgba(116,232,225,.11) 25%,transparent 34% 56%,rgba(192,139,255,.12) 64%,transparent 72%);filter:blur(18px)}
+.album-hero-art:after{left:-18%;right:-8%;bottom:5px;height:1px;background:linear-gradient(90deg,transparent 0,var(--cyan) 25%,#fff 49%,var(--violet) 72%,transparent 100%);box-shadow:0 0 25px rgba(145,232,226,.62)}
+.album-hero-art img{clip-path:polygon(8% 0,100% 0,100% 87%,89% 100%,0 100%,0 12%);border:1px solid rgba(228,235,255,.22);box-shadow:0 28px 80px rgba(0,0,0,.4),0 0 42px rgba(116,226,220,.13)}
+.hero-orbit{position:absolute;z-index:2;pointer-events:none;border:1px solid rgba(206,221,255,.23);border-radius:50%;mix-blend-mode:screen}
+.hero-orbit-a{width:118%;height:58%;left:-16%;top:18%;transform:rotate(-18deg);border-color:rgba(145,232,226,.28) transparent rgba(201,167,255,.28) transparent;filter:drop-shadow(0 0 8px rgba(145,232,226,.24))}
+.hero-orbit-b{width:88%;height:118%;right:-8%;top:-9%;transform:rotate(22deg);border-color:transparent rgba(201,167,255,.24) transparent rgba(145,232,226,.2)}
+.hero-star{position:absolute;z-index:3;color:#efffff;text-shadow:0 0 8px #9ce8df,0 0 18px rgba(201,167,255,.8);pointer-events:none}
+.hero-star-a{left:-1%;top:19%;font-size:14px}.hero-star-b{right:2%;top:8%;font-size:10px}.hero-star-c{right:-2%;bottom:16%;font-size:18px}
+.editions-heading .jp{font-size:13px;font-weight:700;color:#c0c8df;letter-spacing:.08em}
+.edition-tile h3{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:13px;font-weight:800;letter-spacing:0;white-space:nowrap}
+.edition-tile-type{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:5px;min-height:42px}
+.format-tag{display:inline-flex;align-items:center;max-width:100%;padding:2px 5px;border:1px solid rgba(184,202,242,.23);background:linear-gradient(90deg,rgba(145,232,226,.055),rgba(201,167,255,.055));font-size:8px;font-weight:700;line-height:1.35;color:#bfc8e2;white-space:nowrap}
+.edition-tile-price{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:12.5px;font-weight:800;white-space:nowrap;letter-spacing:-.02em}
+.reserve-label{font-size:10px;font-weight:700;color:#c3cbe0}
+.shop-format{display:none!important}
+.serial-section .clean-head p{font-size:12px;font-weight:700;color:#c2cae0}
+.serial-section .serial-rule{font-size:12px;line-height:1.75}
+.prize-detail summary{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr) auto;grid-template-areas:"title quick side";gap:10px;min-height:62px;padding:10px 2px}
+.prize-titleline{grid-area:title;display:flex;align-items:center;gap:7px;min-width:0}.prize-badge{font-size:15px;white-space:nowrap}.prize-star{font-size:9px;color:#dffcf7;text-shadow:0 0 10px rgba(145,232,226,.85),0 0 16px rgba(201,167,255,.55)}.prize-name{font-size:12px;font-weight:800;line-height:1.35}
+.prize-quick{grid-area:quick;align-self:center;margin:0;font-size:10px;line-height:1.5;color:#b8c1da}.prize-quick span{display:block}
+.prize-side{grid-area:side;display:flex;align-items:center;gap:12px}.prize-total{font-size:10px;font-weight:800;color:#eef1ff;padding:0}.prize-toggle{font-size:9px;gap:6px}.prize-toggle i{width:8px;height:8px}
+.prize-body{padding:7px 2px 17px 54px;font-size:11px;line-height:1.8}
+.round-card{padding:17px 15px 16px}.round-date{font-size:13px;font-weight:850;line-height:1.65;color:#fff;text-shadow:0 0 12px rgba(181,194,255,.12)}.round-result{font-size:10.5px}.round-actions{display:flex;align-items:center;gap:6px}.round-done,.round-manage{min-height:30px;padding:5px 8px;border:1px solid rgba(145,232,226,.28);background:linear-gradient(110deg,rgba(126,221,217,.07),rgba(171,122,229,.07));font-size:8.5px;font-weight:800;letter-spacing:.04em;touch-action:manipulation}.round-done.active{border-color:rgba(145,232,226,.6);background:linear-gradient(110deg,rgba(126,221,217,.2),rgba(171,122,229,.13));color:#e9fffb}.round-card.is-done:after{content:"✓";position:absolute;right:10px;bottom:6px;font-size:28px;color:rgba(145,232,226,.08);pointer-events:none}.round-card{position:relative}
+.round-reminder{margin:10px 0 14px;padding:11px 13px;border-left:2px solid #9ce8df;background:linear-gradient(90deg,rgba(145,232,226,.1),rgba(201,167,255,.045),transparent);font-size:11px}.round-reminder strong{display:block;color:#f5fffd}.round-reminder span{display:block;margin-top:2px;color:#c1c9df}
+.serial-note{font-size:10px;line-height:1.8}
+@media(max-width:560px){
+ .album-hero-art{padding:11px 8px 14px 12px}.album-hero-art:before{inset:-18% -12% -18% -18%}.hero-orbit-a{width:122%;left:-19%}.hero-orbit-b{right:-10%}.hero-star-a{left:-2%;top:16%;font-size:12px}.hero-star-b{right:1%;font-size:9px}.hero-star-c{right:-2%;bottom:14%;font-size:15px}
+ .editions-heading .jp{font-size:12px}.edition-tile{padding:9px 6px 11px}.edition-tile h3{font-size:11.5px}.edition-tile-type{gap:2px;min-height:39px}.format-tag{font-size:7.4px;padding:2px 4px}.edition-tile-price{font-size:10.5px}.reserve-label{font-size:9px}
+ .serial-section .clean-head p{font-size:11px}.serial-section .serial-rule{font-size:10.5px}
+ .prize-detail summary{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"title side" "quick quick";gap:5px 8px;min-height:68px;padding:10px 1px}.prize-titleline{gap:5px}.prize-badge{font-size:13px}.prize-star{font-size:8px}.prize-name{font-size:10.5px}.prize-quick{font-size:9px;padding-left:1px}.prize-side{gap:8px}.prize-total{font-size:9px}.prize-toggle{font-size:8px}.prize-body{padding:7px 2px 16px 2px;font-size:10px}
+ .round-card{padding:15px 12px 14px}.round-top{align-items:flex-start}.round-top strong{font-size:14px}.round-actions{gap:4px}.round-done,.round-manage{min-height:29px;padding:5px 7px;font-size:8px}.round-date{font-size:12.5px}.round-result{font-size:10px}.serial-note{font-size:9.5px}
+}
+
 </style>
 </head>
 <body>
@@ -218,6 +254,11 @@ body{font-size:14px}
     <h1>Aurora</h1>
   </div>
   <div class="album-hero-art">
+    <span class="hero-orbit hero-orbit-a" aria-hidden="true"></span>
+    <span class="hero-orbit hero-orbit-b" aria-hidden="true"></span>
+    <span class="hero-star hero-star-a" aria-hidden="true">✦</span>
+    <span class="hero-star hero-star-b" aria-hidden="true">✧</span>
+    <span class="hero-star hero-star-c" aria-hidden="true">⋆</span>
     <img src="https://starglow-sp.com/Aurora/image/goods/thumbnail02.jpg" alt="STARGLOW Aurora official visual">
   </div>
 </section>
@@ -247,7 +288,7 @@ body{font-size:14px}
   </div>
 </section>
 
-<section class="clean-section reveal">
+<section class="clean-section serial-section reveal">
   <div class="clean-head"><h2>SERIAL CAMPAIGN</h2><p>シリアル特典</p></div>
   <p class="serial-rule">シリアルコード1つで、S・A・B・C・D・E賞のいずれか1口に応募できます。オリジナル動画コメントは応募者全員特典です。</p>
   <div id="prizeList" class="prize-stack"></div>
@@ -397,12 +438,12 @@ function setupCompareAxisLock(){
 }
 function getStoredState(){
  const key="aurora-album-personal-v2";
- let state={reserve:{},roundAlloc:{}};
+ let state={reserve:{},roundAlloc:{},roundDone:{}};
  try{state={...state,...JSON.parse(localStorage.getItem(key)||"{}")}}catch{}
  if(!Object.keys(state.reserve||{}).length){
    try{const old=JSON.parse(localStorage.getItem("aurora-album-personal-v1")||"{}");if(old.reserve)state.reserve=old.reserve}catch{}
  }
- state.reserve=state.reserve||{}; state.roundAlloc=state.roundAlloc||{};
+ state.reserve=state.reserve||{}; state.roundAlloc=state.roundAlloc||{}; state.roundDone=state.roundDone||{};
  return {key,state};
 }
 function saveStoredState(key,state){try{localStorage.setItem(key,JSON.stringify(state))}catch{}}
@@ -472,6 +513,19 @@ function openRoundManager(roundIndex,state,key){
  });
  refresh(); modal.showModal();
 }
+function roundWindow(round){
+ const m=round.period.match(/(\d{4})\.(\d{2})\.(\d{2}) (\d{2}):(\d{2}) ～ (?:(\d{4})\.)?(\d{2})\.(\d{2}) (\d{2}):(\d{2})/);
+ if(!m)return null;
+ const sy=+m[1],sm=+m[2],sd=+m[3],sh=+m[4],smin=+m[5],ey=m[6]?+m[6]:sy,em=+m[7],ed=+m[8],eh=+m[9],emin=+m[10];
+ return {start:new Date(`${sy}-${String(sm).padStart(2,"0")}-${String(sd).padStart(2,"0")}T${String(sh).padStart(2,"0")}:${String(smin).padStart(2,"0")}:00+09:00`),end:new Date(`${ey}-${String(em).padStart(2,"0")}-${String(ed).padStart(2,"0")}T${String(eh).padStart(2,"0")}:${String(emin).padStart(2,"0")}:00+09:00`)};
+}
+function showRoundReminder(state){
+ const now=new Date(); const active=DATA.rounds.map((r,i)=>({r,i,w:roundWindow(r)})).find(x=>x.w&&now>=x.w.start&&now<x.w.end&&!state.roundDone[x.i]);
+ let el=document.getElementById("roundReminder");
+ if(!active){if(el)el.remove();return}
+ if(!el){el=document.createElement("div");el.id="roundReminder";el.className="round-reminder";document.querySelector(".serial-section .clean-head[style]")?.insertAdjacentElement("afterend",el)}
+ el.innerHTML=`<strong>${safe(active.r.name)} 応募期間中</strong><span>「申し込み完了」がまだ記録されていません。</span>`;
+}
 function render(){
  const shortNames=["初回盤A","初回盤B","通常盤","BMSG SHOP限定","BMSG SHOP限定","限定バンドル"];
  const store=getStoredState(); const state=store.state;
@@ -480,20 +534,22 @@ function render(){
    const ended=e.price.includes("販売期間終了")?'<div class="edition-tile-status">販売期間終了</div>':"";
    const qty=cleanNumber(state.reserve[i]||0);
    const serialNote=serialEligible(i)?'<div class="edition-serial-note">1枚につきシリアル1つ</div>':'<div class="edition-serial-note">シリアル対象外</div>';
-   const formatBadge=i===3?'<span class="shop-format">2DVD</span>':i===4?'<span class="shop-format">2Blu-ray</span>':'';
-   return `<article class="edition-tile"><img class="edition-jacket" src="${safe(e.image)}" alt="${safe(shortNames[i])}"><div class="edition-tile-no">${String(i+1).padStart(2,"0")}</div><div class="edition-info-row"><div class="edition-info-copy"><h3>${safe(shortNames[i])}${formatBadge}</h3><div class="edition-tile-type">${safe(e.type)}</div><div class="edition-tile-price">${price}</div>${ended}</div><button class="contents-thumb" type="button" data-contents-image="${i}" aria-label="${safe(shortNames[i])}の商品展開図を拡大"><img src="${safe(e.contentsImage)}" alt="" loading="lazy"></button></div><div class="edition-reserve"><span class="reserve-label">予約枚数</span><div class="number-control reserve-control"><button type="button" data-reserve-minus="${i}" aria-label="${safe(shortNames[i])}を1枚減らす">−</button><input type="number" min="0" step="1" inputmode="numeric" value="${qty}" data-reserve-input="${i}" aria-label="${safe(shortNames[i])}の予約枚数"><button type="button" data-reserve-plus="${i}" aria-label="${safe(shortNames[i])}を1枚増やす">＋</button></div></div>${serialNote}</article>`;
+   const formatTags=e.type.split(" / ").map(part=>`<span class="format-tag">${safe(part.replace(/ \+ /g,"＋"))}</span>`).join("");
+   return `<article class="edition-tile"><img class="edition-jacket" src="${safe(e.image)}" alt="${safe(shortNames[i])}"><div class="edition-tile-no">${String(i+1).padStart(2,"0")}</div><div class="edition-info-row"><div class="edition-info-copy"><h3>${safe(shortNames[i])}</h3><div class="edition-tile-type">${formatTags}</div><div class="edition-tile-price">${price}</div>${ended}</div><button class="contents-thumb" type="button" data-contents-image="${i}" aria-label="${safe(shortNames[i])}の商品展開図を拡大"><img src="${safe(e.contentsImage)}" alt="" loading="lazy"></button></div><div class="edition-reserve"><span class="reserve-label">予約枚数</span><div class="number-control reserve-control"><button type="button" data-reserve-minus="${i}" aria-label="${safe(shortNames[i])}を1枚減らす">−</button><input type="number" min="0" step="1" inputmode="numeric" value="${qty}" data-reserve-input="${i}" aria-label="${safe(shortNames[i])}の予約枚数"><button type="button" data-reserve-plus="${i}" aria-label="${safe(shortNames[i])}を1枚増やす">＋</button></div></div>${serialNote}</article>`;
  }).join("");
  $("#trackModalList").innerHTML=DATA.tracks.map(t=>`<li>${safe(t)}</li>`).join("");
  renderCompare();
- $("#prizeList").innerHTML=DATA.prizes.map(p=>`<details class="prize-detail"><summary><span class="prize-badge">${safe(p.key==="ALL"?"ALL":p.key+"賞")}</span><span class="prize-name">${safe(p.name)}</span><span class="prize-quick">${prizeSummary(p)}</span><span class="prize-total">${safe(p.count)}</span><span class="prize-toggle"><span class="when-closed">詳細を見る</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></summary><div class="prize-body"><strong>${safe(p.count)}</strong><br>${safe(p.body)}${p.points.length?`<ul>${p.points.map(x=>`<li>${safe(x)}</li>`).join("")}</ul>`:""}</div></details>`).join("");
- $("#roundList").innerHTML=DATA.rounds.map((r,i)=>`<div class="round-card"><div class="round-top"><strong>${safe(r.name)}</strong><button type="button" class="round-manage" data-round-manage="${i}">管理する</button></div><div class="round-date">${safe(r.period)}</div><div class="round-result">${safe(r.result)}</div></div>`).join("");
+ $("#prizeList").innerHTML=DATA.prizes.map(p=>`<details class="prize-detail"><summary><div class="prize-titleline"><span class="prize-badge">${safe(p.key==="ALL"?"ALL":p.key+"賞")}</span><span class="prize-star" aria-hidden="true">★</span><span class="prize-name">${safe(p.name)}</span></div><span class="prize-quick">${prizeSummary(p)}</span><div class="prize-side"><span class="prize-total">${safe(p.count)}</span><span class="prize-toggle"><span class="when-closed">詳細を見る</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></div></summary><div class="prize-body"><strong>${safe(p.count)}</strong><br>${safe(p.body)}${p.points.length?`<ul>${p.points.map(x=>`<li>${safe(x)}</li>`).join("")}</ul>`:""}</div></details>`).join("");
+ $("#roundList").innerHTML=DATA.rounds.map((r,i)=>{const done=!!state.roundDone[i];return `<div class="round-card ${done?"is-done":""}"><div class="round-top"><strong>${safe(r.name)}</strong><div class="round-actions"><button type="button" class="round-done ${done?"active":""}" data-round-done="${i}" aria-pressed="${done}">${done?"申し込み完了 ✓":"申し込み完了"}</button><button type="button" class="round-manage" data-round-manage="${i}">管理する</button></div></div><div class="round-date">${safe(r.period)}</div><div class="round-result">${safe(r.result)}</div></div>`}).join("");
  document.querySelectorAll("[data-reserve-input]").forEach(input=>{
    const i=input.dataset.reserveInput,minus=document.querySelector(`[data-reserve-minus="${i}"]`),plus=document.querySelector(`[data-reserve-plus="${i}"]`);
    bindNumericControl(input,minus,plus,n=>{state.reserve[i]=n;saveStoredState(store.key,state);updateGlobalSerialSummary(state)});
  });
  document.querySelectorAll("[data-contents-image]").forEach(b=>b.addEventListener("click",()=>{const e=DATA.editions[Number(b.dataset.contentsImage)];$("#productImageFull").src=e.contentsImage;$("#productImageFull").alt=e.name+" 商品展開図";$("#productImageModal").showModal()}));
+ document.querySelectorAll("[data-round-done]").forEach(b=>b.addEventListener("click",()=>{const i=Number(b.dataset.roundDone);state.roundDone[i]=!state.roundDone[i];saveStoredState(store.key,state);render()}));
  document.querySelectorAll("[data-round-manage]").forEach(b=>b.addEventListener("click",()=>openRoundManager(Number(b.dataset.roundManage),state,store.key)));
  updateGlobalSerialSummary(state);
+ showRoundReminder(state);
 }
 function countdown(){const ms=new Date(DATA.releaseAt)-Date.now(),el=$("#releaseCountdown");if(ms<=0){el.innerHTML='<div style="grid-column:1/-1;padding:18px;font-family:Georgia,serif;font-size:24px">Aurora RELEASED</div>';return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4),sec=Math.floor(ms%6e4/1000);const unit=(n,l)=>`<div class="countdown-unit"><span class="countdown-num">${String(n).padStart(2,"0")}</span><span class="countdown-label">${l}</span></div>`;el.innerHTML=unit(d,"日")+unit(h,"時間")+unit(m,"分")+unit(sec,"秒")}
 $("#benefitImageBtn").addEventListener("click",()=>$("#benefitImageModal").showModal());$("#closeBenefitImage").addEventListener("click",()=>$("#benefitImageModal").close());$("#benefitImageModal").addEventListener("click",e=>{if(e.target===$("#benefitImageModal"))$("#benefitImageModal").close()});
