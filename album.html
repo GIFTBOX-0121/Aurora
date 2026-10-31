@@ -242,6 +242,75 @@ body{font-size:14px}
  .round-card{padding:15px 12px 14px}.round-top{align-items:flex-start}.round-top strong{font-size:14px}.round-actions{gap:4px}.round-done,.round-manage{min-height:29px;padding:5px 7px;font-size:8px}.round-date{font-size:12.5px}.round-result{font-size:10px}.serial-note{font-size:9.5px}
 }
 
+
+/* ===== v11 LAYOUT BALANCE + TITLE ORNAMENT + SERIAL TWO-LINE ===== */
+/* 全セクションの左右基準を1本に統一 */
+.wrap{width:min(calc(100% - 36px),820px);margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
+.topnav,.album-hero,.release-center,.editions-section,.clean-section,.footer{width:100%;margin-left:0;margin-right:0}
+
+/* トップ：人物写真には装飾を重ねず、Auroraタイトルの上下だけ装飾 */
+.hero-orbit,.hero-star{display:none!important}
+.album-hero-art{padding:0!important;margin-right:0!important;isolation:isolate}
+.album-hero-art:before{inset:-7% -5% -7% -5%!important;background:radial-gradient(ellipse at 48% 48%,rgba(116,232,225,.13),transparent 55%),radial-gradient(ellipse at 76% 22%,rgba(201,167,255,.14),transparent 50%)!important;filter:blur(22px)!important}
+.album-hero-art:after{display:none!important}
+.album-hero-art img{clip-path:polygon(7% 0,100% 0,100% 90%,91% 100%,0 100%,0 10%);border:1px solid rgba(228,235,255,.14);box-shadow:0 26px 72px rgba(0,0,0,.34),0 0 34px rgba(116,226,220,.08)}
+.album-hero-copy{position:relative;padding:20px 0 18px}
+.album-hero-copy:before,.album-hero-copy:after{display:block;color:#dffcf7;text-shadow:0 0 12px rgba(145,232,226,.7),0 0 18px rgba(201,167,255,.42);font-family:Georgia,serif;line-height:1}
+.album-hero-copy:before{content:"✦";width:72%;margin:0 0 14px;padding:0 0 8px;border-bottom:1px solid transparent;border-image:linear-gradient(90deg,var(--cyan),var(--violet),transparent) 1;text-align:right;font-size:9px}
+.album-hero-copy:after{content:"✧   ⋆";width:88%;margin:14px 0 0;padding:8px 0 0;border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,var(--cyan),var(--violet)) 1;text-align:left;font-size:8px;letter-spacing:.55em}
+
+/* ALBUM EDITIONS */
+.editions-heading .jp{font-size:14px;font-weight:800;color:#d1d7e9}
+.edition-index-row{display:flex;align-items:center;justify-content:space-between;gap:5px;min-height:18px}
+.edition-tile-status{margin:0;color:#ff8f98;font-size:8px;font-weight:900;line-height:1.2;white-space:nowrap;text-shadow:0 0 12px rgba(255,95,110,.18)}
+.edition-tile h3{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:13px;font-weight:850;line-height:1.35;white-space:nowrap}
+.edition-tile-type{min-height:46px}
+.edition-tile-price{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:12px;font-weight:850;white-space:nowrap;letter-spacing:-.045em}
+.edition-info-row{align-items:start}
+.edition-info-copy{display:flex;min-width:0;min-height:108px;flex-direction:column}
+.edition-info-copy .edition-tile-price{margin-top:auto;padding-top:5px}
+.edition-reserve{margin-top:7px}
+.reserve-label{font-size:10px;font-weight:800}
+
+/* SERIAL CAMPAIGN：見出しと一覧を明確に拡大 */
+.serial-section .clean-head h2{font-size:19px}
+.serial-section .clean-head p{font-size:14px!important;font-weight:850!important;color:#e0e5f2!important}
+.serial-section .serial-rule{font-size:13px;line-height:1.8}
+.prize-detail summary{display:block!important;min-height:0!important;padding:11px 2px 9px!important}
+.prize-summary-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.2fr) auto;grid-template-rows:auto auto;align-items:center;column-gap:12px;row-gap:4px}
+.prize-titleline{grid-column:1;grid-row:1;display:flex;align-items:center;gap:7px;min-width:0}
+.prize-badge{font-size:16px!important;font-weight:700;white-space:nowrap}.prize-star{font-size:10px!important}.prize-name{font-size:13px!important;font-weight:850!important;line-height:1.35}
+.prize-quick{grid-column:2;grid-row:1 / span 2;margin:0!important;font-size:11px!important;line-height:1.55!important;color:#c7cee1!important;align-self:center}
+.prize-quick span{display:block}
+.prize-total{grid-column:3;grid-row:1 / span 2;align-self:center;font-size:11px!important;font-weight:900!important;color:#fff!important;white-space:nowrap}
+.prize-toggle-row{display:flex;justify-content:flex-end;margin-top:6px;padding-top:6px;border-top:1px solid rgba(225,231,255,.06)}
+.prize-toggle{display:inline-flex!important;align-items:center;gap:7px;font-size:10px!important;font-weight:800;color:#aef2e8!important}
+.prize-toggle i{width:8px!important;height:8px!important}
+.prize-body{padding:7px 2px 18px 2px!important;font-size:12px!important;line-height:1.85!important}
+
+/* 応募期間：操作の役割を縦に分離 */
+.round-card{padding:17px 15px 15px}
+.round-top{margin-bottom:3px}.round-top strong{font-size:15px}
+.round-date{font-size:13.5px;font-weight:900;line-height:1.65}
+.round-result{margin-top:2px;font-size:11px}
+.round-actions{display:grid!important;grid-template-columns:1fr;gap:7px!important;margin-top:13px}
+.round-manage,.round-done{width:100%;min-height:42px!important;padding:8px 10px!important;font-size:10px!important}
+.round-manage{display:flex;align-items:center;justify-content:space-between;text-align:left;border-color:rgba(145,232,226,.42)!important;background:linear-gradient(100deg,rgba(126,221,217,.13),rgba(171,122,229,.08))!important}
+.round-manage:after{content:"›";font-size:20px;line-height:1;color:#c9fbf4}.round-manage span{font-weight:900}.round-manage small{margin-left:auto;margin-right:10px;color:#aab5d0;font-size:8px;font-weight:700}
+.round-done{background:rgba(255,255,255,.025)!important;border-color:rgba(225,231,255,.18)!important;color:#c7cee1}.round-done.active{background:linear-gradient(100deg,rgba(126,221,217,.16),rgba(171,122,229,.1))!important;border-color:rgba(145,232,226,.55)!important;color:#effffb}
+
+@media(max-width:560px){
+ .wrap{width:calc(100% - 28px);max-width:820px}
+ .album-hero{grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr);gap:12px;padding:25px 0 32px}
+ .album-hero-copy{padding:14px 0 12px}.album-hero-copy:before{width:78%;margin-bottom:11px}.album-hero-copy:after{width:94%;margin-top:11px}
+ .album-hero-art{padding:0!important;margin-right:0!important}.album-hero-art:before{inset:-5%!important}.album-hero-art img{height:55vw;min-height:202px;max-height:305px}
+ .editions-heading .jp{font-size:13px}
+ .edition-tile{padding:9px 6px 11px}.edition-tile h3{font-size:11.5px}.edition-tile-status{font-size:7.3px}.edition-tile-type{min-height:42px}.format-tag{font-size:7.2px}.edition-tile-price{font-size:10.4px;letter-spacing:-.06em}.edition-info-copy{min-height:100px}.reserve-label{font-size:9px}
+ .serial-section .clean-head h2{font-size:18px}.serial-section .clean-head p{font-size:13px!important}.serial-section .serial-rule{font-size:11.5px}
+ .prize-summary-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,1.22fr) auto;column-gap:7px;row-gap:3px}.prize-badge{font-size:14px!important}.prize-star{font-size:9px!important}.prize-name{font-size:11.2px!important}.prize-quick{font-size:9.5px!important;line-height:1.5!important}.prize-total{font-size:9.5px!important}.prize-toggle-row{margin-top:7px}.prize-toggle{font-size:9px!important}.prize-body{font-size:10.5px!important}
+ .round-card{padding:15px 13px}.round-top strong{font-size:15px}.round-date{font-size:13px}.round-result{font-size:10px}.round-manage,.round-done{min-height:40px!important;font-size:9.5px!important}.round-manage small{font-size:7.5px}
+}
+
 </style>
 </head>
 <body>
@@ -254,11 +323,6 @@ body{font-size:14px}
     <h1>Aurora</h1>
   </div>
   <div class="album-hero-art">
-    <span class="hero-orbit hero-orbit-a" aria-hidden="true"></span>
-    <span class="hero-orbit hero-orbit-b" aria-hidden="true"></span>
-    <span class="hero-star hero-star-a" aria-hidden="true">✦</span>
-    <span class="hero-star hero-star-b" aria-hidden="true">✧</span>
-    <span class="hero-star hero-star-c" aria-hidden="true">⋆</span>
     <img src="https://starglow-sp.com/Aurora/image/goods/thumbnail02.jpg" alt="STARGLOW Aurora official visual">
   </div>
 </section>
@@ -527,7 +591,7 @@ function showRoundReminder(state){
  el.innerHTML=`<strong>${safe(active.r.name)} 応募期間中</strong><span>「申し込み完了」がまだ記録されていません。</span>`;
 }
 function render(){
- const shortNames=["初回盤A","初回盤B","通常盤","BMSG SHOP限定","BMSG SHOP限定","限定バンドル"];
+ const shortNames=["初回盤A","初回盤B","通常盤","BMSG SHOP限定","BMSG SHOP限定","限定バンドル付き"];
  const store=getStoredState(); const state=store.state;
  $("#editionsList").innerHTML=DATA.editions.map((e,i)=>{
    const price=safe(e.price.split(" / ")[0]);
@@ -535,12 +599,12 @@ function render(){
    const qty=cleanNumber(state.reserve[i]||0);
    const serialNote=serialEligible(i)?'<div class="edition-serial-note">1枚につきシリアル1つ</div>':'<div class="edition-serial-note">シリアル対象外</div>';
    const formatTags=e.type.split(" / ").map(part=>`<span class="format-tag">${safe(part.replace(/ \+ /g,"＋"))}</span>`).join("");
-   return `<article class="edition-tile"><img class="edition-jacket" src="${safe(e.image)}" alt="${safe(shortNames[i])}"><div class="edition-tile-no">${String(i+1).padStart(2,"0")}</div><div class="edition-info-row"><div class="edition-info-copy"><h3>${safe(shortNames[i])}</h3><div class="edition-tile-type">${formatTags}</div><div class="edition-tile-price">${price}</div>${ended}</div><button class="contents-thumb" type="button" data-contents-image="${i}" aria-label="${safe(shortNames[i])}の商品展開図を拡大"><img src="${safe(e.contentsImage)}" alt="" loading="lazy"></button></div><div class="edition-reserve"><span class="reserve-label">予約枚数</span><div class="number-control reserve-control"><button type="button" data-reserve-minus="${i}" aria-label="${safe(shortNames[i])}を1枚減らす">−</button><input type="number" min="0" step="1" inputmode="numeric" value="${qty}" data-reserve-input="${i}" aria-label="${safe(shortNames[i])}の予約枚数"><button type="button" data-reserve-plus="${i}" aria-label="${safe(shortNames[i])}を1枚増やす">＋</button></div></div>${serialNote}</article>`;
+   return `<article class="edition-tile"><img class="edition-jacket" src="${safe(e.image)}" alt="${safe(shortNames[i])}"><div class="edition-index-row"><div class="edition-tile-no">${String(i+1).padStart(2,"0")}</div>${ended}</div><div class="edition-info-row"><div class="edition-info-copy"><h3>${safe(shortNames[i])}</h3><div class="edition-tile-type">${formatTags}</div><div class="edition-tile-price">${price}</div></div><button class="contents-thumb" type="button" data-contents-image="${i}" aria-label="${safe(shortNames[i])}の商品展開図を拡大"><img src="${safe(e.contentsImage)}" alt="" loading="lazy"></button></div><div class="edition-reserve"><span class="reserve-label">予約枚数</span><div class="number-control reserve-control"><button type="button" data-reserve-minus="${i}" aria-label="${safe(shortNames[i])}を1枚減らす">−</button><input type="number" min="0" step="1" inputmode="numeric" value="${qty}" data-reserve-input="${i}" aria-label="${safe(shortNames[i])}の予約枚数"><button type="button" data-reserve-plus="${i}" aria-label="${safe(shortNames[i])}を1枚増やす">＋</button></div></div>${serialNote}</article>`;
  }).join("");
  $("#trackModalList").innerHTML=DATA.tracks.map(t=>`<li>${safe(t)}</li>`).join("");
  renderCompare();
- $("#prizeList").innerHTML=DATA.prizes.map(p=>`<details class="prize-detail"><summary><div class="prize-titleline"><span class="prize-badge">${safe(p.key==="ALL"?"ALL":p.key+"賞")}</span><span class="prize-star" aria-hidden="true">★</span><span class="prize-name">${safe(p.name)}</span></div><span class="prize-quick">${prizeSummary(p)}</span><div class="prize-side"><span class="prize-total">${safe(p.count)}</span><span class="prize-toggle"><span class="when-closed">詳細を見る</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></div></summary><div class="prize-body"><strong>${safe(p.count)}</strong><br>${safe(p.body)}${p.points.length?`<ul>${p.points.map(x=>`<li>${safe(x)}</li>`).join("")}</ul>`:""}</div></details>`).join("");
- $("#roundList").innerHTML=DATA.rounds.map((r,i)=>{const done=!!state.roundDone[i];return `<div class="round-card ${done?"is-done":""}"><div class="round-top"><strong>${safe(r.name)}</strong><div class="round-actions"><button type="button" class="round-done ${done?"active":""}" data-round-done="${i}" aria-pressed="${done}">${done?"申し込み完了 ✓":"申し込み完了"}</button><button type="button" class="round-manage" data-round-manage="${i}">管理する</button></div></div><div class="round-date">${safe(r.period)}</div><div class="round-result">${safe(r.result)}</div></div>`}).join("");
+ $("#prizeList").innerHTML=DATA.prizes.map(p=>`<details class="prize-detail"><summary><div class="prize-summary-grid"><div class="prize-titleline"><span class="prize-badge">${safe(p.key==="ALL"?"ALL":p.key+"賞")}</span><span class="prize-star" aria-hidden="true">★</span><span class="prize-name">${safe(p.name)}</span></div><div class="prize-quick">${prizeSummary(p)}</div><span class="prize-total">${safe(p.count)}</span></div><div class="prize-toggle-row"><span class="prize-toggle"><span class="when-closed">詳細を見る</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></div></summary><div class="prize-body"><strong>${safe(p.count)}</strong><br>${safe(p.body)}${p.points.length?`<ul>${p.points.map(x=>`<li>${safe(x)}</li>`).join("")}</ul>`:""}</div></details>`).join("");
+ $("#roundList").innerHTML=DATA.rounds.map((r,i)=>{const done=!!state.roundDone[i];return `<div class="round-card ${done?"is-done":""}"><div class="round-top"><strong>${safe(r.name)}</strong></div><div class="round-date">${safe(r.period)}</div><div class="round-result">${safe(r.result)}</div><div class="round-actions"><button type="button" class="round-manage" data-round-manage="${i}"><span>応募口数を管理</span><small>賞・会場 / ユニット別</small></button><button type="button" class="round-done ${done?"active":""}" data-round-done="${i}" aria-pressed="${done}">${done?"申し込み完了 ✓":"申し込み完了を記録"}</button></div></div>`}).join("");
  document.querySelectorAll("[data-reserve-input]").forEach(input=>{
    const i=input.dataset.reserveInput,minus=document.querySelector(`[data-reserve-minus="${i}"]`),plus=document.querySelector(`[data-reserve-plus="${i}"]`);
    bindNumericControl(input,minus,plus,n=>{state.reserve[i]=n;saveStoredState(store.key,state);updateGlobalSerialSummary(state)});
