@@ -537,6 +537,7 @@ body{font-size:14px}
 .aurora-tab.is-active{color:#fff;text-shadow:0 0 12px rgba(199,181,255,.72)}
 .aurora-tab-panel{display:none}
 .aurora-tab-panel.is-active{display:block;animation:tabPanelIn .36s ease both}
+.aurora-tab-panel.is-active .reveal{opacity:1;transform:none}
 @keyframes tabPanelIn{from{opacity:.18;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media(max-width:560px){.aurora-tabs-wrap{margin:27px 0 6px}.aurora-tab{padding:13px 1px;font-size:9.5px}}
 
@@ -1085,6 +1086,9 @@ const auroraTabs=$("#auroraTabs");
 if(auroraTabs){
  const tabButtons=[...auroraTabs.querySelectorAll("[data-aurora-tab]")];
  const tabPanels=[...document.querySelectorAll("[data-aurora-panel]")];
+ tabPanels.filter(panel=>panel.classList.contains("is-active")).forEach(panel=>{
+  panel.querySelectorAll(".reveal").forEach(el=>el.classList.add("is-visible"));
+ });
  let tabTimer=0;
  tabButtons.forEach((button,index)=>button.addEventListener("click",()=>{
   const target=button.dataset.auroraTab;
