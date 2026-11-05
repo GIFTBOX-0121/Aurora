@@ -1089,7 +1089,11 @@ if(auroraTabs){
  tabButtons.forEach((button,index)=>button.addEventListener("click",()=>{
   const target=button.dataset.auroraTab;
   tabButtons.forEach(b=>{const active=b===button;b.classList.toggle("is-active",active);b.setAttribute("aria-selected",active?"true":"false")});
-  tabPanels.forEach(panel=>panel.classList.toggle("is-active",panel.dataset.auroraPanel===target));
+  tabPanels.forEach(panel=>{
+   const active=panel.dataset.auroraPanel===target;
+   panel.classList.toggle("is-active",active);
+   if(active)panel.querySelectorAll(".reveal").forEach(el=>el.classList.add("is-visible"));
+  });
   auroraTabs.style.setProperty("--tab-x",(index*100)+"%");
   auroraTabs.classList.remove("is-moving");
   void auroraTabs.offsetWidth;
