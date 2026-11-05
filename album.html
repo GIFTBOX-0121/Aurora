@@ -660,6 +660,14 @@ body{font-size:14px}
   align-items:center;
   justify-content:center;
 }
+.tower-megaphone-icon{
+  display:block;
+  width:25px;
+  height:25px;
+  overflow:visible;
+  filter:drop-shadow(0 0 6px rgba(156,232,223,.14));
+}
+
 .announce-icon{position:relative;display:block;width:22px;height:22px;filter:drop-shadow(0 0 6px rgba(255,221,139,.18))}
 .announce-cone{position:absolute;left:2px;top:6px;width:12px;height:9px;border:1.4px solid #f0d98f;border-right:0;clip-path:polygon(0 27%,100% 0,100% 100%,0 73%);box-sizing:border-box}
 .announce-cone:after{content:"";position:absolute;right:-3px;top:1px;width:3px;height:5px;border:1.4px solid #f0d98f;border-left:0}
@@ -717,7 +725,7 @@ body{font-size:14px}
   .album-purchase-copy em{font-size:10.5px}
   .album-purchase-arrow{font-size:14px}
   .tower-mini{grid-template-columns:24px minmax(0,1fr);column-gap:5px;padding:6px 9px 6px 5px}
-  .tower-mini-announce{width:24px;height:38px}.announce-icon{transform:scale(.95)}
+  .tower-mini-announce{width:24px;height:38px}
   .tower-mini-head{gap:7px}
   .tower-mini-title{font-size:13px}
   .tower-mini-tag{padding:2px 4px;font-size:6.8px}
@@ -762,7 +770,11 @@ body{font-size:14px}
   <div class="album-purchase-row">
   <a id="towerPointCampaign" class="tower-mini" href="https://tower.jp/article/campaign" target="_blank" rel="noopener noreferrer" hidden aria-live="polite" aria-label="タワーレコード公式キャンペーンを見る">
     <div class="tower-mini-announce" aria-hidden="true">
-      <span class="announce-icon"><i class="announce-cone"></i><i class="announce-handle"></i><i class="announce-wave wave-a"></i><i class="announce-wave wave-b"></i></span>
+      <svg class="tower-megaphone-icon" viewBox="0 0 48 48" focusable="false">
+        <path d="M10 21h7l14-7v20l-14-7h-7z" fill="#e9ebf3"/>
+        <path d="M16 27l3 9h6l-3.5-7.5z" fill="#e9ebf3"/>
+        <path d="M35 19l4-3M36 24h5M35 29l4 3" fill="none" stroke="#9ce8df" stroke-width="2.8" stroke-linecap="round"/>
+      </svg>
     </div>
     <div class="tower-mini-copy">
       <div class="tower-mini-head">
