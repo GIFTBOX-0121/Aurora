@@ -610,6 +610,21 @@ body{font-size:14px}
   .serial-campaign-head{column-gap:7px}
   .serial-jump-btn{min-height:32px;padding:5px 7px;font-size:7.2px}
 }
+
+/* ===== 予約・購入リンク ===== */
+.album-purchase-row{display:flex;justify-content:flex-end;margin:-10px 0 17px}
+.album-purchase-link{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:8px 13px;border:1px solid rgba(225,231,255,.24);background:linear-gradient(115deg,rgba(111,226,232,.06),rgba(255,255,255,.025) 46%,rgba(164,104,255,.11));color:#f2f5ff;text-decoration:none;font-size:10px;font-weight:850;letter-spacing:.06em;box-shadow:inset 0 0 18px rgba(168,118,255,.035)}
+.album-purchase-link span{color:#9ce8df}.album-purchase-link:active{transform:translateY(1px)}
+@media(max-width:560px){.album-purchase-row{margin:-8px 0 15px}.album-purchase-link{min-height:36px;padding:7px 11px;font-size:9px}}
+/* ===== TOWER RECORDS 15% / 20% 自動表示 ===== */
+.tower-point-campaign{position:relative;margin:30px 0 12px;padding:18px 17px 16px;overflow:hidden;border-top:1px solid rgba(255,255,255,.24);border-bottom:1px solid rgba(255,255,255,.18);background:linear-gradient(105deg,rgba(112,228,229,.055),rgba(255,255,255,.018) 40%,rgba(165,107,255,.105));box-shadow:0 16px 46px rgba(0,0,0,.16)}
+.tower-point-campaign[hidden]{display:none!important}.tower-point-campaign:before{content:"";position:absolute;width:180px;height:120px;right:-35px;top:-40px;background:radial-gradient(ellipse,rgba(185,137,255,.19),rgba(102,228,229,.07) 42%,transparent 72%);filter:blur(8px);pointer-events:none}
+.tower-point-kicker{position:relative;font:9px Georgia,serif;letter-spacing:.16em;color:#9ce8df}.tower-point-main{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;margin-top:8px}
+.tower-point-status{font-size:8px;font-weight:800;letter-spacing:.12em;color:#858faa}.tower-point-main h2{margin:4px 0 3px;font-size:16px;letter-spacing:.04em}.tower-point-main p{margin:0;color:#c5cde1;font-size:10.5px;line-height:1.65}.tower-point-main .tower-point-note{margin-top:6px;color:#7f8aa6;font-size:8.5px}
+.tower-point-rate{display:flex;align-items:flex-start;line-height:1;color:#fff;text-shadow:0 0 18px rgba(159,116,255,.4)}.tower-point-rate strong{font:38px Georgia,serif}.tower-point-rate span{margin:4px 0 0 2px;font:14px Georgia,serif;color:#9ce8df}
+.tower-point-link{position:relative;display:flex;align-items:center;justify-content:space-between;margin-top:13px;padding-top:11px;border-top:1px solid rgba(225,231,255,.1);color:#eef2ff;text-decoration:none;font-size:9px;font-weight:850;letter-spacing:.04em}.tower-point-link span{color:#9ce8df}
+@media(max-width:560px){.tower-point-campaign{margin-top:24px;padding:16px 13px 14px}.tower-point-main{gap:8px}.tower-point-main h2{font-size:14px}.tower-point-main p{font-size:9.5px}.tower-point-main .tower-point-note{font-size:7.8px}.tower-point-rate strong{font-size:32px}}
+
 </style>
 </head>
 <body class="serial-layout-a">
@@ -644,6 +659,7 @@ body{font-size:14px}
 <div class="aurora-tab-panel is-active" data-aurora-panel="album">
 <section class="editions-section reveal">
   <div class="editions-heading"><div><h2>ALBUM EDITIONS</h2><p class="jp">全6形態</p></div><button class="track-mini" id="trackBtn" type="button"><span>TRACK LIST</span><i class="disc-mark" aria-hidden="true"></i></button></div>
+  <div class="album-purchase-row"><a class="album-purchase-link" href="https://starglow.lnk.to/Aurora" target="_blank" rel="noopener noreferrer">Aurora 予約・購入 <span aria-hidden="true">↗</span></a></div>
   <div id="editionsList" class="edition-grid"></div>
   <p class="reserve-help">※数字を直接入力することも可能です</p>
 
@@ -663,6 +679,19 @@ body{font-size:14px}
 </div>
 
 <div class="aurora-tab-panel" data-aurora-panel="campaign">
+<section id="towerPointCampaign" class="tower-point-campaign" hidden aria-live="polite">
+  <div class="tower-point-kicker">TOWER RECORDS ONLINE</div>
+  <div class="tower-point-main">
+    <div>
+      <div class="tower-point-status">POINT BACK CAMPAIGN</div>
+      <h2 id="towerPointTitle">全品ポイント還元 開催中</h2>
+      <p id="towerPointPeriod"></p>
+      <p class="tower-point-note">※一部対象外商品あり。実際の付与ポイントは商品ページ・公式キャンペーンページをご確認ください。</p>
+    </div>
+    <div class="tower-point-rate"><strong id="towerPointRate">20</strong><span>%</span></div>
+  </div>
+  <a id="towerPointLink" class="tower-point-link" href="https://tower.jp/article/campaign" target="_blank" rel="noopener noreferrer">タワレコ公式キャンペーンを見る <span aria-hidden="true">↗</span></a>
+</section>
 <section class="clean-section reveal">
   <div class="clean-head"><h2>DOWNLOAD CAMPAIGN</h2><p>デジタルキャンペーン</p></div>
   <div class="pending-only">随時追加予定</div>
@@ -961,5 +990,20 @@ render();countdown();setInterval(countdown,1000);
  if(jump&&target){jump.addEventListener('click',e=>{e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});});}
 })();
 </script>
+
+<script>
+(()=>{
+ const API="https://tower-point-campaign.starsx0601.workers.dev/";
+ const box=document.getElementById("towerPointCampaign");
+ if(!box)return;
+ const rate=document.getElementById("towerPointRate"),title=document.getElementById("towerPointTitle"),period=document.getElementById("towerPointPeriod"),link=document.getElementById("towerPointLink");
+ const hide=()=>{box.hidden=true};
+ const fmt=iso=>{const d=new Date(iso);if(Number.isNaN(d.getTime()))return "";return new Intl.DateTimeFormat("ja-JP",{timeZone:"Asia/Tokyo",month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}).format(d)};
+ const apply=data=>{if(!data||!data.active||![15,20].includes(Number(data.rate))){hide();return}rate.textContent=String(data.rate);title.textContent=`全品${data.rate}%ポイント還元 開催中`;const a=fmt(data.start),b=fmt(data.end);period.textContent=(a&&b)?`${a} ～ ${b}`:(data.period||"");if(data.url)link.href=data.url;box.hidden=false};
+ const check=async()=>{try{const r=await fetch(API,{cache:"no-store"});if(!r.ok)throw new Error();apply(await r.json())}catch(e){hide()}};
+ check();setInterval(check,5*60*1000);
+})();
+</script>
+
 </body>
 </html>
