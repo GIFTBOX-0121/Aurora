@@ -623,7 +623,7 @@ body{font-size:14px}
   position:relative;
   min-width:0;
   display:grid;
-  grid-template-columns:minmax(0,1fr) 40px;
+  grid-template-columns:27px minmax(0,1fr) 40px;
   align-items:center;
   column-gap:3px;
   padding:7px 4px 7px 10px;
@@ -646,6 +646,17 @@ body{font-size:14px}
   background:radial-gradient(ellipse,rgba(255,224,142,.20),transparent 70%);
   pointer-events:none;
 }
+.tower-mini-announce{
+  position:relative;
+  display:flex;
+  width:27px;
+  height:40px;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  line-height:1;
+  filter:drop-shadow(0 0 7px rgba(255,221,139,.20));
+}
 .tower-mini[hidden]{display:none!important}
 .tower-mini-copy{position:relative;min-width:0;line-height:1.2}
 .tower-mini-head{
@@ -660,7 +671,7 @@ body{font-size:14px}
   text-overflow:ellipsis;
   white-space:nowrap;
   color:#fff9e9;
-  font-size:13px;
+  font-size:14.2px;
   font-weight:900;
   letter-spacing:-.025em;
   text-shadow:0 0 12px rgba(255,221,139,.16);
@@ -710,9 +721,10 @@ body{font-size:14px}
   .album-purchase-copy strong{font-size:12px}
   .album-purchase-copy em{font-size:10.5px}
   .album-purchase-arrow{font-size:14px}
-  .tower-mini{grid-template-columns:minmax(0,1fr) 38px;column-gap:2px;padding:6px 3px 6px 8px}
+  .tower-mini{grid-template-columns:24px minmax(0,1fr) 38px;column-gap:2px;padding:6px 3px 6px 5px}
+  .tower-mini-announce{width:24px;height:38px;font-size:17px}
   .tower-mini-head{gap:7px}
-  .tower-mini-title{font-size:12px}
+  .tower-mini-title{font-size:13px}
   .tower-mini-tag{padding:2px 4px;font-size:6.8px}
   .tower-mini-period{margin-top:4px;font-size:10.6px}
   .tower-mini-link{width:38px;height:38px;font-size:17px}
@@ -754,6 +766,7 @@ body{font-size:14px}
   <div class="editions-heading"><div><h2>ALBUM EDITIONS</h2><p class="jp">全6形態</p></div><button class="track-mini" id="trackBtn" type="button"><span>TRACK LIST</span><i class="disc-mark" aria-hidden="true"></i></button></div>
   <div class="album-purchase-row">
   <div id="towerPointCampaign" class="tower-mini" hidden aria-live="polite">
+    <div class="tower-mini-announce" aria-hidden="true">📣</div>
     <div class="tower-mini-copy">
       <div class="tower-mini-head">
         <div id="towerPointTitle" class="tower-mini-title">全品20％ポイント還元 開催中</div>
