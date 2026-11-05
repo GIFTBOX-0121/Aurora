@@ -2,119 +2,78 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050819">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050819">
 <title>Aurora - The Dawn - | STARGLOW 1st Arena Tour 2027 | UNOFFICIAL</title>
 <style>
 :root{color-scheme:dark;--ink:#f7f8ff;--muted:#aeb6d0;--line:rgba(225,231,255,.2);--cyan:#91e8e2;--violet:#c6a3ff;--dawn:#f4c7ad;--bg:#050819}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;overflow-x:hidden;background:linear-gradient(180deg,#050819 0%,#07102a 58%,#101a34 84%,#241d38 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.75}
 body:before{content:"";position:fixed;inset:-30%;z-index:-3;background:radial-gradient(ellipse at 18% 15%,rgba(63,196,204,.24),transparent 34%),radial-gradient(ellipse at 80% 22%,rgba(142,79,207,.29),transparent 38%),radial-gradient(ellipse at 54% 78%,rgba(244,166,150,.12),transparent 40%);filter:blur(18px);animation:auroraMove 18s ease-in-out infinite alternate}body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:radial-gradient(1px 1px at 14% 12%,#fff 99%,transparent),radial-gradient(1px 1px at 73% 28%,#fff 99%,transparent),radial-gradient(1.5px 1.5px at 86% 76%,#d4d6ff 99%,transparent),radial-gradient(1px 1px at 28% 68%,#fff 99%,transparent);background-size:340px 430px;opacity:.42;animation:twinkle 5s ease-in-out infinite alternate}
-@keyframes auroraMove{to{transform:translate(8%,5%) rotate(6deg) scale(1.04)}}@keyframes twinkle{to{opacity:.16}}@keyframes pulse{50%{box-shadow:0 0 26px rgba(145,232,226,.72)}}
-a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:4px}.wrap{width:min(calc(100% - 34px),820px);margin:auto}.topnav{display:flex;justify-content:space-between;align-items:center;padding:24px 0 14px;font-size:10px;letter-spacing:.2em;color:#d8dcf1}.topnav a{border-bottom:1px solid #8ea1c9;padding-bottom:3px}
-.hero{position:relative;min-height:390px;padding:72px 0 40px;display:flex;flex-direction:column;justify-content:flex-end}.hero:before{content:"THE DAWN";position:absolute;right:-4vw;top:28px;font-family:Georgia,serif;font-size:clamp(72px,19vw,160px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(220,224,255,.07);letter-spacing:-.05em}.eyebrow{font-size:10px;letter-spacing:.3em;color:#c7cde8;font-weight:800}.hero h1{margin:14px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(60px,14vw,108px);font-weight:400;line-height:.88;letter-spacing:-.035em;text-shadow:0 0 46px rgba(181,151,255,.38)}.hero .dawn{font-family:Georgia,serif;font-size:clamp(23px,6vw,42px);font-style:italic;color:#dcd9f7;margin-left:clamp(45px,14vw,120px);margin-top:7px}.hero p{font-size:11px;color:#b9c1da;letter-spacing:.12em;margin-top:22px}
-.dawn-line{height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),var(--dawn),transparent);box-shadow:0 0 18px rgba(145,232,226,.35);margin:0 0 50px}
-.section{margin:72px 0}.section-head{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:end;margin-bottom:24px}.section-no{font-family:Georgia,serif;font-size:42px;line-height:.8;color:rgba(210,219,255,.18)}.section-title{border-bottom:1px solid var(--line);padding-bottom:10px}.section h2{margin:0;font-size:15px;letter-spacing:.22em}.section .jp{margin:2px 0 0;font-size:10px;color:#939dbd}.muted{color:var(--muted)}.small{font-size:11px}
-.ticket-current{position:relative;padding:26px 22px 26px 30px;border-top:1px solid rgba(145,232,226,.5);border-bottom:1px solid rgba(198,163,255,.35);background:linear-gradient(105deg,rgba(145,232,226,.075),rgba(198,163,255,.055),transparent)}.ticket-current:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--cyan),var(--violet));box-shadow:0 0 18px rgba(145,232,226,.5)}.ticket-current h3{margin:10px 0 5px;font-size:17px}.status{display:inline-flex;align-items:center;gap:7px;font-size:9px;font-weight:900;letter-spacing:.13em;color:#bff6e9}.status:before{content:"";width:7px;height:7px;background:var(--cyan);transform:rotate(45deg);box-shadow:0 0 12px var(--cyan);animation:pulse 2s ease-in-out infinite}.status.ended{color:#8993ad}.status.ended:before{background:#65708c;box-shadow:none;animation:none}.count{font-family:Georgia,serif;font-size:21px;font-variant-numeric:tabular-nums;color:#eee7ff;margin:10px 0}.ticket-past{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}.ticket-past h3{font-size:12px;margin:6px 0}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:26px}.price{position:relative;text-align:center;padding:20px 10px}.price+.price{border-left:1px solid var(--line)}.price span{display:block;font-size:9px;color:#9ca6c3;line-height:1.5}.price strong{display:block;margin-top:6px;font-family:Georgia,serif;font-size:19px;font-weight:400}
-.links{display:flex;gap:8px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 16px;border:1px solid rgba(218,225,255,.3);background:linear-gradient(110deg,rgba(126,221,217,.07),rgba(171,122,229,.08));clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));font-size:10px;font-weight:800;letter-spacing:.07em;transition:.25s}.btn:hover{transform:translateY(-2px);background:linear-gradient(110deg,rgba(126,221,217,.16),rgba(171,122,229,.17))}.mini{min-height:32px;padding:6px 12px;font-size:9px}
-.route{position:relative;padding-left:44px}.route-line{position:absolute;left:13px;top:9px;bottom:22px;width:1px;background:rgba(207,217,255,.16)}.route-progress{position:absolute;left:13px;top:9px;width:1px;height:0;background:linear-gradient(var(--cyan),var(--violet),var(--dawn));box-shadow:0 0 12px rgba(145,232,226,.65);transition:height .12s linear}.venue{position:relative;padding:0 0 52px}.venue:last-child{padding-bottom:12px}.venue-node{position:absolute;left:-38px;top:7px;width:15px;height:15px;border:1px solid #91a2c9;background:#07102a;transform:rotate(45deg);transition:.45s}.venue.is-visible .venue-node{border-color:var(--cyan);background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 18px rgba(145,232,226,.5)}.venue-index{font-family:Georgia,serif;font-size:11px;color:#7484aa;letter-spacing:.14em}.venue-area{font-size:9px;letter-spacing:.25em;color:#9cadd2;margin-top:2px}.venue h3{font-size:clamp(20px,5vw,30px);font-weight:400;margin:3px 0 14px;letter-spacing:.01em}.show{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:11px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px}.show:last-of-type{border-bottom:1px solid rgba(255,255,255,.1)}.show strong{font-family:Georgia,serif;font-size:13px;font-weight:400}.venue-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+@keyframes auroraMove{to{transform:translate(8%,5%) rotate(6deg) scale(1.04)}}@keyframes twinkle{to{opacity:.16}}@keyframes auroraTabSweep{0%{opacity:0;transform:scaleX(.72)}35%{opacity:1;transform:scaleX(1.14)}100%{opacity:0;transform:scaleX(1)}}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit;color:inherit}button,a{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #fff;outline-offset:3px}.wrap{width:min(calc(100% - 36px),820px);margin:auto}.topnav{display:flex;justify-content:space-between;align-items:center;padding:24px 0 14px;font-size:10px;letter-spacing:.2em;color:#d8dcf1}.topnav a{position:relative;padding-bottom:4px}.topnav a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+
+/* HERO — ALBUMページと同じ左右構成 */
+.tour-hero{position:relative;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:center;gap:clamp(12px,3vw,30px);min-height:370px;padding:32px 0 38px;isolation:isolate}.tour-hero:before{content:"Aurora";position:absolute;left:-3vw;bottom:14px;z-index:-1;font-family:Georgia,"Times New Roman",serif;font-size:clamp(92px,22vw,188px);line-height:.78;color:transparent;-webkit-text-stroke:1px rgba(215,220,255,.07);letter-spacing:-.06em;pointer-events:none}.tour-hero-copy{position:relative;z-index:2;padding:20px 0 18px 2px}.tour-hero-copy:before,.tour-hero-copy:after{display:block;color:#dffcf7;text-shadow:0 0 12px rgba(145,232,226,.7),0 0 18px rgba(201,167,255,.42);font-family:Georgia,serif;line-height:1}.tour-hero-copy:before{content:"✦";width:72%;margin:0 0 14px;padding:0 0 8px;border-bottom:1px solid transparent;border-image:linear-gradient(90deg,var(--cyan),var(--violet),transparent) 1;text-align:right;font-size:9px}.tour-hero-copy:after{content:"✧   ⋆";width:88%;margin:14px 0 0;padding:8px 0 0;border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,var(--cyan),var(--violet)) 1;text-align:left;font-size:8px;letter-spacing:.55em}.tour-hero-kicker{margin-bottom:12px;font-size:9px;font-weight:800;letter-spacing:.2em;color:#c8cde5}.tour-hero h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,10vw,88px);font-weight:400;line-height:.86;letter-spacing:-.045em;text-shadow:0 0 44px rgba(183,151,255,.34)}.tour-hero-sub{margin:8px 0 0 clamp(18px,5vw,42px);font-family:Georgia,"Times New Roman",serif;font-size:clamp(17px,4vw,30px);font-style:italic;color:#e4e0f7}.tour-hero-art{position:relative;min-width:0;overflow:hidden;clip-path:polygon(7% 0,100% 0,100% 90%,91% 100%,0 100%,0 10%);border:1px solid rgba(228,235,255,.14);box-shadow:0 26px 72px rgba(0,0,0,.34),0 0 34px rgba(116,226,220,.08)}.tour-hero-art:before{content:"";position:absolute;inset:-7% -5%;z-index:0;background:radial-gradient(ellipse at 48% 48%,rgba(116,232,225,.13),transparent 55%),radial-gradient(ellipse at 76% 22%,rgba(201,167,255,.14),transparent 50%);filter:blur(22px)}.tour-hero-art img{position:relative;z-index:1;display:block;width:100%;height:clamp(290px,49vw,465px);object-fit:cover;object-position:center top}.tour-center{position:relative;padding:30px 0 42px;text-align:center}.tour-center:before{content:"";position:absolute;left:50%;top:0;width:min(180px,42vw);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent)}.tour-center-date{font-family:Georgia,"Times New Roman",serif;font-size:clamp(20px,4vw,28px);letter-spacing:.04em;color:#f0edff}.tour-center-meta{margin-top:7px;font-size:9px;font-weight:800;letter-spacing:.18em;color:#9da8c6}
+
+/* TABS */
+.aurora-tabs-wrap{margin:34px 0 10px;position:relative;z-index:8}.aurora-tabs{--tab-x:0;position:relative;display:flex;overflow:hidden;border:1px solid rgba(225,231,255,.22);background:rgba(255,255,255,.018);isolation:isolate}.aurora-tabs .tab-glow{position:absolute;z-index:0;inset:0 auto 0 0;width:33.333333%;transform:translateX(var(--tab-x));transition:transform .52s cubic-bezier(.2,.78,.2,1);background:linear-gradient(115deg,transparent,rgba(112,228,229,.07),rgba(165,107,255,.15),rgba(255,255,255,.055),transparent);pointer-events:none}.aurora-tabs .tab-glow:before{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:linear-gradient(90deg,transparent,#fff,#8deaff,transparent);filter:drop-shadow(0 0 6px rgba(169,140,255,.95))}.aurora-tabs .tab-glow:after{content:"";position:absolute;left:-38%;top:-22px;width:176%;height:calc(100% + 44px);opacity:0;background:radial-gradient(ellipse at center,rgba(157,104,255,.36) 0,rgba(102,223,229,.18) 38%,transparent 70%);filter:blur(5px);pointer-events:none}.aurora-tabs.is-moving .tab-glow:after{animation:auroraTabSweep .58s ease-out}.aurora-tab{position:relative;z-index:2;flex:1;min-width:0;padding:14px 3px;border:0;background:transparent;color:#75809e;font-family:Georgia,serif;font-size:10px;letter-spacing:.075em;transition:color .32s,text-shadow .32s;touch-action:manipulation}.aurora-tab.is-active{color:#fff;text-shadow:0 0 12px rgba(199,181,255,.72)}.aurora-tab-panel{display:none}.aurora-tab-panel.is-active{display:block}.aurora-tab-panel.is-active .reveal{opacity:1;transform:none}
+.clean-section{margin:52px 0 62px}.clean-head{margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--line)}.clean-head h2{margin:0;font-size:15px;letter-spacing:.18em}.clean-head p{margin:2px 0 0;font-size:10px;color:#929dbd}.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.is-visible{opacity:1;transform:none}
+
+/* TICKET */
+.ticket-empty{padding:26px 0 28px;border-bottom:1px solid rgba(225,231,255,.14);color:#dfe3f2;font-size:12px;letter-spacing:.02em}
+.ticket-current-list{border-top:1px solid rgba(225,231,255,.16)}
+.ticket-current-item{position:relative;padding:18px 10px 19px 18px;border-bottom:1px solid rgba(225,231,255,.14);background:linear-gradient(105deg,rgba(145,232,226,.045),rgba(198,163,255,.04),transparent)}
+.ticket-current-item:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--cyan),var(--violet));box-shadow:0 0 14px rgba(145,232,226,.38)}
+.ticket-status{display:inline-flex;align-items:center;gap:7px;color:#bff6e9;font-size:8px;font-weight:900;letter-spacing:.13em}
+.ticket-status:before{content:"";width:6px;height:6px;background:var(--cyan);transform:rotate(45deg);box-shadow:0 0 10px var(--cyan)}
+.ticket-current-item h3{margin:7px 0 4px;font-size:13px;line-height:1.55}
+.ticket-period,.ticket-result{font-size:10px;color:#b6bfd7;line-height:1.65}
+.ticket-countdown{margin:7px 0 2px;font-family:Georgia,serif;font-size:15px;color:#f0ebff;font-variant-numeric:tabular-nums}
+.ticket-apply{margin-top:11px}
+
+/* SCHEDULE */
+.schedule-head-row{display:flex;align-items:end;justify-content:space-between;gap:16px}.attendance-total{flex:0 0 auto;padding:5px 9px;border:1px solid rgba(225,231,255,.2);background:linear-gradient(110deg,rgba(126,221,217,.05),rgba(171,122,229,.07));font-size:9px;color:#cbd3e8;white-space:nowrap}.attendance-total strong{font-family:Georgia,serif;font-size:14px;font-weight:400;color:#fff}.city-jumps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;margin:12px 0 34px}.city-jump{min-width:0;padding:7px 1px;border:1px solid rgba(218,225,255,.18);background:rgba(255,255,255,.018);font-size:9px;font-weight:800;color:#b9c3dc;text-align:center;transition:.2s}.city-jump:hover,.city-jump:focus-visible{color:#fff;background:linear-gradient(110deg,rgba(126,221,217,.1),rgba(171,122,229,.12));border-color:rgba(145,232,226,.35)}
+.route{position:relative;padding-left:35px}.route-line{position:absolute;left:9px;top:9px;bottom:22px;width:1px;background:rgba(207,217,255,.16)}.route-progress{position:absolute;left:9px;top:9px;width:1px;height:0;background:linear-gradient(var(--cyan),var(--violet),var(--dawn));box-shadow:0 0 12px rgba(145,232,226,.65);transition:height .12s linear}.venue{position:relative;padding:0 0 54px;scroll-margin-top:18px}.venue:last-child{padding-bottom:12px}.venue-node{position:absolute;left:-32px;top:8px;width:15px;height:15px;border:1px solid #91a2c9;background:#07102a;transform:rotate(45deg);transition:.45s}.venue.is-visible .venue-node,.aurora-tab-panel.is-active .venue-node{border-color:var(--cyan);background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 18px rgba(145,232,226,.5)}.venue-area{font-size:14px;font-weight:800;letter-spacing:.14em;color:#aebfe2;margin:0 0 2px}.venue h3{font-size:clamp(20px,4vw,28px);font-weight:500;margin:2px 0 15px;letter-spacing:.01em}.venue-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:20px;align-items:start}.shows{min-width:0}.show{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"date star" "time star";gap:1px 10px;padding:11px 0;border-top:1px solid rgba(255,255,255,.1);font-size:11px;align-items:center}.show:last-of-type{border-bottom:1px solid rgba(255,255,255,.1)}.show-date{grid-area:date;font-size:11px;font-weight:600;color:#e8ebf7;letter-spacing:.015em}.show-time{grid-area:time;font-size:11px;color:var(--muted)}.attend-btn{grid-area:star;width:34px;height:34px;border:1px solid rgba(218,225,255,.2);background:rgba(255,255,255,.018);color:#7d89aa;font-size:19px;line-height:1;touch-action:manipulation;transition:.2s}.attend-btn.is-attending{color:#fff2a8;border-color:rgba(255,235,153,.46);background:rgba(255,222,116,.08);text-shadow:0 0 12px rgba(255,231,133,.75)}.venue-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 16px;border:1px solid rgba(218,225,255,.3);background:linear-gradient(110deg,rgba(126,221,217,.07),rgba(171,122,229,.08));clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));font-size:10px;font-weight:800;letter-spacing:.07em;transition:.25s}.btn:hover{transform:translateY(-2px);background:linear-gradient(110deg,rgba(126,221,217,.16),rgba(171,122,229,.17))}.mini{min-height:32px;padding:6px 12px;font-size:9px}
+
+/* TRIP MEMO */
+.trip-memo{position:relative;border-left:1px solid rgba(225,231,255,.15);padding:2px 0 2px 16px;min-width:0}.trip-memo-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.trip-memo-head strong{font-size:10px;letter-spacing:.12em}.trip-memo-head span{font-size:7px;color:#7f8aa9;letter-spacing:.08em}.trip-text{display:block;width:100%;min-height:92px;resize:vertical;padding:9px 10px;border:1px solid rgba(218,225,255,.16);border-radius:0;background:rgba(255,255,255,.025);color:#e9ecf7;font-size:10px;line-height:1.65}.trip-text::placeholder{color:#697693}.memo-link-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px;margin-top:7px}.memo-link-input{min-width:0;height:31px;padding:5px 8px;border:1px solid rgba(218,225,255,.16);border-radius:0;background:rgba(255,255,255,.025);font-size:9px}.memo-small-btn,.memo-image-label{display:inline-flex;align-items:center;justify-content:center;min-height:31px;padding:5px 8px;border:1px solid rgba(218,225,255,.18);background:rgba(255,255,255,.025);font-size:8px;font-weight:800;white-space:nowrap;cursor:pointer}.memo-tools{display:flex;gap:5px;margin-top:6px}.memo-image-input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}.memo-links{display:grid;gap:4px;margin-top:7px}.memo-link-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px;align-items:center}.memo-link-item a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:5px 7px;border-bottom:1px solid rgba(225,231,255,.1);font-size:8.5px;color:#bfe9e5}.memo-delete{width:25px;height:25px;border:0;background:transparent;color:#7f8aa9;font-size:13px}.memo-images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:7px}.memo-image{position:relative;aspect-ratio:1;overflow:hidden;border:1px solid rgba(225,231,255,.13);background:#080c20}.memo-image img{display:block;width:100%;height:100%;object-fit:cover}.memo-image button{position:absolute;right:2px;top:2px;width:20px;height:20px;border:0;background:rgba(2,5,18,.72);font-size:11px}.memo-hint{margin-top:6px;font-size:7.5px;line-height:1.55;color:#75809e}
+
+/* OFFICIAL */
 .official-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}.official-grid .btn{clip-path:none;border:0;border-bottom:1px solid var(--line);background:transparent;justify-content:space-between;padding:15px 10px}.official-grid .btn:nth-child(odd){border-right:1px solid var(--line)}.official-grid .btn:hover{background:rgba(255,255,255,.04);transform:none}
-.modal{border:1px solid rgba(197,207,255,.35);border-radius:0;background:rgba(8,12,34,.97);color:#fff;width:min(92vw,570px);max-height:84vh;overflow:auto;padding:28px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));box-shadow:0 30px 100px #000b}.modal::backdrop{background:#020512d9;backdrop-filter:blur(8px)}.close{float:right;background:none;color:#fff;border:0;font-size:24px}.footer{text-align:center;color:#818aa9;font-size:9px;padding:54px 0 68px;letter-spacing:.16em}.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.is-visible{opacity:1;transform:none}
-@media(max-width:560px){.wrap{width:min(calc(100% - 26px),820px)}.hero{min-height:330px;padding-top:54px}.section{margin:58px 0}.section-no{font-size:34px}.price-grid{grid-template-columns:1fr}.price+.price{border-left:0;border-top:1px solid var(--line)}.route{padding-left:35px}.route-line,.route-progress{left:9px}.venue-node{left:-32px}.show{grid-template-columns:1fr;gap:1px}.official-grid{grid-template-columns:1fr}.official-grid .btn:nth-child(odd){border-right:0}.links .btn{flex:1 1 130px}.modal{padding:22px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
+/* ACCESS */
+.modal{border:1px solid rgba(197,207,255,.35);border-radius:0;background:rgba(8,12,34,.98);color:#fff;width:min(94vw,640px);max-height:84vh;overflow:auto;padding:26px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));box-shadow:0 30px 100px #000b}.modal::backdrop{background:#020512d9;backdrop-filter:blur(8px)}.close{float:right;background:none;color:#fff;border:0;font-size:24px}.access-title{margin:10px 0 14px;font-size:22px;font-weight:500}.access-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(225,231,255,.14)}.access-list li{position:relative;padding:10px 4px 10px 18px;border-bottom:1px solid rgba(225,231,255,.1);font-size:10.5px;line-height:1.5}.access-list li:before{content:"";position:absolute;left:2px;top:16px;width:6px;height:6px;transform:rotate(45deg);background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 8px rgba(145,232,226,.35)}.access-official{margin-top:16px}.eyebrow{font-size:9px;letter-spacing:.26em;color:#c7cde8;font-weight:800}.footer{text-align:center;color:#818aa9;font-size:9px;padding:54px 0 68px;letter-spacing:.16em}
 
-/* ===== ALBUM-ALIGNED TOUR LAYOUT ===== */
-.wrap{width:min(calc(100% - 36px),820px);margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
-.topnav{width:100%;margin-left:0;margin-right:0;display:flex;align-items:center;justify-content:space-between;padding:24px 0 14px;font-size:10px;letter-spacing:.2em;color:#d7dbf2}
-.topnav a{position:relative;border-bottom:0;padding-bottom:4px}
-.topnav a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet))}
-
-.tour-hero{position:relative;display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:center;gap:clamp(12px,3vw,34px);min-height:330px;padding:34px 0 38px;isolation:isolate}
-.tour-hero:before{content:"Aurora";position:absolute;left:-3vw;bottom:16px;z-index:-1;font-family:Georgia,"Times New Roman",serif;font-size:clamp(92px,22vw,188px);line-height:.78;color:transparent;-webkit-text-stroke:1px rgba(215,220,255,.07);letter-spacing:-.06em;pointer-events:none}
-.tour-hero-copy{position:relative;z-index:2;padding:20px 0 18px 2px}
-.tour-hero-copy:before,.tour-hero-copy:after{display:block;color:#dffcf7;text-shadow:0 0 12px rgba(145,232,226,.7),0 0 18px rgba(201,167,255,.42);font-family:Georgia,serif;line-height:1}
-.tour-hero-copy:before{content:"✦";width:72%;margin:0 0 14px;padding:0 0 8px;border-bottom:1px solid transparent;border-image:linear-gradient(90deg,var(--cyan),var(--violet),transparent) 1;text-align:right;font-size:9px}
-.tour-hero-copy:after{content:"✧   ⋆";width:88%;margin:14px 0 0;padding:8px 0 0;border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,var(--cyan),var(--violet)) 1;text-align:left;font-size:8px;letter-spacing:.55em}
-.tour-hero-kicker{margin-bottom:12px;font-size:9px;font-weight:800;letter-spacing:.22em;color:#c8cde5;white-space:nowrap}
-.tour-hero h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(52px,10.5vw,92px);font-weight:400;line-height:.86;letter-spacing:-.045em;text-shadow:0 0 44px rgba(183,151,255,.34)}
-.tour-hero-sub{margin:8px 0 0 clamp(20px,5vw,44px);font-family:Georgia,"Times New Roman",serif;font-size:clamp(18px,4vw,31px);font-style:italic;font-weight:400;color:#e4e0f7;letter-spacing:-.02em}
-.tour-hero-art{position:relative;min-width:0;height:clamp(250px,45vw,430px);display:flex;align-items:center;justify-content:center;overflow:hidden;clip-path:polygon(9% 0,100% 0,100% 88%,91% 100%,0 100%,0 12%);border:1px solid rgba(228,235,255,.14);background:radial-gradient(ellipse at 30% 26%,rgba(114,231,223,.17),transparent 42%),radial-gradient(ellipse at 75% 34%,rgba(197,150,255,.24),transparent 47%),linear-gradient(145deg,rgba(7,14,38,.98),rgba(15,18,50,.92) 55%,rgba(32,24,53,.92));box-shadow:0 26px 72px rgba(0,0,0,.34),0 0 34px rgba(116,226,220,.08)}
-.tour-hero-art:before{content:"";position:absolute;inset:-30%;background:linear-gradient(115deg,transparent 26%,rgba(139,239,229,.13) 42%,rgba(189,144,255,.18) 55%,rgba(245,199,173,.08) 68%,transparent 78%);filter:blur(14px);transform:rotate(-9deg);animation:tourVeil 8s ease-in-out infinite alternate}
-.tour-hero-art:after{content:"";position:absolute;left:8%;right:8%;bottom:12%;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),var(--dawn),transparent);box-shadow:0 0 18px rgba(145,232,226,.32)}
-@keyframes tourVeil{to{transform:translate(10%,5%) rotate(-3deg) scale(1.08)}}
-.tour-art-copy{position:relative;z-index:2;width:100%;padding:0 12%;text-align:center}
-.tour-art-copy strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,8vw,72px);font-weight:400;line-height:.9;letter-spacing:-.04em;color:rgba(246,245,255,.93);text-shadow:0 0 34px rgba(184,151,255,.28)}
-.tour-art-copy span{display:block;margin-top:18px;font-size:9px;font-weight:800;letter-spacing:.25em;color:#b8c3dd}
-
-.tour-center{position:relative;padding:30px 0 42px;text-align:center}
-.tour-center:before{content:"";position:absolute;left:50%;top:0;width:min(180px,42vw);height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent)}
-.tour-center-date{font-family:Georgia,"Times New Roman",serif;font-size:clamp(20px,4vw,28px);letter-spacing:.04em;color:#f0edff}
-.tour-center-meta{margin-top:7px;font-size:9px;font-weight:800;letter-spacing:.18em;color:#9da8c6}
-
-.aurora-tabs-wrap{margin:34px 0 10px;position:relative;z-index:8}
-.aurora-tabs{--tab-x:0;position:relative;display:flex;overflow:hidden;border:1px solid rgba(225,231,255,.22);background:rgba(255,255,255,.018);isolation:isolate}
-.aurora-tabs .tab-glow{position:absolute;z-index:0;inset:0 auto 0 0;width:33.333333%;transform:translateX(var(--tab-x));transition:transform .52s cubic-bezier(.2,.78,.2,1);background:linear-gradient(115deg,transparent,rgba(112,228,229,.07),rgba(165,107,255,.15),rgba(255,255,255,.055),transparent);pointer-events:none}
-.aurora-tabs .tab-glow:before{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:linear-gradient(90deg,transparent,#fff,#8deaff,transparent);filter:drop-shadow(0 0 6px rgba(169,140,255,.95))}
-.aurora-tabs .tab-glow:after{content:"";position:absolute;left:-38%;top:-22px;width:176%;height:calc(100% + 44px);opacity:0;background:radial-gradient(ellipse at center,rgba(157,104,255,.36) 0,rgba(102,223,229,.18) 38%,transparent 70%);filter:blur(5px);pointer-events:none}
-.aurora-tabs.is-moving .tab-glow:after{animation:auroraTabSweep .58s ease-out}
-@keyframes auroraTabSweep{0%{opacity:0;transform:scaleX(.72)}35%{opacity:1;transform:scaleX(1.14)}100%{opacity:0;transform:scaleX(1)}}
-.aurora-tab{position:relative;z-index:2;flex:1;min-width:0;padding:14px 3px;border:0;background:transparent;color:#75809e;font-family:Georgia,serif;font-size:10px;letter-spacing:.075em;transition:color .32s,text-shadow .32s;touch-action:manipulation}
-.aurora-tab.is-active{color:#fff;text-shadow:0 0 12px rgba(199,181,255,.72)}
-.aurora-tab-panel{display:none}.aurora-tab-panel.is-active{display:block}
-
-.clean-section{margin:52px 0 62px}
-.clean-head{margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--line)}
-.clean-head h2{margin:0;font-size:15px;letter-spacing:.18em}
-.clean-head p{margin:2px 0 0;font-size:9px;color:#929dbd}
-
-.ticket-current{padding:22px 18px 22px 24px}
-.price-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:22px}
-.price{padding:18px 7px}.price strong{font-size:18px}
-.route{margin-top:6px}
-.official-grid{margin-top:4px}
-.footer{width:100%;margin-left:0;margin-right:0;text-align:center;color:#818aa9;font-size:9px;padding:54px 0 68px;letter-spacing:.16em}
-
-@media(max-width:560px){
+@media(max-width:680px){
  .wrap{width:min(calc(100% - 26px),820px)}
- .tour-hero{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:9px;min-height:250px;padding:24px 0 30px}
- .tour-hero-copy{padding:16px 0 14px}
- .tour-hero-kicker{font-size:6.7px;letter-spacing:.14em;margin-bottom:9px;white-space:normal;line-height:1.5}
- .tour-hero h1{font-size:clamp(43px,13vw,64px)}
- .tour-hero-sub{margin-left:12px;font-size:clamp(15px,4.7vw,22px)}
- .tour-hero-art{height:58vw;min-height:210px;max-height:310px}
- .tour-art-copy{padding:0 8%}.tour-art-copy strong{font-size:clamp(30px,10vw,46px)}.tour-art-copy span{margin-top:13px;font-size:6.8px;letter-spacing:.14em}
- .tour-center{padding:28px 0 34px}
- .aurora-tabs-wrap{margin-top:24px}
- .aurora-tab{padding:13px 2px;font-size:9px}
- .clean-section{margin:44px 0 56px}
- .price-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
- .price{padding:14px 4px}.price span{font-size:7.4px}.price strong{font-size:13px}
- .route{padding-left:35px}.route-line,.route-progress{left:9px}.venue-node{left:-32px}
- .show{grid-template-columns:1fr;gap:1px}
- .official-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .official-grid .btn:nth-child(odd){border-right:1px solid var(--line)}
- .official-grid .btn{padding:13px 8px;font-size:8.5px}
- .links .btn{flex:1 1 130px}
+ .tour-hero{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:9px;min-height:250px;padding:24px 0 30px}.tour-hero-copy{padding:16px 0 14px}.tour-hero-kicker{font-size:6.5px;letter-spacing:.12em;line-height:1.5}.tour-hero h1{font-size:clamp(41px,12.5vw,62px)}.tour-hero-sub{margin-left:10px;font-size:clamp(14px,4.4vw,21px)}.tour-hero-art img{height:62vw;min-height:225px;max-height:320px}.tour-center{padding:28px 0 34px}.aurora-tabs-wrap{margin-top:24px}.aurora-tab{padding:13px 2px;font-size:9px}.clean-section{margin:44px 0 56px}
+ .schedule-head-row{align-items:end}.attendance-total{padding:4px 7px;font-size:7.5px}.attendance-total strong{font-size:12px}.city-jumps{gap:2px;margin-top:10px;margin-bottom:30px}.city-jump{padding:7px 0;font-size:7.6px;letter-spacing:-.03em}
+ .route{padding-left:29px}.route-line,.route-progress{left:7px}.venue-node{left:-28px;width:13px;height:13px}.venue-area{font-size:13px}.venue h3{font-size:20px;margin-bottom:12px}.venue-layout{grid-template-columns:1fr;gap:14px}.show{padding:10px 0}.show-date,.show-time{font-size:10.5px}.attend-btn{width:32px;height:32px}.trip-memo{border-left:0;border-top:1px solid rgba(225,231,255,.13);padding:13px 0 0}.trip-text{min-height:78px}.memo-images{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .official-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.official-grid .btn{padding:13px 8px;font-size:8.5px}.modal{padding:21px}.access-list li{font-size:9.5px}
 }
-
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="wrap"><header class="topnav"><a href="index.html">← AURORA HOME</a><span>UNOFFICIAL / TOUR</span></header><main>
-<section class="tour-hero reveal">
+<div class="wrap">
+<header class="topnav"><a href="index.html">← Aurora HOME</a><span>UNOFFICIAL / TOUR</span></header>
+<main>
+<section class="tour-hero reveal is-visible">
   <div class="tour-hero-copy">
     <div class="tour-hero-kicker">STARGLOW 1st ARENA TOUR 2027</div>
     <h1>Aurora</h1>
     <div class="tour-hero-sub">- The Dawn -</div>
   </div>
-  <div class="tour-hero-art" aria-hidden="true">
-    <div class="tour-art-copy"><strong>THE<br>DAWN</strong><span>STARGLOW / 2027</span></div>
+  <div class="tour-hero-art">
+    <img src="https://prcdn.freetls.fastly.net/release_image/118793/288/118793-288-fb38372233a744ec2aee756c38f0dfaf-1356x1920.jpg" alt="STARGLOW 1st Arena Tour 2027 Aurora - The Dawn - tour visual">
   </div>
 </section>
-<section class="tour-center reveal">
+<section class="tour-center reveal is-visible">
   <div class="tour-center-date">2027.01 — 04</div>
   <div class="tour-center-meta">7 CITIES / 14 SHOWS</div>
 </section>
-<nav class="aurora-tabs-wrap reveal" aria-label="Aurora Tour contents">
+<nav class="aurora-tabs-wrap reveal is-visible" aria-label="Aurora Tour contents">
   <div class="aurora-tabs" id="tourTabs">
     <span class="tab-glow" aria-hidden="true"></span>
     <button type="button" class="aurora-tab is-active" data-tour-tab="ticket" aria-selected="true">TICKET</button>
@@ -122,65 +81,127 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{
     <button type="button" class="aurora-tab" data-tour-tab="official" aria-selected="false">OFFICIAL</button>
   </div>
 </nav>
+
 <div class="aurora-tab-panel is-active" data-tour-panel="ticket">
-<section class="clean-section reveal"><div class="clean-head"><h2>TICKET</h2><p>チケット先行</p></div><div id="ticketCurrent" class="ticket-current"></div><div id="ticketPast"></div><div class="price-grid"><div class="price"><span>SS指定席<br>アップグレード</span><strong>¥18,000</strong></div><div class="price"><span>一般指定席</span><strong>¥13,000</strong></div><div class="price"><span>着席指定席</span><strong>¥13,000</strong></div></div><p class="small muted">3歳以上有料 / 3歳未満入場不可。1公演につきお一人様4枚まで。SS指定席は対象のFC・B-Town先行で一般指定席に当選・入金した方のみ後日アップグレード申込可能。</p></section>
+<section class="clean-section reveal is-visible">
+  <div class="clean-head"><h2>TICKET</h2><p>チケット先行</p></div>
+  <div id="ticketCurrent"></div>
+</section>
 </div>
+
 <div class="aurora-tab-panel" data-tour-panel="schedule">
-<section class="clean-section reveal" id="schedule"><div class="clean-head"><h2>TOUR SCHEDULE</h2><p>全国7都市・全14公演 / 光の航路</p></div><div id="venueList" class="route"><div class="route-line"></div><div id="routeProgress" class="route-progress"></div></div></section>
+<section class="clean-section reveal" id="schedule">
+  <div class="clean-head schedule-head-row">
+    <div><h2>TOUR SCHEDULE</h2><p>全国7都市・全14公演</p></div>
+    <div class="attendance-total"><strong id="attendanceCount">0 / 14</strong> 公演参加</div>
+  </div>
+  <div class="city-jumps" id="cityJumps" aria-label="都市へ移動"></div>
+  <div id="venueList" class="route"><div class="route-line"></div><div id="routeProgress" class="route-progress"></div></div>
+</section>
 </div>
+
 <div class="aurora-tab-panel" data-tour-panel="official">
-<section class="clean-section reveal"><div class="clean-head"><h2>OFFICIAL</h2><p>公式情報</p></div><div class="official-grid"><a class="btn" href="https://starglow.tokyo/special/tour2027aurora" target="_blank" rel="noopener noreferrer">Tour Special Site <span>↗</span></a><a class="btn" href="https://starglow.tokyo/" target="_blank" rel="noopener noreferrer">STARGLOW Official <span>↗</span></a><a class="btn" href="https://x.com/starglow_bmsg" target="_blank" rel="noopener noreferrer">X <span>↗</span></a><a class="btn" href="https://www.instagram.com/starglow_bmsg" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a><a class="btn" href="https://www.tiktok.com/@starglow_bmsg" target="_blank" rel="noopener noreferrer">TikTok <span>↗</span></a><a class="btn" href="https://www.youtube.com/@starglow_bmsg" target="_blank" rel="noopener noreferrer">YouTube <span>↗</span></a></div></section>
+<section class="clean-section reveal">
+  <div class="clean-head"><h2>OFFICIAL</h2><p>公式情報</p></div>
+  <div class="official-grid">
+    <a class="btn" href="https://starglow.tokyo/special/tour2027aurora" target="_blank" rel="noopener noreferrer">Tour Special Site <span>↗</span></a>
+    <a class="btn" href="https://starglow.tokyo/" target="_blank" rel="noopener noreferrer">STARGLOW Official <span>↗</span></a>
+    <a class="btn" href="https://x.com/starglow_bmsg" target="_blank" rel="noopener noreferrer">X <span>↗</span></a>
+    <a class="btn" href="https://www.instagram.com/starglow_bmsg" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a>
+    <a class="btn" href="https://www.tiktok.com/@starglow_bmsg" target="_blank" rel="noopener noreferrer">TikTok <span>↗</span></a>
+    <a class="btn" href="https://www.youtube.com/@starglow_bmsg" target="_blank" rel="noopener noreferrer">YouTube <span>↗</span></a>
+  </div>
+</section>
 </div>
-</main><footer class="footer">UNOFFICIAL FAN SITE<br>本サイトは非公式ファンサイトです</footer></div>
-<dialog id="accessModal" class="modal"><button class="close" id="closeModal" type="button">×</button><div id="modalContent"></div></dialog>
+</main>
+<footer class="footer">UNOFFICIAL FAN SITE<br>本サイトは非公式ファンサイトです</footer>
+</div>
+
+<dialog id="accessModal" class="modal"><button class="close" id="closeModal" type="button" aria-label="閉じる">×</button><div id="modalContent"></div></dialog>
+
 <script>
 const TICKETS=[
- {name:"ローソンチケット先行（Lencore・プレリクエスト）",start:"2026-10-23T15:00:00+09:00",end:"2026-11-01T23:59:00+09:00",result:"11/7 12:00 ～ 11/12 23:59",url:"https://l-tike.com/starglow/",note:"Fan Club・B-Town会員以外も申込可能"},
- {name:"STARS / B-Town〈Architect〉2次・B-Town〈Resident〉会員先行",start:"2026-10-10T12:00:00+09:00",end:"2026-10-15T23:59:00+09:00",paymentEnd:"2026-10-28T23:59:00+09:00",result:"10/23 12:00 ～ 10/28 23:59",url:"https://starglow.tokyo/news/live/1447/",note:"受付終了 / 当選者の入金期間は10/28 23:59まで"},
- {name:"STARS / B-Town〈Architect〉1次先行",start:"2026-09-22T00:00:00+09:00",end:"2026-10-04T23:59:00+09:00",result:"10/10 12:00 ～ 10/15 23:59",url:"https://starglow.tokyo/special/tour2027aurora/news/20260922",note:"受付終了"}
+ {name:"ローソンチケット2次先行（Lencore・プレリクエスト）",start:"2026-11-02T15:00:00+09:00",end:"2026-11-12T23:59:00+09:00",result:"11/19 12:00 ～ 11/23 23:59",url:"https://l-tike.com/starglow/"},
+ {name:"チケットぴあ先行",start:"2026-11-02T15:00:00+09:00",end:"2026-11-12T23:59:00+09:00",result:"11/19 12:00 ～ 11/23 23:59",url:"https://w.pia.jp/t/starglow2027/"},
+ {name:"イープラス先行",start:"2026-11-02T15:00:00+09:00",end:"2026-11-12T23:59:00+09:00",result:"11/19 12:00 ～ 11/23 23:59",url:"https://eplus.jp/starglow/"}
 ];
+function ticketRemain(ms){
+ if(ms<=0)return "";
+ const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);
+ return `${d}日 ${String(h).padStart(2,"0")}時間 ${String(m).padStart(2,"0")}分`;
+}
+function renderTickets(){
+ const box=document.getElementById("ticketCurrent");
+ if(!box)return;
+ const now=Date.now();
+ const active=TICKETS.filter(t=>now>=new Date(t.start).getTime()&&now<=new Date(t.end).getTime());
+ if(!active.length){
+   box.innerHTML='<div class="ticket-empty">現在受付中の先行はありません。</div>';
+   return;
+ }
+ box.innerHTML=`<div class="ticket-current-list">${active.map((t,i)=>`
+   <article class="ticket-current-item">
+    <div class="ticket-status">受付中 / NOW OPEN</div>
+    <h3>${safe(t.name)}</h3>
+    <div class="ticket-period">受付：11/2 15:00 ～ 11/12 23:59</div>
+    <div class="ticket-countdown" data-ticket-end="${safe(t.end)}"></div>
+    <div class="ticket-result">当落発表 / 入金：${safe(t.result)}</div>
+    <div class="ticket-apply"><a class="btn mini" href="${safe(t.url)}" target="_blank" rel="noopener noreferrer">申し込み ↗</a></div>
+   </article>`).join("")}</div>`;
+ updateTicketCountdown();
+}
+function updateTicketCountdown(){
+ document.querySelectorAll("[data-ticket-end]").forEach(el=>{
+   const ms=new Date(el.dataset.ticketEnd).getTime()-Date.now();
+   el.textContent=ms>0?`締切まで ${ticketRemain(ms)}`:"受付終了";
+ });
+}
 const VENUES=[
- {area:"新潟",name:"朱鷺メッセ",shows:[["2027.01.16 SAT","OPEN 17:00 / START 18:00"],["2027.01.17 SUN","OPEN 15:00 / START 16:00"]],access:"JR新潟駅から路線バスで約15分『朱鷺メッセ』下車。徒歩の場合は新潟駅から約20～25分。",venueUrl:"https://www.tokimesse.com/visitor/access/",map:"https://www.google.com/maps/search/?api=1&query=%E6%9C%B1%E9%B7%BA%E3%83%A1%E3%83%83%E3%82%BB"},
- {area:"愛知",name:"AICHI SKY EXPO HALL A",shows:[["2027.01.30 SAT","OPEN 16:00 / START 17:00"],["2027.01.31 SUN","OPEN 15:00 / START 16:00"]],access:"名鉄名古屋駅から中部国際空港駅まで最速28分。中部国際空港から徒歩約5分。",venueUrl:"https://www.aichiskyexpo.com/access/",map:"https://www.google.com/maps/search/?api=1&query=AICHI+SKY+EXPO"},
- {area:"福岡",name:"マリンメッセ福岡 B館",shows:[["2027.02.06 SAT","OPEN 16:00 / START 17:00"],["2027.02.07 SUN","OPEN 15:00 / START 16:00"]],access:"博多駅・天神から西鉄バス『マリンメッセ前』が便利。地下鉄 呉服町駅から徒歩約15分。",venueUrl:"https://www.marinemesse.or.jp/",map:"https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E7%A6%8F%E5%B2%A1B%E9%A4%A8"},
- {area:"北海道",name:"北海きたえーる",shows:[["2027.02.27 SAT","OPEN 16:00 / START 17:00"],["2027.02.28 SUN","OPEN 15:00 / START 16:00"]],access:"札幌市営地下鉄 東豊線『豊平公園』駅から地下連絡通路で直結。観覧者用駐車場なし。",venueUrl:"https://www.kitayell.jp/access/",map:"https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%B5%B7%E3%81%8D%E3%81%9F%E3%81%88%E3%83%BC%E3%82%8B"},
- {area:"広島",name:"広島グリーンアリーナ",shows:[["2027.03.13 SAT","OPEN 16:00 / START 17:00"],["2027.03.14 SUN","OPEN 15:00 / START 16:00"]],access:"アストラムライン『県庁前』、広島電鉄『紙屋町西』、広島バスセンターが最寄り。",venueUrl:"https://h-jigyoudan.or.jp/sports-center/",map:"https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%B3%B6%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"},
- {area:"兵庫",name:"GLION ARENA KOBE",shows:[["2027.03.27 SAT","OPEN 15:00 / START 16:00"],["2027.03.28 SUN","OPEN 15:00 / START 16:00"]],access:"各線三宮駅から徒歩約17～20分。ポートライナー『ポートターミナル』徒歩約13分。ポートループ『アリーナ前』も利用可。",venueUrl:"https://www.totteikobe.jp/access/",map:"https://www.google.com/maps/search/?api=1&query=GLION+ARENA+KOBE"},
- {area:"東京",name:"有明アリーナ",shows:[["2027.04.10 SAT","OPEN 16:00 / START 17:00"],["2027.04.11 SUN","OPEN 15:00 / START 16:00"]],access:"ゆりかもめ『新豊洲』『有明テニスの森』から徒歩約8分。りんかい線『国際展示場』『東雲』から徒歩約17分。",venueUrl:"https://ariake-arena.tokyo/access/",map:"https://www.google.com/maps/search/?api=1&query=%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"}
+ {area:"新潟",name:"朱鷺メッセ",shows:[["2027.01.16（土）","OPEN 17:00 / START 18:00"],["2027.01.17（日）","OPEN 15:00 / START 16:00"]],access:["JR新潟駅 → 路線バス約15分 →「朱鷺メッセ」下車","JR新潟駅 → 徒歩約20〜25分"],venueUrl:"https://www.tokimesse.com/visitor/access/",map:"https://www.google.com/maps/search/?api=1&query=%E6%9C%B1%E9%B7%BA%E3%83%A1%E3%83%83%E3%82%BB"},
+ {area:"愛知",name:"AICHI SKY EXPO HALL A",shows:[["2027.01.30（土）","OPEN 16:00 / START 17:00"],["2027.01.31（日）","OPEN 15:00 / START 16:00"]],access:["名鉄名古屋駅 → 中部国際空港駅 最速28分","中部国際空港駅 → 徒歩約5分"],venueUrl:"https://www.aichiskyexpo.com/access/",map:"https://www.google.com/maps/search/?api=1&query=AICHI+SKY+EXPO"},
+ {area:"福岡",name:"マリンメッセ福岡 B館",shows:[["2027.02.06（土）","OPEN 16:00 / START 17:00"],["2027.02.07（日）","OPEN 15:00 / START 16:00"]],access:["博多駅・天神 → 西鉄バス「マリンメッセ前」下車","地下鉄「呉服町」駅 → 徒歩約15分"],venueUrl:"https://www.marinemesse.or.jp/",map:"https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E7%A6%8F%E5%B2%A1B%E9%A4%A8"},
+ {area:"北海道",name:"北海きたえーる",shows:[["2027.02.27（土）","OPEN 16:00 / START 17:00"],["2027.02.28（日）","OPEN 15:00 / START 16:00"]],access:["地下鉄東豊線「豊平公園」駅 → 地下連絡通路で直結","観覧者用駐車場なし"],venueUrl:"https://www.kitayell.jp/access/",map:"https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%B5%B7%E3%81%8D%E3%81%9F%E3%81%88%E3%83%BC%E3%82%8B"},
+ {area:"広島",name:"広島グリーンアリーナ",shows:[["2027.03.13（土）","OPEN 16:00 / START 17:00"],["2027.03.14（日）","OPEN 15:00 / START 16:00"]],access:["アストラムライン「県庁前」・広島電鉄「紙屋町西」・広島バスセンターが最寄り"],venueUrl:"https://h-jigyoudan.or.jp/sports-center/",map:"https://www.google.com/maps/search/?api=1&query=%E5%BA%83%E5%B3%B6%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"},
+ {area:"兵庫",name:"GLION ARENA KOBE",shows:[["2027.03.27（土）","OPEN 15:00 / START 16:00"],["2027.03.28（日）","OPEN 15:00 / START 16:00"]],access:["各線三宮駅 → 徒歩約17〜20分","ポートライナー「ポートターミナル」→ 徒歩約13分","ポートループ「アリーナ前」利用可"],venueUrl:"https://www.totteikobe.jp/access/",map:"https://www.google.com/maps/search/?api=1&query=GLION+ARENA+KOBE"},
+ {area:"東京",name:"有明アリーナ",shows:[["2027.04.10（土）","OPEN 16:00 / START 17:00"],["2027.04.11（日）","OPEN 15:00 / START 16:00"]],access:["ゆりかもめ「新豊洲」「有明テニスの森」→ 徒歩約8分","りんかい線「国際展示場」「東雲」→ 徒歩約17分"],venueUrl:"https://ariake-arena.tokyo/access/",map:"https://www.google.com/maps/search/?api=1&query=%E6%9C%89%E6%98%8E%E3%82%A2%E3%83%AA%E3%83%BC%E3%83%8A"}
 ];
-const $=s=>document.querySelector(s);const safe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function fmtRemain(ms){if(ms<=0)return"";const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return`${d}日 ${String(h).padStart(2,"0")}時間 ${String(m).padStart(2,"0")}分`}
-function renderTickets(){const now=Date.now(),current=TICKETS.find(t=>now>=new Date(t.start)&&now<=new Date(t.end)),box=$("#ticketCurrent");if(current){box.innerHTML=`<div class="status">受付中 / NOW OPEN</div><h3>${safe(current.name)}</h3><div class="small">受付：10/23 15:00 ～ 11/1 23:59</div><div id="ticketCountdown" class="count"></div><div class="small muted">当落発表 / 入金：${safe(current.result)}<br>${safe(current.note)}</div><div class="links" style="margin-top:15px"><a class="btn" href="${safe(current.url)}" target="_blank" rel="noopener noreferrer">申し込み ↗</a></div>`}else{box.innerHTML=`<div class="status ended">CURRENTLY CLOSED</div><p class="small muted">現在受付中の先行はありません。次の公式発表をお待ちください。</p>`}
- $("#ticketPast").innerHTML=TICKETS.filter(t=>!current||t!==current).map(t=>{const paying=t.paymentEnd&&now>new Date(t.end)&&now<=new Date(t.paymentEnd);return`<div class="ticket-past"><span class="status ${paying?"":"ended"}">${paying?"入金期間中":"受付終了"}</span><h3>${safe(t.name)}</h3><div class="small muted">${safe(t.note)}<br>当落 / 入金：${safe(t.result)}</div><div style="margin-top:8px"><a class="btn mini" href="${safe(t.url)}" target="_blank" rel="noopener noreferrer">公式詳細 ↗</a></div></div>`}).join("");updateTicketCountdown()}
-function updateTicketCountdown(){const now=Date.now(),current=TICKETS.find(t=>now>=new Date(t.start)&&now<=new Date(t.end)),el=$("#ticketCountdown");if(el&&current)el.textContent=`締切まで ${fmtRemain(new Date(current.end)-now)}`}
-function renderVenues(){const target=$("#venueList"),line=target.querySelector(".route-line"),progress=target.querySelector(".route-progress");target.innerHTML="";target.append(line,progress);VENUES.forEach((v,i)=>{const a=document.createElement("article");a.className="venue reveal";a.innerHTML=`<span class="venue-node"></span><div class="venue-index">${String(i+1).padStart(2,"0")} / 07</div><div class="venue-area">${safe(v.area)}</div><h3>${safe(v.name)}</h3>${v.shows.map(s=>`<div class="show"><strong>${safe(s[0])}</strong><span class="muted">${safe(s[1])}</span></div>`).join("")}<div class="venue-actions"><button class="btn mini" type="button" data-access="${i}">ACCESS</button><a class="btn mini" href="${safe(v.map)}" target="_blank" rel="noopener noreferrer">MAP ↗</a></div>`;target.append(a)});document.querySelectorAll("[data-access]").forEach(b=>b.addEventListener("click",()=>openAccess(Number(b.dataset.access))));observeReveal();updateRoute()}
-function openAccess(i){const v=VENUES[i];$("#modalContent").innerHTML=`<div class="eyebrow">${safe(v.area)} / ACCESS</div><h2>${safe(v.name)}</h2><p>${safe(v.access)}</p><div class="links"><a class="btn" href="${safe(v.venueUrl)}" target="_blank" rel="noopener noreferrer">会場公式アクセス ↗</a><a class="btn" href="${safe(v.map)}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></div><p class="small muted">交通情報は変更される場合があります。公演前に会場公式情報をご確認ください。</p>`;$("#accessModal").showModal()}
-function updateRoute(){const route=$("#venueList"),p=$("#routeProgress");if(!route||!p)return;const r=route.getBoundingClientRect(),vh=innerHeight;const start=vh*.7,end=vh*.2;const travelled=Math.min(Math.max(start-r.top,0),Math.max(r.height-(start-end),0));p.style.height=`${travelled}px`}
-let io;function observeReveal(){if(!io)io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("is-visible")}),{threshold:.08});document.querySelectorAll(".reveal:not([data-observed])").forEach(el=>{el.dataset.observed="1";io.observe(el)})}
-$("#closeModal").addEventListener("click",()=>$("#accessModal").close());$("#accessModal").addEventListener("click",e=>{if(e.target.id==="accessModal")e.target.close()});addEventListener("scroll",updateRoute,{passive:true});addEventListener("resize",updateRoute);renderTickets();renderVenues();observeReveal();setInterval(updateTicketCountdown,30000);
+const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];const safe=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const STORE_KEY="aurora-tour-personal-v1";
+function loadStore(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||"{}")||{}}catch(e){return{}}}
+function saveStore(data){try{localStorage.setItem(STORE_KEY,JSON.stringify(data));return true}catch(e){alert("端末の保存容量がいっぱいのため保存できませんでした。画像を減らしてもう一度お試しください。");return false}}
+let STORE=loadStore();
+if(!STORE.attendance)STORE.attendance={};if(!STORE.memos)STORE.memos={};
+function memoFor(i){if(!STORE.memos[i])STORE.memos[i]={text:"",links:[],images:[]};return STORE.memos[i]}
+function showKey(vi,si){return `${vi}-${si}`}
+function updateAttendanceCount(){const n=Object.values(STORE.attendance).filter(Boolean).length;const el=$("#attendanceCount");if(el)el.textContent=`${n} / 14`}
+function renderCityJumps(){const box=$("#cityJumps");box.innerHTML=VENUES.map((v,i)=>`<button class="city-jump" type="button" data-city-jump="${i}">${safe(v.area)}</button>`).join("");$$('[data-city-jump]').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById(`venue-${b.dataset.cityJump}`);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}))}
+function renderVenues(){
+ const target=$("#venueList"),line=target.querySelector(".route-line"),progress=target.querySelector(".route-progress");target.innerHTML="";target.append(line,progress);
+ VENUES.forEach((v,i)=>{
+  const memo=memoFor(i),a=document.createElement("article");a.className="venue reveal is-visible";a.id=`venue-${i}`;
+  const shows=v.shows.map((s,si)=>{const key=showKey(i,si),on=!!STORE.attendance[key];return `<div class="show"><div class="show-date">${safe(s[0])}</div><div class="show-time">${safe(s[1])}</div><button class="attend-btn ${on?'is-attending':''}" type="button" data-attend="${key}" aria-label="${safe(s[0])}に参加予定を付ける" aria-pressed="${on?'true':'false'}">${on?'★':'☆'}</button></div>`}).join("");
+  a.innerHTML=`<span class="venue-node"></span><div class="venue-area">${safe(v.area)}</div><h3>${safe(v.name)}</h3><div class="venue-layout"><div class="shows">${shows}<div class="venue-actions"><button class="btn mini" type="button" data-access="${i}">ACCESS</button><a class="btn mini" href="${safe(v.map)}" target="_blank" rel="noopener noreferrer">MAP ↗</a></div></div><aside class="trip-memo"><div class="trip-memo-head"><strong>TRIP MEMO</strong><span>端末保存</span></div><textarea class="trip-text" data-memo-text="${i}" placeholder="ホテル・新幹線・飛行機・バス・集合時間など">${safe(memo.text)}</textarea><div class="memo-link-row"><input class="memo-link-input" data-link-input="${i}" type="url" inputmode="url" placeholder="予約ページなどのURL"><button class="memo-small-btn" type="button" data-add-link="${i}">リンク追加</button></div><div class="memo-tools"><label class="memo-image-label" for="memo-image-${i}">画像を追加</label><input class="memo-image-input" id="memo-image-${i}" data-image-input="${i}" type="file" accept="image/*"></div><div class="memo-links" data-memo-links="${i}"></div><div class="memo-images" data-memo-images="${i}"></div><div class="memo-hint">メモ・リンク・画像はこの端末にのみ保存されます。</div></aside></div>`;
+  target.append(a);renderMemoExtras(i);
+ });
+ $$('[data-access]').forEach(b=>b.addEventListener('click',()=>openAccess(Number(b.dataset.access))));
+ $$('[data-attend]').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.attend;STORE.attendance[key]=!STORE.attendance[key];saveStore(STORE);const on=!!STORE.attendance[key];b.classList.toggle('is-attending',on);b.textContent=on?'★':'☆';b.setAttribute('aria-pressed',on?'true':'false');updateAttendanceCount()}));
+ $$('[data-memo-text]').forEach(el=>el.addEventListener('input',()=>{memoFor(Number(el.dataset.memoText)).text=el.value;saveStore(STORE)}));
+ $$('[data-add-link]').forEach(b=>b.addEventListener('click',()=>addMemoLink(Number(b.dataset.addLink))));
+ $$('[data-link-input]').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();addMemoLink(Number(el.dataset.linkInput))}}));
+ $$('[data-image-input]').forEach(el=>el.addEventListener('change',()=>addMemoImage(Number(el.dataset.imageInput),el)));
+ updateAttendanceCount();updateRoute();
+}
+function normaliseUrl(value){let v=String(value||'').trim();if(!v)return'';if(!/^https?:\/\//i.test(v))v='https://'+v;try{const u=new URL(v);return /^https?:$/.test(u.protocol)?u.href:''}catch(e){return''}}
+function addMemoLink(i){const input=document.querySelector(`[data-link-input="${i}"]`),url=normaliseUrl(input.value);if(!url){if(input.value.trim())alert('URLを確認してください。');return}const memo=memoFor(i);if(!memo.links.includes(url))memo.links.push(url);if(saveStore(STORE)){input.value='';renderMemoExtras(i)}}
+function renderMemoExtras(i){const memo=memoFor(i),links=document.querySelector(`[data-memo-links="${i}"]`),images=document.querySelector(`[data-memo-images="${i}"]`);if(links)links.innerHTML=memo.links.map((u,n)=>`<div class="memo-link-item"><a href="${safe(u)}" target="_blank" rel="noopener noreferrer">${safe(u)}</a><button class="memo-delete" type="button" data-del-link="${i}-${n}" aria-label="リンクを削除">×</button></div>`).join('');if(images)images.innerHTML=memo.images.map((src,n)=>`<div class="memo-image"><img src="${src}" alt="保存したメモ画像"><button type="button" data-del-image="${i}-${n}" aria-label="画像を削除">×</button></div>`).join('');$$(`[data-del-link^="${i}-"]`).forEach(b=>b.addEventListener('click',()=>{const n=Number(b.dataset.delLink.split('-')[1]);memo.links.splice(n,1);saveStore(STORE);renderMemoExtras(i)}));$$(`[data-del-image^="${i}-"]`).forEach(b=>b.addEventListener('click',()=>{const n=Number(b.dataset.delImage.split('-')[1]);memo.images.splice(n,1);saveStore(STORE);renderMemoExtras(i)}))}
+function addMemoImage(i,input){const file=input.files&&input.files[0];if(!file)return;if(!file.type.startsWith('image/'))return;const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>{const max=900,scale=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));const ctx=c.getContext('2d');ctx.drawImage(img,0,0,c.width,c.height);const data=c.toDataURL('image/jpeg',.72),memo=memoFor(i);memo.images.push(data);if(saveStore(STORE))renderMemoExtras(i);else memo.images.pop();input.value=''};img.src=reader.result};reader.readAsDataURL(file)}
+function openAccess(i){const v=VENUES[i];$("#modalContent").innerHTML=`<div class="eyebrow">${safe(v.area)} / ACCESS</div><h2 class="access-title">${safe(v.name)}</h2><ul class="access-list">${v.access.map(x=>`<li>${safe(x)}</li>`).join('')}</ul><div class="access-official"><a class="btn" href="${safe(v.venueUrl)}" target="_blank" rel="noopener noreferrer">会場公式アクセス ↗</a></div>`;$("#accessModal").showModal()}
+function updateRoute(){const route=$("#venueList"),p=$("#routeProgress");if(!route||!p||!route.offsetParent)return;const r=route.getBoundingClientRect(),vh=innerHeight,start=vh*.7,end=vh*.2,travelled=Math.min(Math.max(start-r.top,0),Math.max(r.height-(start-end),0));p.style.height=`${travelled}px`}
+let io;function observeReveal(){if(!io)io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("is-visible")}),{threshold:.08});$$('.reveal:not([data-observed])').forEach(el=>{el.dataset.observed='1';io.observe(el)})}
+$("#closeModal").addEventListener("click",()=>$("#accessModal").close());$("#accessModal").addEventListener("click",e=>{if(e.target.id==="accessModal")e.target.close()});addEventListener("scroll",updateRoute,{passive:true});addEventListener("resize",updateRoute);
+renderTickets();renderCityJumps();renderVenues();observeReveal();setInterval(updateTicketCountdown,30000);
 
-
-// Album-style TOUR tabs: display only; existing ticket/venue/access data is preserved.
-(()=>{
- const tabsRoot=document.getElementById("tourTabs");
- if(!tabsRoot)return;
- const tabs=[...tabsRoot.querySelectorAll("[data-tour-tab]")];
- const panels=[...document.querySelectorAll("[data-tour-panel]")];
- let tabTimer;
- const activate=(name,btn)=>{
-   const index=Math.max(0,tabs.indexOf(btn));
-   tabsRoot.style.setProperty("--tab-x",`${index*100}%`);
-   tabsRoot.classList.remove("is-moving");
-   void tabsRoot.offsetWidth;
-   tabsRoot.classList.add("is-moving");
-   tabs.forEach(t=>{const on=t===btn;t.classList.toggle("is-active",on);t.setAttribute("aria-selected",on?"true":"false")});
-   panels.forEach(p=>p.classList.toggle("is-active",p.dataset.tourPanel===name));
-   clearTimeout(tabTimer);tabTimer=setTimeout(()=>tabsRoot.classList.remove("is-moving"),620);
-   requestAnimationFrame(()=>{observeReveal();updateRoute()});
- };
- tabs.forEach(btn=>btn.addEventListener("click",()=>activate(btn.dataset.tourTab,btn)));
-})();
-
+(()=>{const tabsRoot=document.getElementById("tourTabs");if(!tabsRoot)return;const tabs=[...tabsRoot.querySelectorAll("[data-tour-tab]")],panels=[...document.querySelectorAll("[data-tour-panel]")];panels.filter(p=>p.classList.contains('is-active')).forEach(p=>p.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible')));let tabTimer;const activate=(name,btn)=>{const index=Math.max(0,tabs.indexOf(btn));tabsRoot.style.setProperty("--tab-x",`${index*100}%`);tabsRoot.classList.remove("is-moving");void tabsRoot.offsetWidth;tabsRoot.classList.add("is-moving");tabs.forEach(t=>{const on=t===btn;t.classList.toggle("is-active",on);t.setAttribute("aria-selected",on?"true":"false")});panels.forEach(p=>{const active=p.dataset.tourPanel===name;p.classList.toggle("is-active",active);if(active)p.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'))});clearTimeout(tabTimer);tabTimer=setTimeout(()=>tabsRoot.classList.remove("is-moving"),620);requestAnimationFrame(()=>{observeReveal();updateRoute()})};tabs.forEach(btn=>btn.addEventListener("click",()=>activate(btn.dataset.tourTab,btn)))})();
 </script>
 </body>
 </html>
