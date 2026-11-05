@@ -311,9 +311,267 @@ body{font-size:14px}
  .round-card{padding:15px 13px}.round-top strong{font-size:15px}.round-date{font-size:13px}.round-result{font-size:10px}.round-manage,.round-done{min-height:40px!important;font-size:9.5px!important}.round-manage small{font-size:7.5px}
 }
 
+
+/* ===== v12 COMMON: MOVING AURORA TITLE / STATUS TAG / 2x2 ROUND GRID ===== */
+
+/* Auroraタイトル上下：Slam Dunkの「光が走る区切り線」発想をAurora色に */
+.album-hero-copy:before,
+.album-hero-copy:after{
+  content:""!important;
+  display:block!important;
+  width:100%!important;
+  height:2px!important;
+  padding:0!important;
+  border:0!important;
+  border-image:none!important;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(145,232,226,.18) 18%,
+      rgba(145,232,226,.92) 38%,
+      rgba(231,242,255,1) 48%,
+      rgba(201,167,255,.92) 58%,
+      rgba(201,167,255,.18) 78%,
+      transparent 100%
+    );
+  background-size:220% 100%!important;
+  box-shadow:
+    0 0 8px rgba(145,232,226,.22),
+    0 0 16px rgba(201,167,255,.13);
+  animation:auroraTitleLine 4.2s linear infinite!important;
+  opacity:.92;
+}
+.album-hero-copy:before{margin:0 0 16px!important}
+.album-hero-copy:after{
+  margin:16px 0 0!important;
+  animation-direction:reverse!important;
+  animation-duration:5.1s!important;
+}
+@keyframes auroraTitleLine{
+  0%{background-position:120% 50%}
+  100%{background-position:-120% 50%}
+}
+@media(prefers-reduced-motion:reduce){
+  .album-hero-copy:before,.album-hero-copy:after{animation:none!important}
+}
+
+/* 限定バンドル：販売終了を明確なステータスタグに */
+.edition-tile-status{
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:22px;
+  margin:0!important;
+  padding:3px 7px!important;
+  border:1px solid rgba(255,102,117,.72)!important;
+  border-radius:999px;
+  background:linear-gradient(110deg,rgba(181,34,51,.30),rgba(255,89,106,.13))!important;
+  color:#ffd9dd!important;
+  font-size:9px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  letter-spacing:.02em;
+  white-space:nowrap;
+  text-shadow:none!important;
+  box-shadow:0 0 14px rgba(255,73,94,.16);
+}
+
+/* SERIAL：全体の可読性を上げる */
+.serial-section .clean-head h2{font-size:20px!important}
+.serial-section .clean-head p{font-size:15px!important}
+.serial-section .serial-rule{
+  font-size:13px!important;
+  line-height:1.85!important;
+  color:#d4daeb!important;
+}
+.prize-detail summary{
+  display:block!important;
+  padding:12px 2px 10px!important;
+}
+.prize-titleline{
+  display:flex!important;
+  align-items:center!important;
+  flex-wrap:nowrap!important;
+  gap:7px!important;
+  min-width:0!important;
+}
+.prize-badge{
+  flex:0 0 auto;
+  font-size:16px!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+}
+.prize-star{
+  flex:0 0 auto;
+  font-size:10px!important;
+}
+.prize-name{
+  min-width:0;
+  font-size:13px!important;
+  font-weight:850!important;
+  line-height:1.25!important;
+  white-space:nowrap!important;
+  letter-spacing:-.025em;
+}
+.prize-quick{
+  font-size:11.5px!important;
+  line-height:1.55!important;
+  color:#cbd2e5!important;
+}
+.prize-total{
+  font-size:11px!important;
+  font-weight:900!important;
+  white-space:nowrap!important;
+}
+.prize-toggle-row{
+  margin-top:8px!important;
+  padding-top:8px!important;
+}
+.prize-toggle{
+  min-height:30px;
+  padding:5px 9px;
+  border:1px solid rgba(145,232,226,.24);
+  background:linear-gradient(90deg,rgba(145,232,226,.055),rgba(201,167,255,.045));
+  font-size:10.5px!important;
+  border-radius:999px;
+}
+.prize-body{
+  font-size:12px!important;
+  line-height:1.85!important;
+}
+
+/* 応募期間は常に横2列×縦2段 */
+.round-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+}
+.round-card{min-width:0}
+.round-top strong{font-size:15px!important}
+.round-date{
+  font-size:13px!important;
+  line-height:1.62!important;
+}
+.round-result{font-size:10.5px!important}
+.round-actions{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:7px!important;
+}
+.round-manage,.round-done{
+  width:100%!important;
+  min-width:0!important;
+  white-space:normal!important;
+}
+
+@media(max-width:560px){
+  .album-hero-copy:before{margin-bottom:12px!important}
+  .album-hero-copy:after{margin-top:12px!important}
+  .edition-tile-status{
+    min-height:20px;
+    padding:3px 6px!important;
+    font-size:8px!important;
+  }
+  .serial-section .clean-head h2{font-size:19px!important}
+  .serial-section .clean-head p{font-size:14px!important}
+  .serial-section .serial-rule{font-size:11.5px!important}
+  .prize-badge{font-size:14.5px!important}
+  .prize-name{font-size:clamp(10.8px,3.05vw,12px)!important}
+  .prize-quick{font-size:10.5px!important}
+  .prize-total{font-size:10px!important}
+  .prize-toggle{font-size:10px!important}
+  .prize-body{font-size:11px!important}
+  .round-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+  .round-card{padding:13px 10px!important}
+  .round-top strong{font-size:14px!important}
+  .round-date{font-size:11.5px!important}
+  .round-result{font-size:9.5px!important}
+  .round-manage,.round-done{
+    min-height:39px!important;
+    padding:7px 6px!important;
+    font-size:9px!important;
+  }
+  .round-manage small{
+    display:none!important;
+  }
+}
+
+
+/* SERIAL LAYOUT A：2段エディトリアル */
+.serial-layout-a .prize-summary-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  grid-template-areas:
+    "title total"
+    "quick quick"!important;
+  gap:6px 10px!important;
+  align-items:center!important;
+}
+.serial-layout-a .prize-titleline{grid-area:title!important}
+.serial-layout-a .prize-total{grid-area:total!important;text-align:right}
+.serial-layout-a .prize-quick{
+  grid-area:quick!important;
+  display:block!important;
+  padding-left:calc(16px + 7px);
+}
+.serial-layout-a .prize-quick span{display:inline!important}
+.serial-layout-a .prize-quick span+span:before{content:"　／　";color:#69748f}
+
+
+
+/* ===== FINAL A × C TAB NAVIGATION ===== */
+.aurora-tabs-wrap{margin:34px 0 10px;position:relative;z-index:8}
+.aurora-tabs{--tab-x:0;position:relative;display:flex;overflow:hidden;border:1px solid rgba(225,231,255,.22);background:rgba(255,255,255,.018);isolation:isolate}
+.aurora-tabs .tab-glow{position:absolute;z-index:0;inset:0 auto 0 0;width:33.333333%;transform:translateX(var(--tab-x));transition:transform .52s cubic-bezier(.2,.78,.2,1);background:linear-gradient(115deg,transparent,rgba(112,228,229,.07),rgba(165,107,255,.15),rgba(255,255,255,.055),transparent);pointer-events:none}
+.aurora-tabs .tab-glow:before{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:linear-gradient(90deg,transparent,#fff,#8deaff,transparent);filter:drop-shadow(0 0 6px rgba(169,140,255,.95))}
+.aurora-tabs .tab-glow:after{content:"";position:absolute;left:-38%;top:-22px;width:176%;height:calc(100% + 44px);opacity:0;background:radial-gradient(ellipse at center,rgba(157,104,255,.36) 0,rgba(102,223,229,.18) 38%,transparent 70%);filter:blur(5px);pointer-events:none}
+.aurora-tabs.is-moving .tab-glow:after{animation:auroraTabSweep .58s ease-out}
+@keyframes auroraTabSweep{0%{opacity:0;transform:scaleX(.72)}35%{opacity:1;transform:scaleX(1.14)}100%{opacity:0;transform:scaleX(1)}}
+.aurora-tab{position:relative;z-index:2;flex:1;min-width:0;padding:14px 3px;border:0;background:transparent;color:#75809e;font-family:Georgia,serif;font-size:10px;letter-spacing:.075em;transition:color .32s,text-shadow .32s;touch-action:manipulation}
+.aurora-tab.is-active{color:#fff;text-shadow:0 0 12px rgba(199,181,255,.72)}
+.aurora-tab-panel{display:none}
+.aurora-tab-panel.is-active{display:block;animation:tabPanelIn .36s ease both}
+@keyframes tabPanelIn{from{opacity:.18;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(max-width:560px){.aurora-tabs-wrap{margin:27px 0 6px}.aurora-tab{padding:13px 1px;font-size:9.5px}}
+
+/* ===== FINAL SERIAL / LUXE HOLOGRAM ===== */
+.serial-section .prize-stack{display:grid;gap:14px;border-top:0}
+.serial-section .prize-detail{position:relative;overflow:hidden;border:0;border-top:1px solid rgba(255,255,255,.21);border-bottom:1px solid rgba(255,255,255,.13);background:linear-gradient(105deg,rgba(99,218,206,.045),rgba(170,112,232,.065) 60%,rgba(255,255,255,.02))}
+.serial-section .prize-detail:before{content:"";position:absolute;right:-60px;top:-85px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(193,142,255,.17),transparent 68%);pointer-events:none}
+.serial-section .prize-detail summary{position:relative;display:block!important;min-height:0!important;padding:17px 15px 12px!important;cursor:pointer;list-style:none}
+.serial-section .prize-detail summary:after{content:none!important}
+.serial-section .prize-summary-grid{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"title title" "quick total"!important;gap:8px 12px!important;align-items:start!important}
+.serial-section .prize-titleline{grid-area:title!important;display:flex!important;align-items:baseline!important;gap:8px!important;min-width:0}
+.serial-section .prize-badge{flex:none;font:400 18px Georgia,serif!important;color:#f7f7ff!important;white-space:nowrap}
+.serial-section .prize-star{display:inline!important;flex:none;color:#9cf1e5!important;font-size:13px!important}
+.serial-section .prize-name{min-width:0;font-size:15px!important;font-weight:850!important;line-height:1.3!important;letter-spacing:-.04em!important;white-space:normal!important}
+.serial-section .prize-quick{grid-area:quick!important;display:block!important;padding:0!important;margin:0!important;color:#c3cbe0!important;font-size:12px!important;line-height:1.65!important}
+.serial-section .prize-quick span{display:block!important}
+.serial-section .prize-quick span+span:before{content:none!important}
+.serial-section .prize-total{grid-area:total!important;align-self:start!important;padding:3px 8px!important;border:1px solid rgba(218,192,255,.18);background:rgba(181,124,238,.055);color:#eadcff!important;font-size:12px!important;font-weight:900!important;line-height:1.4!important;white-space:nowrap!important;text-align:right!important}
+.serial-section .prize-toggle-row{display:flex!important;justify-content:flex-end!important;margin-top:6px!important;padding:0!important;border:0!important}
+.serial-section .prize-toggle{min-height:0!important;padding:0 0 2px!important;border:0!important;border-bottom:1px solid rgba(156,232,223,.44)!important;border-radius:0!important;background:transparent!important;color:#9ce8df!important;font-size:11px!important;font-weight:850!important}
+.serial-section .prize-toggle i{margin-left:5px}
+.serial-section .prize-body{position:relative;padding:13px 15px 15px!important;border-top:1px solid rgba(255,255,255,.08);color:#c4cce0!important;font-size:12px!important;line-height:1.8!important}
+.serial-section .serial-all-benefit{margin-top:14px;padding:13px 15px;border-top:1px solid rgba(156,232,223,.2);border-bottom:1px solid rgba(201,167,255,.16);background:linear-gradient(90deg,rgba(145,232,226,.045),rgba(201,167,255,.04));display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline}
+.serial-section .serial-all-benefit strong{font:400 14px Georgia,serif;color:#9ce8df;white-space:nowrap}.serial-section .serial-all-benefit span{font-size:12px;font-weight:800}.serial-section .serial-all-benefit small{grid-column:1/-1;color:#929db7;font-size:9px;line-height:1.6}
+@media(max-width:560px){
+ .serial-section .prize-stack{gap:12px}
+ .serial-section .prize-detail summary{padding:15px 12px 11px!important}
+ .serial-section .prize-badge{font-size:17px!important}
+ .serial-section .prize-name{font-size:clamp(12.2px,3.5vw,14px)!important}
+ .serial-section .prize-quick{font-size:11px!important;line-height:1.62!important}
+ .serial-section .prize-total{font-size:10.5px!important;padding:3px 6px!important}
+ .serial-section .prize-toggle{font-size:10.5px!important}
+ .serial-section .prize-body{font-size:11px!important;padding:12px!important}
+}
+
 </style>
 </head>
-<body>
+<body class="serial-layout-a">
 <div class="wrap">
 <header class="topnav"><a href="index.html">← Aurora HOME</a><span>UNOFFICIAL / ALBUM</span></header>
 <main>
@@ -333,6 +591,16 @@ body{font-size:14px}
   <div id="releaseCountdown" class="countdown-grid" aria-label="発売までのカウントダウン"></div>
 </section>
 
+<nav class="aurora-tabs-wrap reveal" aria-label="Aurora contents">
+  <div class="aurora-tabs" id="auroraTabs">
+    <span class="tab-glow" aria-hidden="true"></span>
+    <button type="button" class="aurora-tab is-active" data-aurora-tab="album" aria-selected="true">ALBUM</button>
+    <button type="button" class="aurora-tab" data-aurora-tab="campaign" aria-selected="false">CAMPAIGN</button>
+    <button type="button" class="aurora-tab" data-aurora-tab="serial" aria-selected="false">SERIAL</button>
+  </div>
+</nav>
+
+<div class="aurora-tab-panel is-active" data-aurora-panel="album">
 <section class="editions-section reveal">
   <div class="editions-heading"><div><h2>ALBUM EDITIONS</h2><p class="jp">全6形態</p></div><button class="track-mini" id="trackBtn" type="button"><span>TRACK LIST</span><i class="disc-mark" aria-hidden="true"></i></button></div>
   <div id="editionsList" class="edition-grid"></div>
@@ -351,7 +619,19 @@ body{font-size:14px}
     </button>
   </div>
 </section>
+</div>
 
+<div class="aurora-tab-panel" data-aurora-panel="campaign">
+<section class="clean-section reveal">
+  <div class="clean-head"><h2>DOWNLOAD CAMPAIGN</h2><p>デジタルキャンペーン</p></div>
+  <div class="pending-only">随時追加予定</div>
+</section>
+<section class="clean-section reveal">
+  <div class="clean-head"><h2>STREAMING &amp; DOWNLOAD</h2><p>配信・ダウンロード</p></div>
+  <div class="pending-only">随時追加予定</div>
+</section>
+</div>
+<div class="aurora-tab-panel" data-aurora-panel="serial">
 <section class="clean-section serial-section reveal">
   <div class="clean-head"><h2>SERIAL CAMPAIGN</h2><p>シリアル特典</p></div>
   <p class="serial-rule">シリアルコード1つで、S・A・B・C・D・E賞のいずれか1口に応募できます。オリジナル動画コメントは応募者全員特典です。</p>
@@ -368,16 +648,8 @@ body{font-size:14px}
   <div id="serialWarning" class="serial-warning">応募口数が予定シリアル数を超えています。予約枚数か各応募期間の管理内容を確認してください。</div>
   <div class="serial-note">※形態一覧で入力した予約枚数から、シリアル封入対象商品の予定枚数を自動計算<br>※BMSG MUSIC SHOP限定盤（2DVD / 2Blu-ray）はシリアル封入対象外</div>
 </section>
+</div>
 
-<section class="clean-section reveal">
-  <div class="clean-head"><h2>DOWNLOAD CAMPAIGN</h2><p>デジタルキャンペーン</p></div>
-  <div class="pending-only">随時追加予定</div>
-</section>
-
-<section class="clean-section reveal">
-  <div class="clean-head"><h2>STREAMING &amp; DOWNLOAD</h2><p>配信・ダウンロード</p></div>
-  <div class="pending-only">随時追加予定</div>
-</section>
 </main>
 <footer class="footer">UNOFFICIAL FAN SITE<br>本サイトは非公式ファンサイトです</footer>
 </div>
@@ -515,13 +787,12 @@ function serialEligible(i){return [0,1,2,5].includes(i)}
 function cleanNumber(v){const n=parseInt(String(v).replace(/[^0-9]/g,""),10);return Number.isFinite(n)?Math.max(0,n):0}
 function prizeSummary(p){
  const map={
-  S:`<span>★ RUI・TAIKI・ADAM：250名</span><span>★ KANON・GOICHI：250名</span>`,
-  A:`<span>札幌・東京・名古屋・大阪・福岡</span><span>（2部制）</span>`,
-  B:`<span>札幌・東京・名古屋・大阪・福岡</span><span>（2部制）</span>`,
+  S:`<span>RUI・TAIKI・ADAM：250名</span><span>KANON・GOICHI：250名</span>`,
+  A:`<span>札幌・東京・名古屋・大阪・福岡（2部制）</span>`,
+  B:`<span>札幌・東京・名古屋・大阪・福岡（2部制）</span>`,
   C:`<span>全13公演・各公演100名予定</span>`,
   D:`<span>全14公演・各公演50名予定</span>`,
-  E:`<span>直筆サイン入り</span>`,
-  ALL:`<span>オリジナル動画コメント</span>`
+  E:`<span>50名</span>`
  };
  return map[p.key]||"";
 }
@@ -603,7 +874,9 @@ function render(){
  }).join("");
  $("#trackModalList").innerHTML=DATA.tracks.map(t=>`<li>${safe(t)}</li>`).join("");
  renderCompare();
- $("#prizeList").innerHTML=DATA.prizes.map(p=>`<details class="prize-detail"><summary><div class="prize-summary-grid"><div class="prize-titleline"><span class="prize-badge">${safe(p.key==="ALL"?"ALL":p.key+"賞")}</span><span class="prize-star" aria-hidden="true">★</span><span class="prize-name">${safe(p.name)}</span></div><div class="prize-quick">${prizeSummary(p)}</div><span class="prize-total">${safe(p.count)}</span></div><div class="prize-toggle-row"><span class="prize-toggle"><span class="when-closed">詳細を見る</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></div></summary><div class="prize-body"><strong>${safe(p.count)}</strong><br>${safe(p.body)}${p.points.length?`<ul>${p.points.map(x=>`<li>${safe(x)}</li>`).join("")}</ul>`:""}</div></details>`).join("");
+ const prizeRows=DATA.prizes.filter(p=>p.key!=="ALL");
+ const allBenefit=DATA.prizes.find(p=>p.key==="ALL");
+ $("#prizeList").innerHTML=prizeRows.map(p=>`<details class="prize-detail"><summary><div class="prize-summary-grid"><div class="prize-titleline"><span class="prize-badge">${safe(p.key+"賞")}</span><span class="prize-star" aria-hidden="true">★</span><span class="prize-name">${safe(p.name)}</span></div><div class="prize-quick">${prizeSummary(p)}</div><span class="prize-total">${safe(p.count)}</span></div><div class="prize-toggle-row"><span class="prize-toggle"><span class="when-closed">詳細を見る</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></div></summary><div class="prize-body"><strong>${safe(p.count)}</strong><br>${safe(p.body)}${p.points.length?`<ul>${p.points.map(x=>`<li>${safe(x)}</li>`).join("")}</ul>`:""}</div></details>`).join("")+(allBenefit?`<div class="serial-all-benefit"><strong>応募者全員</strong><span>${safe(allBenefit.name)}</span><small>${safe(allBenefit.points.join(" / "))}</small></div>`:"");
  $("#roundList").innerHTML=DATA.rounds.map((r,i)=>{const done=!!state.roundDone[i];return `<div class="round-card ${done?"is-done":""}"><div class="round-top"><strong>${safe(r.name)}</strong></div><div class="round-date">${safe(r.period)}</div><div class="round-result">${safe(r.result)}</div><div class="round-actions"><button type="button" class="round-manage" data-round-manage="${i}"><span>応募口数を管理</span><small>賞・会場 / ユニット別</small></button><button type="button" class="round-done ${done?"active":""}" data-round-done="${i}" aria-pressed="${done}">${done?"申し込み完了 ✓":"申し込み完了を記録"}</button></div></div>`}).join("");
  document.querySelectorAll("[data-reserve-input]").forEach(input=>{
    const i=input.dataset.reserveInput,minus=document.querySelector(`[data-reserve-minus="${i}"]`),plus=document.querySelector(`[data-reserve-plus="${i}"]`);
@@ -621,6 +894,22 @@ $("#productImageModal").addEventListener("click",e=>{if(e.target===$("#productIm
 $("#trackBtn").addEventListener("click",()=>$("#trackModal").showModal());$("#closeTrackModal").addEventListener("click",()=>$("#trackModal").close());$("#trackModal").addEventListener("click",e=>{if(e.target===$("#trackModal"))$("#trackModal").close()});
 $("#closeRoundManager").addEventListener("click",()=>$("#roundManagerModal").close());$("#roundManagerModal").addEventListener("click",e=>{if(e.target===$("#roundManagerModal"))$("#roundManagerModal").close()});
 $("#closeModal").addEventListener("click",()=>$("#compareModal").close());
+const auroraTabs=$("#auroraTabs");
+if(auroraTabs){
+ const tabButtons=[...auroraTabs.querySelectorAll("[data-aurora-tab]")];
+ const tabPanels=[...document.querySelectorAll("[data-aurora-panel]")];
+ let tabTimer=0;
+ tabButtons.forEach((button,index)=>button.addEventListener("click",()=>{
+  const target=button.dataset.auroraTab;
+  tabButtons.forEach(b=>{const active=b===button;b.classList.toggle("is-active",active);b.setAttribute("aria-selected",active?"true":"false")});
+  tabPanels.forEach(panel=>panel.classList.toggle("is-active",panel.dataset.auroraPanel===target));
+  auroraTabs.style.setProperty("--tab-x",(index*100)+"%");
+  auroraTabs.classList.remove("is-moving");
+  void auroraTabs.offsetWidth;
+  auroraTabs.classList.add("is-moving");
+  clearTimeout(tabTimer);tabTimer=setTimeout(()=>auroraTabs.classList.remove("is-moving"),620);
+ });
+}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("is-visible")}),{threshold:.08});document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 render();countdown();setInterval(countdown,1000);
 </script>
