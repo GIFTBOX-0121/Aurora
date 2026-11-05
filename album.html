@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -267,6 +268,8 @@ body{font-size:14px}
 .edition-tile-type{min-height:46px}
 .edition-tile-price{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:12px;font-weight:850;white-space:nowrap;letter-spacing:-.045em}
 .edition-info-row{align-items:start}
+/* 展開図：6形態すべて、1つ目の形態タグと上端を揃える */
+.contents-thumb{align-self:start;margin-top:28px}
 .edition-info-copy{display:flex;min-width:0;min-height:108px;flex-direction:column}
 .edition-info-copy .edition-tile-price{margin-top:auto;padding-top:5px}
 .edition-reserve{margin-top:7px}
@@ -305,7 +308,7 @@ body{font-size:14px}
  .album-hero-copy{padding:14px 0 12px}.album-hero-copy:before{width:78%;margin-bottom:11px}.album-hero-copy:after{width:94%;margin-top:11px}
  .album-hero-art{padding:0!important;margin-right:0!important}.album-hero-art:before{inset:-5%!important}.album-hero-art img{height:55vw;min-height:202px;max-height:305px}
  .editions-heading .jp{font-size:13px}
- .edition-tile{padding:9px 6px 11px}.edition-tile h3{font-size:11.5px}.edition-tile-status{font-size:7.3px}.edition-tile-type{min-height:42px}.format-tag{font-size:7.2px}.edition-tile-price{font-size:10.4px;letter-spacing:-.06em}.edition-info-copy{min-height:100px}.reserve-label{font-size:9px}
+ .edition-tile{padding:9px 6px 11px}.edition-tile h3{font-size:11.5px}.edition-tile-status{font-size:7.3px}.edition-tile-type{min-height:42px}.format-tag{font-size:7.2px}.edition-tile-price{font-size:10.4px;letter-spacing:-.06em}.contents-thumb{margin-top:25px}.edition-info-copy{min-height:100px}.reserve-label{font-size:9px}
  .serial-section .clean-head h2{font-size:18px}.serial-section .clean-head p{font-size:13px!important}.serial-section .serial-rule{font-size:11.5px}
  .prize-summary-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,1.22fr) auto;column-gap:7px;row-gap:3px}.prize-badge{font-size:14px!important}.prize-star{font-size:9px!important}.prize-name{font-size:11.2px!important}.prize-quick{font-size:9.5px!important;line-height:1.5!important}.prize-total{font-size:9.5px!important}.prize-toggle-row{margin-top:7px}.prize-toggle{font-size:9px!important}.prize-body{font-size:10.5px!important}
  .round-card{padding:15px 13px}.round-top strong{font-size:15px}.round-date{font-size:13px}.round-result{font-size:10px}.round-manage,.round-done{min-height:40px!important;font-size:9.5px!important}.round-manage small{font-size:7.5px}
@@ -569,6 +572,44 @@ body{font-size:14px}
  .serial-section .prize-body{font-size:11px!important;padding:12px!important}
 }
 
+
+/* SERIAL shortcut: SERIAL CAMPAIGN → 応募期間・シリアル管理 */
+.serial-campaign-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:"title shortcut" "sub shortcut";
+  column-gap:10px;
+  align-items:center;
+}
+.serial-campaign-head h2{grid-area:title;min-width:0}
+.serial-campaign-head p{grid-area:sub}
+.serial-jump-btn{
+  grid-area:shortcut;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:6px 9px;
+  border:1px solid rgba(225,231,255,.24);
+  background:linear-gradient(115deg,rgba(111,226,232,.07),rgba(255,255,255,.035) 45%,rgba(164,104,255,.12));
+  color:#eef2ff;
+  font-size:8px;
+  font-weight:800;
+  line-height:1.35;
+  letter-spacing:.04em;
+  text-align:center;
+  text-decoration:none;
+  white-space:nowrap;
+  box-shadow:inset 0 0 18px rgba(168,118,255,.04);
+  touch-action:manipulation;
+}
+.serial-jump-btn:after{content:" ↓";color:#9ce8df}
+.serial-jump-btn:active{background:linear-gradient(115deg,rgba(111,226,232,.12),rgba(164,104,255,.18))}
+#serialRounds{scroll-margin-top:18px}
+@media(max-width:560px){
+  .serial-campaign-head{column-gap:7px}
+  .serial-jump-btn{min-height:32px;padding:5px 7px;font-size:7.2px}
+}
 </style>
 </head>
 <body class="serial-layout-a">
@@ -633,11 +674,11 @@ body{font-size:14px}
 </div>
 <div class="aurora-tab-panel" data-aurora-panel="serial">
 <section class="clean-section serial-section reveal">
-  <div class="clean-head"><h2>SERIAL CAMPAIGN</h2><p>シリアル特典</p></div>
+  <div class="clean-head serial-campaign-head"><h2>SERIAL CAMPAIGN</h2><p>シリアル特典</p><a class="serial-jump-btn" href="#serialRounds">応募期間・シリアル管理へ</a></div>
   <p class="serial-rule">シリアルコード1つで、S・A・B・C・D・E賞のいずれか1口に応募できます。オリジナル動画コメントは応募者全員特典です。</p>
   <div id="prizeList" class="prize-stack"></div>
 
-  <div class="clean-head" style="margin-top:28px"><h2>応募期間</h2><p>全4回</p></div>
+  <div id="serialRounds" class="clean-head" style="margin-top:28px"><h2>応募期間</h2><p>全4回</p></div>
   <div id="roundList" class="round-grid"></div>
 
   <div class="serial-overview" aria-live="polite">
@@ -912,6 +953,13 @@ if(auroraTabs){
 }
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("is-visible")}),{threshold:.08});document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 render();countdown();setInterval(countdown,1000);
+</script>
+<script>
+(()=>{
+ const jump=document.querySelector('.serial-jump-btn');
+ const target=document.getElementById('serialRounds');
+ if(jump&&target){jump.addEventListener('click',e=>{e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});});}
+})();
 </script>
 </body>
 </html>
