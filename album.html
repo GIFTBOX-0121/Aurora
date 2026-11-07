@@ -917,7 +917,7 @@ body{font-size:14px}
   min-height:42px!important;
   padding:10px 5px!important;
   border-radius:5px!important;
-  font-size:9px!important;
+  font-size:11px!important;
   line-height:1.1!important;
   letter-spacing:.035em!important;
   background:rgba(7,12,30,.56)!important;
@@ -960,8 +960,8 @@ body{font-size:14px}
   .release-filter-btn{
     min-height:40px!important;
     padding:9px 2px!important;
-    font-size:7px!important;
-    letter-spacing:0!important;
+    font-size:9px!important;
+    letter-spacing:-.015em!important;
   }
 }
 
@@ -981,27 +981,86 @@ body{font-size:14px}
 /* 選択中は白い内枠で状態だけ分かるようにする（色は変えない） */
 .release-filter-btn.is-active{box-shadow:inset 0 0 0 1px rgba(255,255,255,.68),0 0 12px rgba(255,255,255,.08)!important}
 
+/* トップ画像下：TOURと合わせた5つ星の飾り線 */
+.hero-five-stars{
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:-7px 0 0;
+  color:#efffff;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-shadow:0 0 8px rgba(145,232,226,.82),0 0 15px rgba(201,167,255,.62);
+}
+.hero-five-stars:before,.hero-five-stars:after{
+  content:"";
+  width:min(22vw,120px);
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(145,232,226,.58),rgba(201,167,255,.52));
+}
+.hero-five-stars:after{transform:scaleX(-1)}
+@media(max-width:560px){
+  .hero-five-stars{gap:8px;margin:-5px 0 0;font-size:9px}
+  .hero-five-stars:before,.hero-five-stars:after{width:15vw}
+}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
-<style>
 
-/* Aurora title design 07 */
-.hero-title .aurora,
-.album-title .aurora,
-.aurora-title,
-h1.aurora {
-  font-family: "Cormorant Garamond", Georgia, serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.035em !important;
+<style id="aurora-title-design-07-final">
+/* 07 — selected title design */
+.album-hero h1{
+  font-family:"Cormorant Garamond",Georgia,serif !important;
+  font-style:italic !important;
+  font-weight:400 !important;
+  font-size:clamp(53px,10.2vw,90px) !important;
+  line-height:.84 !important;
+  letter-spacing:-.035em !important;
+  color:#f7f7ff !important;
   text-shadow:
     0 0 9px rgba(145,232,226,.95),
     0 0 26px rgba(201,167,255,.42) !important;
 }
 
+/* TOURと同じ5つのシャンパンゴールド星 */
+.album-hero .hero-five-stars{
+  grid-column:1 / -1 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:clamp(13px,3.6vw,27px) !important;
+  width:100% !important;
+  height:38px !important;
+  margin:1px 0 3px !important;
+  font-size:0 !important;
+}
+.album-hero .hero-five-stars:before,
+.album-hero .hero-five-stars:after{content:none !important;display:none !important}
+.album-hero .hero-five-stars svg{
+  display:block !important;
+  width:25px !important;
+  height:25px !important;
+  overflow:visible !important;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.45)) !important;
+}
+.album-hero .hero-five-stars .star-core{
+  fill:url(#auroraChampagneStar) !important;
+}
+@media(max-width:560px){
+  .album-hero h1{font-size:13vw !important}
+  .album-hero .hero-five-stars{
+    gap:clamp(13px,3.6vw,27px) !important;
+    height:38px !important;
+    margin:1px 0 3px !important;
+  }
+  .album-hero .hero-five-stars svg{width:25px !important;height:25px !important}
+}
 </style>
+
 </head>
 <body class="serial-layout-a">
 <div class="wrap">
@@ -1015,6 +1074,13 @@ h1.aurora {
   <div class="album-hero-art">
     <img src="https://starglow-sp.com/Aurora/image/goods/thumbnail02.jpg" alt="STARGLOW Aurora official visual">
   </div>
+  <div class="hero-five-stars" aria-hidden="true">
+  <svg viewBox="0 0 48 48"><defs><linearGradient id="auroraChampagneStar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff7e9"/><stop offset=".55" stop-color="#e7d5bd"/><stop offset="1" stop-color="#b9a58f"/></linearGradient></defs><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+</div>
 </section>
 
 <section class="release-center reveal">
