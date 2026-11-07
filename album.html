@@ -1103,6 +1103,32 @@ body{font-size:14px}
 }
 </style>
 
+
+<style id="album-hero-top-balance-fix-v2">
+/* 背景Auroraを星より上へ完全に逃がす */
+.album-hero:before{
+  left:-1.2vw !important;
+  bottom:94px !important;
+  font-size:clamp(72px,17.5vw,146px) !important;
+}
+
+/* 左タイトルを少し右へ寄せて、左端〜トップ画の間の中央寄りへ */
+.album-hero-copy{
+  transform:translateX(clamp(10px,2.2vw,20px)) !important;
+}
+
+@media(max-width:560px){
+  .album-hero:before{
+    left:-1vw !important;
+    bottom:88px !important;
+    font-size:clamp(68px,16.5vw,96px) !important;
+  }
+  .album-hero-copy{
+    transform:translateX(clamp(8px,2vw,14px)) !important;
+  }
+}
+</style>
+
 </head>
 <body class="serial-layout-a">
 <div class="wrap">
