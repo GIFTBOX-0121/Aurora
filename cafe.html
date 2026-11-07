@@ -10,9 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 :root{
   --ink:#f7f7ff;
@@ -22,24 +20,16 @@
   --bg:#050819;
   --yellow:#ffe100;
   --red:#e60012;
-  --coffee:#211c1a;
+  --coffee:#211c1a
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif
 }
 
 body:before{
@@ -48,49 +38,31 @@ body:before{
   inset:-20%;
   z-index:-2;
   background:
-    radial-gradient(
-      ellipse at 18% 12%,
-      rgba(74,194,207,.25),
-      transparent 34%
-    ),
-    radial-gradient(
-      ellipse at 76% 18%,
-      rgba(143,85,209,.30),
-      transparent 38%
-    ),
-    radial-gradient(
-      ellipse at 55% 78%,
-      rgba(63,108,183,.20),
-      transparent 42%
-    );
-  filter:blur(18px);
+    radial-gradient(ellipse at 18% 12%,rgba(74,194,207,.25),transparent 34%),
+    radial-gradient(ellipse at 76% 18%,rgba(143,85,209,.30),transparent 38%),
+    radial-gradient(ellipse at 55% 78%,rgba(63,108,183,.20),transparent 42%);
+  filter:blur(18px)
 }
 
-a{
-  -webkit-tap-highlight-color:transparent;
-}
+a{-webkit-tap-highlight-color:transparent}
 
 .wrap{
   width:min(calc(100% - 34px),820px);
-  margin:0 auto;
+  margin:0 auto
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .cafe-hero{
   position:relative;
   display:grid;
-  grid-template-columns:
-    minmax(0,.78fr)
-    minmax(0,1.22fr);
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
   align-items:center;
   gap:clamp(12px,3vw,34px);
   min-height:330px;
   padding:34px 0 30px;
-  isolation:isolate;
+  isolation:isolate
 }
 
 .cafe-hero-copy{
@@ -98,7 +70,7 @@ a{
   z-index:2;
   width:100%;
   text-align:center;
-  padding:20px 0 18px;
+  padding:20px 0 18px
 }
 
 .cafe-hero-kicker{
@@ -107,15 +79,16 @@ a{
   font-weight:800;
   letter-spacing:.16em;
   color:#c8cde5;
-  line-height:1.55;
+  line-height:1.55
+}
+
+.cafe-hero-kicker span{
+  display:block
 }
 
 .cafe-hero h1{
   margin:0;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family:"Cormorant Garamond",Georgia,serif;
   font-style:italic;
   font-size:clamp(53px,10.2vw,90px);
   font-weight:400;
@@ -124,7 +97,7 @@ a{
   color:#f7f7ff;
   text-shadow:
     0 0 9px rgba(145,232,226,.95),
-    0 0 26px rgba(201,167,255,.42);
+    0 0 26px rgba(201,167,255,.42)
 }
 
 .cafe-hero-sub{
@@ -132,13 +105,13 @@ a{
   font-size:8px;
   font-weight:800;
   letter-spacing:.17em;
-  color:#dadbea;
+  color:#dadbea
 }
 
 .cafe-hero-art{
   position:relative;
   min-width:0;
-  isolation:isolate;
+  isolation:isolate
 }
 
 .cafe-hero-art:before{
@@ -147,17 +120,9 @@ a{
   inset:-7% -5%;
   z-index:-1;
   background:
-    radial-gradient(
-      ellipse at 48% 48%,
-      rgba(116,232,225,.13),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 76% 22%,
-      rgba(201,167,255,.14),
-      transparent 50%
-    );
-  filter:blur(22px);
+    radial-gradient(ellipse at 48% 48%,rgba(116,232,225,.13),transparent 55%),
+    radial-gradient(ellipse at 76% 22%,rgba(201,167,255,.14),transparent 50%);
+  filter:blur(22px)
 }
 
 .cafe-hero-art img{
@@ -166,24 +131,21 @@ a{
   aspect-ratio:600/424;
   object-fit:cover;
   border:1px solid rgba(228,235,255,.14);
-  clip-path:
-    polygon(
-      7% 0,
-      100% 0,
-      100% 90%,
-      91% 100%,
-      0 100%,
-      0 10%
-    );
+  clip-path:polygon(
+    7% 0,
+    100% 0,
+    100% 90%,
+    91% 100%,
+    0 100%,
+    0 10%
+  );
   box-shadow:
     0 26px 72px rgba(0,0,0,.34),
-    0 0 34px rgba(116,226,220,.08);
+    0 0 34px rgba(116,226,220,.08)
 }
 
 
-/* =========================
-   STAR
-========================= */
+/* STAR */
 
 .star-divider{
   display:flex;
@@ -191,7 +153,7 @@ a{
   justify-content:center;
   gap:clamp(13px,3.6vw,27px);
   height:38px;
-  margin:0 0 10px;
+  margin:0 0 10px
 }
 
 .star-divider svg{
@@ -199,20 +161,15 @@ a{
   width:25px;
   height:25px;
   overflow:visible;
-  filter:
-    drop-shadow(
-      0 2px 3px rgba(0,0,0,.45)
-    );
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))
 }
 
 .star-divider .star-core{
-  fill:url(#champagneStar);
+  fill:url(#champagneStar)
 }
 
 
-/* =========================
-   TOWER OFFICIAL
-========================= */
+/* TOWER OFFICIAL */
 
 .official-main{
   display:flex;
@@ -225,8 +182,7 @@ a{
   text-decoration:none;
   background:var(--yellow);
   border-left:6px solid var(--red);
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.17);
+  box-shadow:0 12px 28px rgba(0,0,0,.17)
 }
 
 .official-main small{
@@ -234,23 +190,21 @@ a{
   margin-bottom:2px;
   font-size:8px;
   font-weight:950;
-  letter-spacing:.15em;
+  letter-spacing:.15em
 }
 
 .official-main strong{
   display:block;
-  font-size:14px;
+  font-size:14px
 }
 
 .official-main span{
   font-size:18px;
-  font-weight:950;
+  font-weight:950
 }
 
 
-/* =========================
-   TABS
-========================= */
+/* TABS */
 
 .tabs-shell{
   position:sticky;
@@ -263,13 +217,13 @@ a{
       rgba(5,8,25,.97),
       rgba(5,8,25,.88)
     );
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px)
 }
 
 .tabs{
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  gap:5px;
+  gap:5px
 }
 
 .tab-btn{
@@ -281,7 +235,7 @@ a{
   font-size:8px;
   font-weight:950;
   letter-spacing:.05em;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .tab-btn[aria-selected="true"]{
@@ -293,45 +247,32 @@ a{
     );
   border-color:#ffe100;
   color:#17120e;
-  box-shadow:
-    0 0 18px rgba(255,225,0,.13);
+  box-shadow:0 0 18px rgba(255,225,0,.13)
 }
 
 
-/* =========================
-   CAFE BODY
-========================= */
+/* BODY */
 
 .cafe-zone{
   position:relative;
   color:var(--coffee);
-  padding:18px 0 58px;
+  padding:18px 0 58px
 }
 
 .cafe-zone:before{
   content:"";
   position:absolute;
-  inset:
-    0
-    calc((100vw - 100%)/-2);
+  inset:0 calc((100vw - 100%)/-2);
   z-index:-1;
   background:
-    radial-gradient(
-      circle at 14% 14%,
-      rgba(173,230,225,.23),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 87% 16%,
-      rgba(201,167,255,.20),
-      transparent 30%
-    ),
+    radial-gradient(circle at 14% 14%,rgba(173,230,225,.23),transparent 25%),
+    radial-gradient(circle at 87% 16%,rgba(201,167,255,.20),transparent 30%),
     linear-gradient(
       180deg,
       #c9b9aa 0%,
       #bca997 33%,
       #b8bac4 100%
-    );
+    )
 }
 
 .panel{
@@ -339,72 +280,64 @@ a{
   border-top:6px solid var(--red);
   border-bottom:6px solid var(--yellow);
   padding:22px 18px 24px;
-  box-shadow:
-    0 16px 44px rgba(46,33,25,.12);
+  box-shadow:0 16px 44px rgba(46,33,25,.12)
 }
 
 .tab-panel[hidden]{
-  display:none!important;
+  display:none!important
 }
 
 .section-kicker{
   font-size:8px;
   font-weight:950;
   letter-spacing:.18em;
-  color:#a70d1f;
+  color:#a70d1f
 }
 
 .section-title{
   margin:4px 0 6px;
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family:Georgia,"Times New Roman",serif;
   font-size:27px;
   font-weight:400;
-  color:#251d24;
+  color:#251d24
 }
 
 .section-desc{
   margin:0 0 17px;
   font-size:10px;
   line-height:1.75;
-  color:#665b57;
+  color:#665b57
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 .store-list,
 .stack{
   display:grid;
-  gap:12px;
+  gap:12px
 }
 
 .card{
   position:relative;
   padding:18px 16px;
-  background:
-    rgba(255,250,245,.64);
-  border:
-    1px solid rgba(35,26,39,.14);
-  overflow:hidden;
+  background:rgba(255,250,245,.64);
+  border:1px solid rgba(35,26,39,.14);
+  overflow:hidden
 }
 
 .card-head{
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  gap:10px;
+  gap:10px
 }
 
 .city{
   font-size:9px;
   font-weight:950;
   letter-spacing:.18em;
-  color:#aa1021;
+  color:#aa1021
 }
 
 .store-name{
@@ -414,24 +347,24 @@ a{
   text-decoration:none;
   font-size:16px;
   font-weight:850;
-  line-height:1.42;
+  line-height:1.42
 }
 
 .store-name:hover{
-  text-decoration:underline;
+  text-decoration:underline
 }
 
 .period{
   font-size:10px;
   line-height:1.65;
-  color:#5f5551;
+  color:#5f5551
 }
 
 .phase{
   display:block;
   margin-top:2px;
   font-size:9px;
-  opacity:.82;
+  opacity:.82
 }
 
 .badges{
@@ -439,7 +372,7 @@ a{
   display:flex;
   flex-direction:column;
   align-items:flex-end;
-  gap:5px;
+  gap:5px
 }
 
 .badge{
@@ -450,29 +383,27 @@ a{
   color:#ffe86d;
   font-size:7.5px;
   font-weight:950;
-  letter-spacing:.10em;
+  letter-spacing:.10em
 }
 
 .badge.takeout{
   background:#b9e0dc;
-  color:#211c1a;
+  color:#211c1a
 }
 
 .badge.only{
   background:#ffe86d;
-  color:#211c1a;
+  color:#211c1a
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .actions{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-top:13px;
+  margin-top:13px
 }
 
 .btn{
@@ -483,59 +414,60 @@ a{
   padding:7px 10px;
   color:#211c1a;
   text-decoration:none;
-  border:
-    1px solid rgba(33,28,26,.22);
-  background:
-    rgba(255,255,255,.16);
+  border:1px solid rgba(33,28,26,.22);
+  background:rgba(255,255,255,.16);
   font-size:8.5px;
-  font-weight:900;
+  font-weight:900
 }
 
 .btn.x{
   background:#211c1a;
-  color:#fff;
+  color:#fff
 }
 
 .btn.reserve{
-  background:#f0e7df;
+  background:#f0e7df
 }
 
 .btn.resale{
   background:#fff6bf;
-  border-color:#b59b2a;
+  border-color:#b59b2a
 }
 
 .btn.tower{
   background:#ffe100;
   border-color:#d9bd00;
-  color:#191500;
+  color:#191500
 }
 
 
-/* =========================
-   MEDIA
-========================= */
+/* PHOTOS */
 
 .media-card{
   display:grid;
-  grid-template-columns:
-    minmax(115px,.75fr)
-    minmax(0,1.25fr);
+  grid-template-columns:minmax(115px,.75fr) minmax(0,1.25fr);
   gap:14px;
   align-items:center;
   margin-bottom:14px;
   padding:11px;
-  background:
-    rgba(255,250,245,.58);
-  border:
-    1px solid rgba(35,26,39,.14);
+  background:rgba(255,250,245,.58);
+  border:1px solid rgba(35,26,39,.14)
 }
 
 .media-card img{
   display:block;
   width:100%;
   aspect-ratio:600/424;
-  object-fit:cover;
+  object-fit:cover
+}
+
+.official-photo{
+  display:block;
+  width:100%;
+  margin:0 0 12px;
+  border:1px solid rgba(35,26,39,.14);
+  background:#eee;
+  object-fit:cover
 }
 
 .media-copy strong{
@@ -543,23 +475,21 @@ a{
   margin-bottom:5px;
   font-family:Georgia,serif;
   font-size:18px;
-  font-weight:400;
+  font-weight:400
 }
 
 .media-copy p{
   margin:0 0 9px;
   font-size:9px;
   line-height:1.65;
-  color:#695e59;
+  color:#695e59
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 
 .menu-group{
-  margin-top:12px;
+  margin-top:12px
 }
 
 .menu-group-title{
@@ -569,64 +499,60 @@ a{
   gap:8px;
   margin:0 0 7px;
   padding-bottom:7px;
-  border-bottom:
-    1px solid rgba(33,28,26,.14);
+  border-bottom:1px solid rgba(33,28,26,.14)
 }
 
 .menu-group-title b{
   font-family:Georgia,serif;
   font-size:19px;
-  font-weight:400;
+  font-weight:400
 }
 
 .menu-group-title span{
   font-size:9px;
   font-weight:900;
-  color:#7d655a;
+  color:#7d655a
 }
 
 .menu-item{
   padding:11px 0;
-  border-bottom:
-    1px solid rgba(33,28,26,.09);
+  border-bottom:1px solid rgba(33,28,26,.09)
 }
 
 .producer{
   font-size:8px;
   font-weight:950;
   letter-spacing:.11em;
-  color:#a70d1f;
+  color:#a70d1f
 }
 
 .menu-item h3{
   margin:3px 0 5px;
   font-size:13px;
-  line-height:1.45;
+  line-height:1.45
 }
 
 .menu-item p{
   margin:0;
   font-size:9px;
   line-height:1.65;
-  color:#71645e;
+  color:#71645e
 }
 
 
-/* =========================
-   FEATURE
-========================= */
+/* FEATURE */
 
 .feature{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:12px
 }
 
 .feature .card h3{
   margin:4px 0 6px;
   font-family:Georgia,serif;
   font-size:20px;
-  font-weight:400;
+  font-weight:400
 }
 
 .price{
@@ -634,24 +560,22 @@ a{
   margin-bottom:8px;
   font-size:10px;
   font-weight:950;
-  color:#7a2b2d;
+  color:#7a2b2d
 }
 
 .notice{
   margin-top:10px;
   padding:10px 11px;
-  background:
-    rgba(255,225,0,.19);
-  border-left:
-    3px solid var(--red);
+  background:rgba(255,225,0,.19);
+  border-left:3px solid var(--red);
   font-size:9px;
-  line-height:1.7;
+  line-height:1.7
 }
 
 .small{
   font-size:9px;
   line-height:1.72;
-  color:#695e59;
+  color:#695e59
 }
 
 .photo-link{
@@ -663,96 +587,92 @@ a{
   text-decoration:none;
   text-align:center;
   font-size:9px;
-  font-weight:900;
+  font-weight:900
 }
 
 .updated{
   margin-top:18px;
   font-size:8px;
   line-height:1.65;
-  color:#766a65;
+  color:#766a65
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:560px){
 
   .wrap{
-    width:min(calc(100% - 26px),820px);
+    width:min(calc(100% - 26px),820px)
   }
 
   .cafe-hero{
-    grid-template-columns:
-      minmax(0,.74fr)
-      minmax(0,1.26fr);
+    grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr);
     gap:12px;
     padding:25px 0 23px;
-    min-height:auto;
+    min-height:auto
   }
 
   .cafe-hero-copy{
-    padding:14px 0 12px;
+    padding:14px 0 12px
   }
 
   .cafe-hero-kicker{
     font-size:6.2px;
-    letter-spacing:.10em;
+    letter-spacing:.10em
   }
 
   .cafe-hero h1{
-    font-size:13vw;
+    font-size:13vw
   }
 
   .cafe-hero-sub{
     font-size:6.4px;
-    letter-spacing:.11em;
+    letter-spacing:.11em
   }
 
   .cafe-hero-art img{
-    min-height:155px;
+    min-height:155px
   }
 
   .star-divider{
     gap:16px;
-    height:34px;
+    height:34px
   }
 
   .tab-btn{
     font-size:7px;
-    padding:6px 1px;
+    padding:6px 1px
   }
 
   .panel{
-    padding:19px 13px 22px;
+    padding:19px 13px 22px
   }
 
   .section-title{
-    font-size:24px;
+    font-size:24px
   }
 
   .store-name{
-    font-size:14px;
+    font-size:14px
   }
 
   .btn{
     font-size:7.8px;
-    padding:7px 8px;
+    padding:7px 8px
   }
 
   .media-card{
     grid-template-columns:1fr;
-    gap:10px;
+    gap:10px
   }
 
   .media-card img{
-    max-height:210px;
+    max-height:210px
   }
 
   .feature{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr
   }
 }
 </style>
@@ -767,7 +687,9 @@ a{
     <div class="cafe-hero-copy">
 
       <div class="cafe-hero-kicker">
-        STARGLOW × TOWER RECORDS CAFE
+        <span>STARGLOW</span>
+        <span>×</span>
+        <span>TOWER RECORDSCAFE</span>
       </div>
 
       <h1>CAFE</h1>
@@ -782,8 +704,9 @@ a{
     <div class="cafe-hero-art">
 
       <img
-        src="https://collabo-cafe.com/wp-content/uploads/starglow-cafe-tower-records-cafe-omotesando-osaka-2026-eyecatch.jpg"
-        alt="STARGLOW × TOWER RECORDS CAFE キービジュアル"
+        src="https://api.microlink.io/?url=https%3A%2F%2Ftower.jp%2Farticle%2Fnews%2F2026%2F08%2F02%2Fc101&embed=image.url"
+        onerror="this.onerror=null;this.src='https://starglow-sp.com/Aurora/image/goods/thumbnail02.jpg'"
+        alt="STARGLOW 5人 キービジュアル"
       >
 
     </div>
@@ -791,87 +714,33 @@ a{
   </section>
 
 
-  <div
-    class="star-divider"
-    aria-hidden="true"
-  >
+  <div class="star-divider" aria-hidden="true">
 
     <svg viewBox="0 0 48 48">
-
       <defs>
-
-        <linearGradient
-          id="champagneStar"
-          x1="0"
-          y1="0"
-          x2="1"
-          y2="1"
-        >
-
-          <stop
-            offset="0"
-            stop-color="#fff7e9"
-          />
-
-          <stop
-            offset=".52"
-            stop-color="#e7d5bd"
-          />
-
-          <stop
-            offset="1"
-            stop-color="#b9a58f"
-          />
-
+        <linearGradient id="champagneStar" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff7e9"/>
+          <stop offset=".52" stop-color="#e7d5bd"/>
+          <stop offset="1" stop-color="#b9a58f"/>
         </linearGradient>
-
       </defs>
-
-      <path
-        class="star-core"
-        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
-      />
-
+      <path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/>
     </svg>
 
-
     <svg viewBox="0 0 48 48">
-
-      <path
-        class="star-core"
-        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
-      />
-
+      <path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/>
     </svg>
 
-
     <svg viewBox="0 0 48 48">
-
-      <path
-        class="star-core"
-        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
-      />
-
+      <path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/>
     </svg>
 
-
     <svg viewBox="0 0 48 48">
-
-      <path
-        class="star-core"
-        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
-      />
-
+      <path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/>
     </svg>
 
-
     <svg viewBox="0 0 48 48">
-
-      <path
-        class="star-core"
-        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
-      />
-
+      <path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/>
     </svg>
 
   </div>
@@ -885,20 +754,11 @@ a{
   >
 
     <div>
-
-      <small>
-        TOWER RECORDS OFFICIAL
-      </small>
-
-      <strong>
-        タワーレコードサイト
-      </strong>
-
+      <small>TOWER RECORDS OFFICIAL</small>
+      <strong>タワーレコードサイト</strong>
     </div>
 
-    <span>
-      ↗
-    </span>
+    <span>↗</span>
 
   </a>
 
@@ -973,9 +833,7 @@ a{
 <div class="panel">
 
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
 <section
   class="tab-panel"
@@ -1026,8 +884,7 @@ a{
   2026.11.12 — 12.06
 
   <span class="phase">
-    前期：11.12 — 11.24
-    /
+    前期：11.12 — 11.24 /
     後期：11.25 — 12.06
   </span>
 
@@ -1131,8 +988,7 @@ a{
   2026.11.18 — 11.29
 
   <span class="phase">
-    前期：11.18 — 11.23
-    /
+    前期：11.18 — 11.23 /
     後期：11.24 — 11.29
   </span>
 
@@ -1315,9 +1171,7 @@ a{
 </section>
 
 
-<!-- =========================
-     MENU
-========================= -->
+<!-- MENU -->
 
 <section
   class="tab-panel"
@@ -1336,8 +1190,7 @@ a{
 </h2>
 
 <p class="section-desc">
-  メンバー5人がプロデュースした
-  コラボメニュー。
+  メンバー5人がプロデュースしたコラボメニュー。
   全期間共通で提供。
 </p>
 
@@ -1345,8 +1198,8 @@ a{
 <div class="media-card">
 
 <img
-  src="https://collabo-cafe.com/wp-content/uploads/starglow-cafe-tower-records-cafe-omotesando-osaka-2026-eyecatch.jpg"
-  alt="STARGLOW × TOWER RECORDS CAFE official visual"
+  src="https://api.microlink.io/?url=https%3A%2F%2Fpic.x.com%2F0hAD88eezC&embed=image.url"
+  alt="TOWER RECORDS CAFE 公式メニュー画像"
 >
 
 <div class="media-copy">
@@ -1356,19 +1209,18 @@ a{
 </strong>
 
 <p>
-  タワーレコードカフェ公式投稿には、
+  タワーレコードカフェ公式の
   メニュー・スーベニア・
-  テイクアウト・特典の
-  公式画像が掲載されています。
+  テイクアウト・特典画像。
 </p>
 
 <a
   class="btn tower"
-  href="https://pic.x.com/0hAD88eezC"
+  href="https://tower.jp/article/news/2026/08/02/c101"
   target="_blank"
   rel="noopener noreferrer"
 >
-  公式メニュー画像を見る ↗
+  タワレコ公式詳細 ↗
 </a>
 
 </div>
@@ -1379,20 +1231,11 @@ a{
 <div class="card">
 
 
-<!-- FOOD -->
-
 <div class="menu-group">
 
 <div class="menu-group-title">
-
-<b>
-  FOOD
-</b>
-
-<span>
-  ALL ¥1,990
-</span>
-
+  <b>FOOD</b>
+  <span>ALL ¥1,990</span>
 </div>
 
 
@@ -1472,20 +1315,11 @@ a{
 </div>
 
 
-<!-- SWEETS -->
-
 <div class="menu-group">
 
 <div class="menu-group-title">
-
-<b>
-  SWEETS
-</b>
-
-<span>
-  ALL ¥1,790
-</span>
-
+  <b>SWEETS</b>
+  <span>ALL ¥1,790</span>
 </div>
 
 
@@ -1496,8 +1330,7 @@ a{
 </div>
 
 <h3>
-  筋トレマスターによる
-  チョコっとチートデイ
+  筋トレマスターによるチョコっとチートデイ
 </h3>
 
 <p>
@@ -1542,139 +1375,37 @@ a{
 </div>
 
 
-<!-- DRINK -->
-
 <div class="menu-group">
 
 <div class="menu-group-title">
-
-<b>
-  DRINK
-</b>
-
-<span>
-  ¥990 /
-  SOUVENIR ¥1,690
-</span>
-
+  <b>DRINK</b>
+  <span>¥990 / SOUVENIR ¥1,690</span>
 </div>
 
 
 <div class="menu-item">
-
-<div class="producer">
-  RUI PRODUCE
+<div class="producer">RUI PRODUCE</div>
+<h3>カフェラテ</h3>
 </div>
-
-<h3>
-  カフェラテ
-</h3>
-
-<p>
-  牛乳 /
-  コーヒーゼリー /
-  コーヒーベース /
-  ホイップクリーム /
-  ビスケット /
-  アラザン /
-  ミント /
-  モナカ
-</p>
-
-</div>
-
 
 <div class="menu-item">
-
-<div class="producer">
-  TAIKI PRODUCE
+<div class="producer">TAIKI PRODUCE</div>
+<h3>筋トレマスターによる3:00PM Chill Time baby</h3>
 </div>
-
-<h3>
-  筋トレマスターによる
-  3:00PM Chill Time baby
-</h3>
-
-<p>
-  低脂肪牛乳 /
-  濃縮紅茶 /
-  ミント /
-  ホイップクリーム /
-  モナカ
-</p>
-
-</div>
-
 
 <div class="menu-item">
-
-<div class="producer">
-  KANON PRODUCE
+<div class="producer">KANON PRODUCE</div>
+<h3>茶をしばきたい時に飲むほうじ茶ラテ</h3>
 </div>
-
-<h3>
-  茶をしばきたい時に飲む
-  ほうじ茶ラテ
-</h3>
-
-<p>
-  ほうじ茶ラテ /
-  ホイップクリーム /
-  ホワイトチョコレートコポー /
-  アラザン /
-  ミント /
-  モナカ
-</p>
-
-</div>
-
 
 <div class="menu-item">
-
-<div class="producer">
-  GOICHI PRODUCE
+<div class="producer">GOICHI PRODUCE</div>
+<h3>パリピラムネブリンブリンサマーナイトプールパーティー</h3>
 </div>
-
-<h3>
-  パリピラムネブリンブリン
-  サマーナイトプールパーティー
-</h3>
-
-<p>
-  瓶ラムネ /
-  ブルーゼリー /
-  さくらシロップ /
-  エディブルフラワー /
-  ミント /
-  ホイップクリーム /
-  モナカ
-</p>
-
-</div>
-
 
 <div class="menu-item">
-
-<div class="producer">
-  ADAM PRODUCE
-</div>
-
-<h3>
-  まるでハワイ、
-  時差ボケトロピカルティー
-</h3>
-
-<p>
-  紅茶 /
-  マンゴージュース /
-  はちみつ /
-  マンゴー /
-  パイン /
-  ナタデココ /
-  ホイップクリーム /
-  モナカ
-</p>
-
+<div class="producer">ADAM PRODUCE</div>
+<h3>まるでハワイ、時差ボケトロピカルティー</h3>
 </div>
 
 </div>
@@ -1684,23 +1415,21 @@ a{
 
 <div class="notice">
 
-  店内利用は、
-  1人につき
+店内利用は、
+1人につき
 
-  「フード or スイーツ1品
-  ＋
-  ドリンク1品以上」
+「フード or スイーツ1品
+＋
+ドリンク1品以上」
 
-  の注文が必要です。
+の注文が必要です。
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     TAKEOUT
-========================= -->
+<!-- TAKEOUT -->
 
 <section
   class="tab-panel"
@@ -1719,12 +1448,15 @@ a{
 </h2>
 
 <p class="section-desc">
-
   表参道・大阪に加え、
-  名古屋・福岡でも
-  テイクアウトコラボを開催。
-
+  名古屋・福岡でもテイクアウトコラボを開催。
 </p>
+
+<img
+  class="official-photo"
+  src="https://api.microlink.io/?url=https%3A%2F%2Fpic.x.com%2F0hAD88eezC&embed=image.url"
+  alt="TOWER RECORDS CAFE公式 テイクアウト画像"
+>
 
 
 <div class="feature">
@@ -1746,25 +1478,15 @@ a{
 
 <p class="small">
 
-  予約やカフェ店内利用の有無を問わず購入可能。
+予約やカフェ店内利用の有無を問わず購入可能。
 
-  おひとり様6点まで。
+おひとり様6点まで。
 
-  1点購入につき
-  メニュー注文特典を
-  ランダムで1枚。
+1点購入につき
+メニュー注文特典を
+ランダムで1枚。
 
 </p>
-
-
-<a
-  class="photo-link"
-  href="https://pic.x.com/0hAD88eezC"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  公式テイクアウト画像を見る ↗
-</a>
 
 </article>
 
@@ -1781,48 +1503,41 @@ a{
 
 <p class="small">
 
-  <b>表参道</b>
-  12:30–20:00
+<b>表参道</b>
+12:30–20:00
 
-  <br>
+<br>
 
-  <b>大阪</b>
-  13:20–20:50
+<b>大阪</b>
+13:20–20:50
 
-  <br>
+<br>
 
-  <b>名古屋栄スカイル</b>
-  11/12–11/18
+<b>名古屋栄スカイル</b>
+11/12–11/18
 
-  <br>
+<br>
 
-  <b>福岡</b>
-  11/12–11/18
+<b>福岡</b>
+11/12–11/18
 
 </p>
 
 
 <div class="notice">
-
-  数量限定。
-
-  テイクアウト商品の
-  ラストオーダーは
-  各店舗閉店1時間前。
-
+数量限定。
+テイクアウト商品のラストオーダーは
+各店舗閉店1時間前。
 </div>
 
 </article>
-
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     BENEFIT
-========================= -->
+<!-- BENEFIT -->
 
 <section
   class="tab-panel"
@@ -1841,11 +1556,16 @@ a{
 </h2>
 
 <p class="section-desc">
-
   メニュー注文特典と、
   事前予約来場特典の2種類。
-
 </p>
+
+
+<img
+  class="official-photo"
+  src="https://api.microlink.io/?url=https%3A%2F%2Fpic.x.com%2F0hAD88eezC&embed=image.url"
+  alt="TOWER RECORDS CAFE公式 特典画像"
+>
 
 
 <div class="feature">
@@ -1863,17 +1583,16 @@ a{
 
 <p class="small">
 
-  コラボメニュー1点につき、
+コラボメニュー1点につき、
 
-  <b>
-    複製メッセージ＆サイン入り
-    チケット風カード
-    （全5種）
-  </b>
+<b>
+複製メッセージ＆サイン入り
+チケット風カード（全5種）
+</b>
 
-  をランダムで1枚。
+をランダムで1枚。
 
-  テイクアウトボトルも対象。
+テイクアウトボトルも対象。
 
 </p>
 
@@ -1892,50 +1611,33 @@ a{
 
 <p class="small">
 
-  事前予約で来店すると
-  予約席数分をプレゼント。
+事前予約で来店すると
+予約席数分をプレゼント。
 
-  <br><br>
+<br><br>
 
-  前期：
-  ロゴデザイン
+前期：ロゴデザイン
 
-  <br>
+<br>
 
-  後期：
-  アーティスト写真KVデザイン
+後期：アーティスト写真KVデザイン
 
 </p>
 
 
 <div class="notice">
-
-  当日券での入場には
-  予約来場特典は付きません。
-
+当日券での入場には
+予約来場特典は付きません。
 </div>
 
 </article>
 
-
 </div>
-
-
-<a
-  class="photo-link"
-  href="https://pic.x.com/0hAD88eezC"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  公式特典画像を見る ↗
-</a>
 
 </section>
 
 
-<!-- =========================
-     GOODS
-========================= -->
+<!-- GOODS -->
 
 <section
   class="tab-panel"
@@ -1954,10 +1656,8 @@ a{
 </h2>
 
 <p class="section-desc">
-
   コラボカフェ開催店舗で
   STARGLOWオフィシャルグッズを販売。
-
 </p>
 
 
@@ -1969,65 +1669,31 @@ a{
 
 
 <div class="menu-item">
-
-<h3>
-  表参道店
-</h3>
-
-<p>
-  11月12日（木）
-  開店時より
-</p>
-
+<h3>表参道店</h3>
+<p>11月12日（木）開店時より</p>
 </div>
 
 
 <div class="menu-item">
-
-<h3>
-  大阪ステーションシティ店
-</h3>
-
-<p>
-  11月18日（水）
-  開店時より
-</p>
-
+<h3>大阪ステーションシティ店</h3>
+<p>11月18日（水）開店時より</p>
 </div>
 
 
 <div class="notice">
 
-  <b>
-    店内で飲食した
-    当日のお客様のみ購入可能。
-  </b>
+<b>
+店内で飲食した当日のお客様のみ購入可能。
+</b>
 
-  <br>
+<br>
 
-  「テイクアウト＋グッズ」
+「テイクアウト＋グッズ」
+「グッズのみ」は不可。
 
-  「グッズのみ」
-
-  は不可。
-
-  購入は1人1回まで。
+購入は1人1回まで。
 
 </div>
-
-
-<p class="small">
-
-  グッズラインナップ・
-  購入上限数は、
-
-  現在タワーレコード公式ページでは
-
-  「後日公開」
-
-  と案内されています。
-
-</p>
 
 
 <a
@@ -2046,11 +1712,11 @@ a{
 
 <div class="updated">
 
-  ※掲載内容は
-  TOWER RECORDS公式案内をもとに整理しています。
+※掲載内容は
+TOWER RECORDS公式案内をもとに整理しています。
 
-  販売状況・空席・在庫などの最新情報は、
-  各公式ページ・店舗Xをご確認ください。
+販売状況・空席・在庫などの最新情報は、
+各公式ページ・店舗Xをご確認ください。
 
 </div>
 
@@ -2130,9 +1796,7 @@ a{
 
 
   if(initial){
-
     openTab(initial);
-
   }
 
 })();
