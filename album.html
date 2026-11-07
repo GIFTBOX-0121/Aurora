@@ -803,6 +803,25 @@ body{font-size:14px}
 .release-day-main .release-date-main{font-size:27px;text-shadow:0 0 18px rgba(145,232,226,.2)}
 .release-day-main .release-event-copy strong{font-size:14px}
 .release-schedule-note{margin:15px 0 0;font-size:8.5px;line-height:1.8;color:#7f89a5}
+
+/* ===== SCHEDULE TYPE TAGS / FILTER ===== */
+.release-filter-bar{display:flex;flex-wrap:wrap;gap:7px;margin:-6px 0 18px}
+.release-filter-btn{appearance:none;border:1px solid rgba(225,231,255,.18);background:rgba(4,8,24,.38);color:#aab3cb;padding:7px 10px;font-size:8px;line-height:1;letter-spacing:.09em;font-weight:900;cursor:pointer;transition:.2s}
+.release-filter-btn:hover,.release-filter-btn.is-active{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.09)}
+.release-kind-wrap{display:flex;flex-wrap:wrap;gap:4px;width:76px}
+.release-kind-wrap .release-kind{width:100%;min-width:0}
+.release-kind[data-kind="VIDEO"]{border-color:rgba(145,232,226,.52);background:rgba(145,232,226,.10);color:#bff8ef}
+.release-kind[data-kind="PHOTO"]{border-color:rgba(238,166,218,.50);background:rgba(238,166,218,.10);color:#ffd0ef}
+.release-kind[data-kind="RELEASE"]{border-color:rgba(255,218,128,.52);background:rgba(255,218,128,.10);color:#ffe4a0}
+.release-kind[data-kind="AUDIO"]{border-color:rgba(157,190,255,.52);background:rgba(157,190,255,.10);color:#cbdcff}
+.release-kind[data-kind="STREAM"]{border-color:rgba(198,163,255,.52);background:rgba(198,163,255,.10);color:#dfcfff}
+.release-kind[data-kind="PHOTO"]{border-color:rgba(238,166,218,.50);background:rgba(238,166,218,.10);color:#ffd0ef}
+.release-kind[data-kind="TV"]{border-color:rgba(255,151,151,.50);background:rgba(255,151,151,.09);color:#ffc0c0}
+.release-kind[data-kind="RADIO"]{border-color:rgba(255,184,122,.50);background:rgba(255,184,122,.09);color:#ffd0a6}
+.release-kind[data-kind="MAGAZINE"]{border-color:rgba(176,225,153,.50);background:rgba(176,225,153,.09);color:#d3f5c2}
+.release-kind[data-kind="GOODS"]{border-color:rgba(239,206,185,.50);background:rgba(239,206,185,.09);color:#f4d9c8}
+.release-kind[data-kind="INFO"]{border-color:rgba(210,215,230,.40);background:rgba(210,215,230,.07);color:#d8ddea}
+.release-day[hidden],.release-event[hidden]{display:none!important}
 @media(max-width:560px){
   .release-schedule-section{margin:28px 0 54px}
   .release-schedule-head{gap:10px;margin-bottom:16px}
@@ -814,6 +833,7 @@ body{font-size:14px}
   .release-events{gap:7px}
   .release-event{grid-template-columns:58px minmax(0,1fr) 20px;gap:8px;min-height:47px;padding:8px 7px}
   .release-kind{width:58px;min-width:58px;padding:3px 3px;font-size:6.2px}
+  .release-kind-wrap{width:58px}.release-filter-bar{gap:5px;margin:-4px 0 14px}.release-filter-btn{padding:6px 7px;font-size:6.8px}
   .release-event-copy strong{font-size:10.5px}.release-event-copy span{font-size:8.5px}
   .release-day-main .release-event-copy strong{font-size:11.5px}
 }
@@ -896,286 +916,284 @@ body{font-size:14px}
   <div class="clean-head release-schedule-head">
     <h2>SCHEDULE</h2>
     <a class="release-calendar-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="Aurora RELEASE CALENDARを見る">
-      <span class="release-calendar-icon" aria-hidden="true">▣</span>
-      <small>Aurora</small>
-      <strong>RELEASE CALENDAR</strong>
+      <span class="release-calendar-icon" aria-hidden="true">▣</span><small>Aurora</small><strong>RELEASE CALENDAR</strong>
     </a>
   </div>
-
-  <div class="release-schedule-list">
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.07</div>
-        <div class="release-date-day">SAT</div>
-      </div>
+  <div class="release-filter-bar" aria-label="SCHEDULEを種類で絞り込み">
+    <button type="button" class="release-filter-btn is-active" data-schedule-filter="ALL">ALL</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="RELEASE">RELEASE</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="VIDEO">VIDEO</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="PHOTO">PHOTO</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="AUDIO">AUDIO</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="STREAM">STREAM</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="TV">TV</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="RADIO">RADIO</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="MAGAZINE">MAGAZINE</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="GOODS">GOODS</button>
+    <button type="button" class="release-filter-btn" data-schedule-filter="INFO">INFO</button>
+  </div>
+  <div class="release-schedule-list" id="auroraScheduleList">
+    <div class="release-day" data-schedule-date="2026-11-07">
+      <div class="release-date-block"><div class="release-date-main">11.07</div><div class="release-date-day">SAT</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="static-1107-film" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ Album Mood Film</strong>
             <span>09:00 / STARGLOW Official X</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118855954649559071" target="_blank" rel="noopener noreferrer" aria-label="公式投稿を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118855954649559071" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event release">
-          <span class="release-kind">INFO</span>
+        <div class="release-event release" data-schedule-key="static-1107-calendar" data-types="INFO">
+          <span class="release-kind" data-kind="INFO">INFO</span>
           <div class="release-event-copy">
             <strong>1st Album ‘Aurora’ Release Calendar 公開</strong>
             <span>12:00 / STARGLOW Official X</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式リリースカレンダーを見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.08–12</div>
-        <div class="release-date-day">SUN–THU</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-08/12">
+      <div class="release-date-block"><div class="release-date-main">11.08–12</div><div class="release-date-day">SUN–THU</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-08-solo" data-types="VIDEO PHOTO">
+          <div class="release-kind-wrap"><span class="release-kind" data-kind="VIDEO">VIDEO</span><span class="release-kind" data-kind="PHOTO">PHOTO</span></div>
           <div class="release-event-copy">
             <strong>‘Aurora’ Album Mood Film &amp; Photo - Solo</strong>
+            <span>11/08 SUN / メンバー公開後に自動反映</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release" data-schedule-key="2026-11-09-solo" data-types="VIDEO PHOTO">
+          <div class="release-kind-wrap"><span class="release-kind" data-kind="VIDEO">VIDEO</span><span class="release-kind" data-kind="PHOTO">PHOTO</span></div>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Album Mood Film &amp; Photo - Solo</strong>
+            <span>11/09 MON / メンバー公開後に自動反映</span>
+          </div>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release" data-schedule-key="2026-11-10-solo" data-types="VIDEO PHOTO">
+          <div class="release-kind-wrap"><span class="release-kind" data-kind="VIDEO">VIDEO</span><span class="release-kind" data-kind="PHOTO">PHOTO</span></div>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Album Mood Film &amp; Photo - Solo</strong>
+            <span>11/10 TUE / メンバー公開後に自動反映</span>
+          </div>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release" data-schedule-key="2026-11-11-solo" data-types="VIDEO PHOTO">
+          <div class="release-kind-wrap"><span class="release-kind" data-kind="VIDEO">VIDEO</span><span class="release-kind" data-kind="PHOTO">PHOTO</span></div>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Album Mood Film &amp; Photo - Solo</strong>
+            <span>11/11 WED / メンバー公開後に自動反映</span>
+          </div>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release" data-schedule-key="2026-11-12-solo" data-types="VIDEO PHOTO">
+          <div class="release-kind-wrap"><span class="release-kind" data-kind="VIDEO">VIDEO</span><span class="release-kind" data-kind="PHOTO">PHOTO</span></div>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Album Mood Film &amp; Photo - Solo</strong>
+            <span>11/12 THU / メンバー公開後に自動反映</span>
+          </div>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.10</div>
-        <div class="release-date-day">TUE</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-10">
+      <div class="release-date-block"><div class="release-date-main">11.10</div><div class="release-date-day">TUE</div></div>
       <div class="release-events">
-        <div class="release-event media">
-          <span class="release-kind">MAGAZINE</span>
+        <div class="release-event media" data-schedule-key="static-1110-magazine" data-types="MAGAZINE">
+          <span class="release-kind" data-kind="MAGAZINE">MAGAZINE</span>
           <div class="release-event-copy">
             <strong>「サンデー毎日」2026年11月22日号 発売</strong>
             <span>RUI 表紙</span>
           </div>
-          <a class="release-event-link" href="https://starglow.tokyo/news/media/1501/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://starglow.tokyo/news/media/1501/" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">TV</span>
+        <div class="release-event media" data-schedule-key="static-1110-tv" data-types="TV">
+          <span class="release-kind" data-kind="TV">TV</span>
           <div class="release-event-copy">
             <strong>「ヒューマングルメンタリー オモウマい店」</strong>
             <span>19:00〜 / KANON・GOICHI 出演</span>
           </div>
-          <a class="release-event-link" href="https://starglow.tokyo/news/media/1514/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://starglow.tokyo/news/media/1514/" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.13</div>
-        <div class="release-date-day">FRI</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-13">
+      <div class="release-date-block"><div class="release-date-main">11.13</div><div class="release-date-day">FRI</div></div>
       <div class="release-events">
-        <div class="release-event media">
-          <span class="release-kind">RADIO</span>
+        <div class="release-event media" data-schedule-key="static-1113-radio" data-types="RADIO">
+          <span class="release-kind" data-kind="RADIO">RADIO</span>
           <div class="release-event-copy">
             <strong>「Novel CoreのMBSヤングタウン」</strong>
             <span>22:00〜 / TAIKI・GOICHI 出演</span>
           </div>
-          <a class="release-event-link" href="https://starglow.tokyo/news/media/1494/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://starglow.tokyo/news/media/1494/" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">TV</span>
+        <div class="release-event media" data-schedule-key="static-1113-tv" data-types="TV">
+          <span class="release-kind" data-kind="TV">TV</span>
           <div class="release-event-copy">
             <strong>日本テレビ「バズリズム 02」</strong>
             <span>24:59〜25:59 / 『Slam Dunk』披露・トークゲスト</span>
           </div>
-          <a class="release-event-link" href="https://starglow.tokyo/news/media/1516/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://starglow.tokyo/news/media/1516/" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">PHOTO</span>
+        <div class="release-event release" data-schedule-key="2026-11-13-photo" data-types="PHOTO">
+          <span class="release-kind" data-kind="PHOTO">PHOTO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ Album Mood Photo - STARGLOW</strong>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-13-studio" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>STAR*STUDIO -SPECIAL EDITION- Digest</strong>
             <span>18:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.14</div>
-        <div class="release-date-day">SAT</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-14">
+      <div class="release-date-block"><div class="release-date-main">11.14</div><div class="release-date-day">SAT</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-14-teaser1" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ MV -Teaser Pt1-</strong>
             <span>20:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.15</div>
-        <div class="release-date-day">SUN</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-15">
+      <div class="release-date-block"><div class="release-date-main">11.15</div><div class="release-date-day">SUN</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-15-teaser2" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ MV -Teaser Pt2-</strong>
             <span>20:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.17</div>
-        <div class="release-date-day">TUE</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-17">
+      <div class="release-date-block"><div class="release-date-main">11.17</div><div class="release-date-day">TUE</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">RELEASE</span>
+        <div class="release-event release" data-schedule-key="2026-11-17-release" data-types="RELEASE">
+          <span class="release-kind" data-kind="RELEASE">RELEASE</span>
           <div class="release-event-copy">
             <strong>1st Album ‘Aurora’ 全曲先行配信</strong>
             <span>0:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-17-digest" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ -Album Digest-</strong>
             <span>20:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event goods">
-          <span class="release-kind">GOODS</span>
+        <div class="release-event goods" data-schedule-key="static-1117-goods" data-types="GOODS">
+          <span class="release-kind" data-kind="GOODS">GOODS</span>
           <div class="release-event-copy">
             <strong>STARGLOW Aurora Merch. 販売開始</strong>
             <span>20:00〜 / BMSG SHOP</span>
           </div>
-          <a class="release-event-link" href="https://starglow.tokyo/news/goods/1495/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://starglow.tokyo/news/goods/1495/" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-17-mv" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ Music Video</strong>
             <span>21:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day release-day-main">
-      <div class="release-date-block">
-        <div class="release-date-main">11.18</div>
-        <div class="release-date-day">WED</div>
-      </div>
+    <div class="release-day release-day-main" data-schedule-date="2026-11-18">
+      <div class="release-date-block"><div class="release-date-main">11.18</div><div class="release-date-day">WED</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">RELEASE</span>
+        <div class="release-event release" data-schedule-key="2026-11-18-album" data-types="RELEASE">
+          <span class="release-kind" data-kind="RELEASE">RELEASE</span>
           <div class="release-event-copy">
             <strong>STARGLOW 1st Album 『Aurora』 Release</strong>
             <span>全14曲 / 全6形態</span>
           </div>
-          <a class="release-event-link" href="https://starglow-sp.com/Aurora/" target="_blank" rel="noopener noreferrer" aria-label="Aurora公式サイトを見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://starglow-sp.com/Aurora/" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-      </div>
-    </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.19</div>
-        <div class="release-date-day">THU</div>
-      </div>
-      <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">AUDIO</span>
+        <div class="release-event release" data-schedule-key="2026-11-18-audio" data-types="AUDIO">
+          <span class="release-kind" data-kind="AUDIO">AUDIO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ Official Audio</strong>
             <span>0:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">STREAM</span>
+        <div class="release-event release" data-schedule-key="2026-11-18-youtube" data-types="STREAM">
+          <span class="release-kind" data-kind="STREAM">STREAM</span>
           <div class="release-event-copy">
             <strong>Release Party on YouTube</strong>
             <span>19:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">STREAM</span>
+        <div class="release-event release" data-schedule-key="2026-11-18-stationhead" data-types="STREAM">
+          <span class="release-kind" data-kind="STREAM">STREAM</span>
           <div class="release-event-copy">
             <strong>Stationhead - RUI, KANON, ADAM</strong>
             <span>19:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-18-dance" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ Dance Performance</strong>
             <span>20:15</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">STREAM</span>
+        <div class="release-event release" data-schedule-key="2026-11-18-awa" data-types="STREAM">
+          <span class="release-kind" data-kind="STREAM">STREAM</span>
           <div class="release-event-copy">
             <strong>AWA Lounge - ALL Members</strong>
             <span>20:30</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
-
-    <div class="release-day">
-      <div class="release-date-block">
-        <div class="release-date-main">11.20</div>
-        <div class="release-date-day">FRI</div>
-      </div>
+    <div class="release-day" data-schedule-date="2026-11-20">
+      <div class="release-date-block"><div class="release-date-main">11.20</div><div class="release-date-day">FRI</div></div>
       <div class="release-events">
-        <div class="release-event release">
-          <span class="release-kind">VIDEO</span>
+        <div class="release-event release" data-schedule-key="2026-11-20-stalog" data-types="VIDEO">
+          <span class="release-kind" data-kind="VIDEO">VIDEO</span>
           <div class="release-event-copy">
             <strong>STALOG - ‘Aurora’ Behind The Scenes</strong>
             <span>18:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
-        <div class="release-event media">
-          <span class="release-kind">STREAM</span>
+        <div class="release-event release" data-schedule-key="2026-11-20-stationhead" data-types="STREAM">
+          <span class="release-kind" data-kind="STREAM">STREAM</span>
           <div class="release-event-copy">
             <strong>Stationhead - TAIKI, GOICHI</strong>
             <span>21:00</span>
           </div>
-          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+          <a class="release-event-link" data-schedule-link href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
   </div>
-
   <p class="release-schedule-note">※公式サイト・STARGLOW Official Xで日時まで確認できた予定のみ掲載。追加発表にあわせて更新します。</p>
 </section>
 </div>
@@ -1501,6 +1519,66 @@ render();countdown();setInterval(countdown,1000);
 })();
 </script>
 
+
+<script>
+/* Aurora SCHEDULE / Worker連携 + 種類フィルター */
+(()=>{
+ const API="https://aurora-schedule.starsx0601.workers.dev/schedule";
+ const list=document.getElementById("auroraScheduleList");
+ if(!list)return;
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const typesOf=item=>Array.isArray(item.type)?item.type:[item.type||"INFO"];
+ const tagHTML=types=>{const a=types.filter(Boolean);const h=a.map(t=>`<span class="release-kind" data-kind="${esc(t)}">${esc(t)}</span>`).join("");return a.length>1?`<div class="release-kind-wrap">${h}</div>`:h};
+ const normalizeExistingKey=key=>({
+   "2026-11-19-audio":"2026-11-18-audio",
+   "2026-11-19-youtube":"2026-11-18-youtube",
+   "2026-11-19-stationhead":"2026-11-18-stationhead",
+   "2026-11-19-dance":"2026-11-18-dance",
+   "2026-11-19-awa":"2026-11-18-awa"
+ }[key]||key);
+ const applyFilter=filter=>{
+   list.querySelectorAll(".release-event").forEach(row=>{const types=(row.dataset.types||"").split(/\s+/);row.hidden=filter!=="ALL"&&!types.includes(filter)});
+   list.querySelectorAll(".release-day").forEach(day=>{day.hidden=![...day.querySelectorAll(".release-event")].some(row=>!row.hidden)});
+ };
+ document.querySelectorAll("[data-schedule-filter]").forEach(btn=>btn.addEventListener("click",()=>{
+   document.querySelectorAll("[data-schedule-filter]").forEach(b=>b.classList.toggle("is-active",b===btn));applyFilter(btn.dataset.scheduleFilter);
+ }));
+ const currentFilter=()=>document.querySelector("[data-schedule-filter].is-active")?.dataset.scheduleFilter||"ALL";
+ const updateExisting=(key,item)=>{
+   const fixedKey=normalizeExistingKey(key);
+   const row=list.querySelector(`[data-schedule-key="${CSS.escape(fixedKey)}"]`);
+   if(!row)return false;
+   if(item.url&&/^https:\/\/(x\.com|starglow\.tokyo|starglow-sp\.com)\//.test(item.url)){
+     const a=row.querySelector("[data-schedule-link]");if(a)a.href=item.url;
+   }
+   const types=typesOf(item);if(types.length){row.dataset.types=types.join(" ");const old=row.querySelector(".release-kind-wrap,.release-kind");if(old)old.outerHTML=tagHTML(types)}
+   if(item.member){
+     let meta=row.querySelector(".release-event-copy span");
+     const dateText=item.date?item.date.slice(5).replace("-","/"):"";
+     const value=`${dateText}${dateText?" / ":""}${item.member}`;
+     if(meta)meta.textContent=value;else row.querySelector(".release-event-copy")?.insertAdjacentHTML("beforeend",`<span>${esc(value)}</span>`);
+   }
+   return true;
+ };
+ const dayName=date=>["SUN","MON","TUE","WED","THU","FRI","SAT"][new Date(date+"T12:00:00+09:00").getDay()];
+ const ensureDay=date=>{
+   let day=list.querySelector(`[data-schedule-date="${CSS.escape(date)}"]`);if(day)return day;
+   const md=date.slice(5).replace("-",".");
+   day=document.createElement("div");day.className="release-day";day.dataset.scheduleDate=date;
+   day.innerHTML=`<div class="release-date-block"><div class="release-date-main">${md}</div><div class="release-date-day">${dayName(date)}</div></div><div class="release-events"></div>`;
+   const days=[...list.querySelectorAll(".release-day")];const next=days.find(d=>(d.dataset.scheduleDate||"9999")>date);if(next)list.insertBefore(day,next);else list.appendChild(day);return day;
+ };
+ const addAuto=(key,item)=>{
+   if(!item.autoAdded||!item.date||list.querySelector(`[data-schedule-key="${CSS.escape(key)}"]`))return;
+   const types=typesOf(item),day=ensureDay(item.date),events=day.querySelector(".release-events"),row=document.createElement("div");
+   row.className="release-event release";row.dataset.scheduleKey=key;row.dataset.types=types.join(" ");
+   const sub=[item.time,item.member].filter(Boolean).join(" / ");
+   row.innerHTML=`${tagHTML(types)}<div class="release-event-copy"><strong>${esc(item.title||"Aurora Schedule")}</strong>${sub?`<span>${esc(sub)}</span>`:""}</div>${item.url?`<a class="release-event-link" data-schedule-link href="${esc(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>`:"<span></span>"}`;events.appendChild(row);
+ };
+ const load=async()=>{try{const r=await fetch(API,{cache:"no-store"});if(!r.ok)return;const data=await r.json();if(!data?.schedule)return;Object.entries(data.schedule).forEach(([key,item])=>{if(!updateExisting(key,item))addAuto(key,item)});applyFilter(currentFilter())}catch(_){}};
+ load();document.addEventListener("visibilitychange",()=>{if(!document.hidden)load()});
+})();
+</script>
 </body>
 </html>
 Draggable item chatgpt:conversation:6ab355e0-d860-83ee-87a0-15129fc3bc47 was dropped over droppable area chatgpt:conversation:6ab355e0-d860-83ee-87a0-15129fc3bc47
