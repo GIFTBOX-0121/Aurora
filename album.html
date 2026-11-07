@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -740,61 +741,81 @@ body{font-size:14px}
 
 /* ===== AURORA RELEASE SCHEDULE ===== */
 .release-schedule-section{margin:34px 0 64px}
-.release-schedule-head{position:relative;padding-right:168px}
-.release-calendar-link{
-  position:absolute;right:0;top:1px;display:inline-flex;align-items:center;justify-content:center;
-  min-height:34px;padding:7px 12px;border:1px solid rgba(226,232,255,.24);
-  background:linear-gradient(110deg,rgba(145,232,226,.045),rgba(198,163,255,.07));
-  font-size:8.5px;font-weight:800;letter-spacing:.09em;color:#e7ebf7;white-space:nowrap
+.release-schedule-head{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  margin-bottom:20px;padding-bottom:11px;border-bottom:1px solid var(--line)
 }
-.release-calendar-link:hover{background:linear-gradient(110deg,rgba(145,232,226,.11),rgba(198,163,255,.13))}
-.release-schedule-list{margin-top:22px;border-top:1px solid rgba(225,231,255,.18)}
+.release-schedule-head h2{margin:0}
+.release-calendar-link{
+  flex:0 0 auto;display:grid;grid-template-columns:36px auto;grid-template-rows:auto auto;
+  column-gap:11px;align-items:center;min-height:58px;padding:9px 17px 9px 12px;
+  border:1px solid rgba(226,232,255,.24);
+  background:linear-gradient(110deg,rgba(145,232,226,.055),rgba(198,163,255,.08));
+  color:#e7ebf7;white-space:nowrap
+}
+.release-calendar-icon{
+  grid-row:1/3;display:flex;align-items:center;justify-content:center;width:36px;height:36px;
+  border:1px solid rgba(145,232,226,.34);font-size:19px;line-height:1
+}
+.release-calendar-link small{font-size:8.5px;font-weight:800;line-height:1.1;letter-spacing:.12em;color:#aeb8d3}
+.release-calendar-link strong{font-size:10.5px;line-height:1.2;letter-spacing:.11em}
+.release-calendar-link:hover{background:linear-gradient(110deg,rgba(145,232,226,.12),rgba(198,163,255,.14))}
+.release-schedule-list{display:grid;gap:10px;margin-top:0}
 .release-day{
-  display:grid;grid-template-columns:102px minmax(0,1fr);gap:22px;
-  padding:22px 2px;border-bottom:1px solid rgba(225,231,255,.13);position:relative
+  display:grid;grid-template-columns:86px minmax(0,1fr);gap:16px;position:relative;
+  padding:15px;border:1px solid rgba(225,231,255,.13);
+  background:linear-gradient(120deg,rgba(255,255,255,.025),rgba(145,232,226,.018),rgba(201,167,255,.025));
+  overflow:hidden
 }
 .release-day:before{
-  content:"";position:absolute;left:0;top:-1px;width:0;height:1px;
-  background:linear-gradient(90deg,#91e8e2,#c6a3ff,#f4c7ad);
-  box-shadow:0 0 10px rgba(145,232,226,.45);transition:width .35s ease
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,#91e8e2,#c6a3ff);opacity:.72
 }
-.release-day:hover:before{width:100%}
-.release-date-block{padding-top:1px}
+.release-date-block{
+  display:flex;flex-direction:column;justify-content:center;padding-right:13px;
+  border-right:1px solid rgba(225,231,255,.11)
+}
 .release-date-main{font-family:Georgia,"Times New Roman",serif;font-size:24px;line-height:1;color:#f0f2fb;letter-spacing:-.02em}
-.release-date-day{margin-top:5px;font-size:8.5px;letter-spacing:.16em;color:#8995b4;font-weight:800}
-.release-events{display:grid;gap:13px}
-.release-event{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:12px;align-items:start}
+.release-date-day{margin-top:6px;font-size:8.5px;letter-spacing:.16em;color:#8995b4;font-weight:800}
+.release-events{display:grid;gap:8px}
+.release-event{
+  position:relative;display:grid;grid-template-columns:76px minmax(0,1fr) 24px;gap:12px;align-items:center;
+  min-height:50px;padding:9px 10px;border:1px solid rgba(225,231,255,.08);
+  background:rgba(4,8,24,.34)
+}
 .release-kind{
-  margin-top:2px;font-size:7.5px;line-height:1.5;letter-spacing:.13em;font-weight:900;
-  color:#9fe8df;white-space:nowrap
+  display:flex;align-items:center;justify-content:center;width:76px;
+  padding:4px 6px;border:1px solid rgba(145,232,226,.3);
+  background:rgba(145,232,226,.055);font-size:7px;line-height:1.2;
+  letter-spacing:.11em;font-weight:900;color:#bff8ef;white-space:nowrap
 }
-.release-event.media .release-kind{color:#beb0ee}
-.release-event.goods .release-kind{color:#efceb9}
-.release-event.release .release-kind{color:#fff}
-.release-event-copy strong{display:block;font-size:12px;line-height:1.6;color:#f2f4fb}
-.release-event-copy span{display:block;margin-top:2px;font-size:9.5px;line-height:1.7;color:#aab3cb}
-.release-event-link{
-  align-self:center;font-size:13px;color:#aab6d3;padding:2px 3px;transition:.2s
-}
+.release-event.media .release-kind{border-color:rgba(190,176,238,.3);background:rgba(190,176,238,.055);color:#d5cafa}
+.release-event.goods .release-kind{border-color:rgba(239,206,185,.3);background:rgba(239,206,185,.055);color:#f4d9c8}
+.release-event.release .release-kind{border-color:rgba(226,232,255,.3);background:rgba(255,255,255,.045);color:#fff}
+.release-event-copy strong{display:block;font-size:12px;line-height:1.5;color:#f2f4fb}
+.release-event-copy span{display:block;margin-top:2px;font-size:9.5px;line-height:1.55;color:#aab3cb}
+.release-event-link{align-self:center;font-size:13px;color:#aab6d3;padding:5px;transition:.2s}
 .release-event-link:hover{color:#fff;transform:translate(1px,-1px)}
 .release-day.release-day-main{
-  background:linear-gradient(90deg,rgba(145,232,226,.045),rgba(198,163,255,.05),transparent);
-  padding-left:10px;padding-right:10px
+  background:linear-gradient(110deg,rgba(145,232,226,.065),rgba(198,163,255,.07),rgba(5,8,25,.78))
 }
+.release-day-main:before{width:3px;box-shadow:0 0 14px rgba(145,232,226,.34)}
 .release-day-main .release-date-main{font-size:27px;text-shadow:0 0 18px rgba(145,232,226,.2)}
 .release-day-main .release-event-copy strong{font-size:14px}
 .release-schedule-note{margin:15px 0 0;font-size:8.5px;line-height:1.8;color:#7f89a5}
 @media(max-width:560px){
   .release-schedule-section{margin:28px 0 54px}
-  .release-schedule-head{padding-right:0}
-  .release-calendar-link{position:static;margin-top:12px;min-height:32px}
-  .release-day{grid-template-columns:74px minmax(0,1fr);gap:13px;padding:18px 0}
-  .release-date-main{font-size:20px}
-  .release-event{grid-template-columns:52px minmax(0,1fr) auto;gap:8px}
-  .release-event-copy strong{font-size:11px}
-  .release-event-copy span{font-size:9px}
-  .release-day-main{padding-left:7px;padding-right:7px}
-  .release-day-main .release-event-copy strong{font-size:12px}
+  .release-schedule-head{gap:10px;margin-bottom:16px}
+  .release-calendar-link{grid-template-columns:30px auto;column-gap:8px;min-height:48px;padding:7px 11px 7px 8px}
+  .release-calendar-icon{width:30px;height:30px;font-size:16px}
+  .release-calendar-link small{font-size:7.2px}.release-calendar-link strong{font-size:8.7px}
+  .release-day{grid-template-columns:61px minmax(0,1fr);gap:10px;padding:11px 10px}
+  .release-date-block{padding-right:9px}.release-date-main{font-size:19px}.release-date-day{font-size:7.5px}
+  .release-events{gap:7px}
+  .release-event{grid-template-columns:58px minmax(0,1fr) 20px;gap:8px;min-height:47px;padding:8px 7px}
+  .release-kind{width:58px;min-width:58px;padding:3px 3px;font-size:6.2px}
+  .release-event-copy strong{font-size:10.5px}.release-event-copy span{font-size:8.5px}
+  .release-day-main .release-event-copy strong{font-size:11.5px}
 }
 
 </style>
@@ -873,9 +894,12 @@ body{font-size:14px}
 <div class="aurora-tab-panel" data-aurora-panel="schedule">
 <section class="clean-section release-schedule-section reveal">
   <div class="clean-head release-schedule-head">
-    <h2>RELEASE SCHEDULE</h2>
-    <p>Aurora / 公式発表済みスケジュール</p>
-    <a class="release-calendar-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer">OFFICIAL RELEASE CALENDAR ↗</a>
+    <h2>SCHEDULE</h2>
+    <a class="release-calendar-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="Aurora RELEASE CALENDARを見る">
+      <span class="release-calendar-icon" aria-hidden="true">▣</span>
+      <small>Aurora</small>
+      <strong>RELEASE CALENDAR</strong>
+    </a>
   </div>
 
   <div class="release-schedule-list">
@@ -886,7 +910,7 @@ body{font-size:14px}
       </div>
       <div class="release-events">
         <div class="release-event release">
-          <span class="release-kind">CONTENT</span>
+          <span class="release-kind">VIDEO</span>
           <div class="release-event-copy">
             <strong>‘Aurora’ Album Mood Film</strong>
             <span>09:00 / STARGLOW Official X</span>
@@ -900,6 +924,22 @@ body{font-size:14px}
             <span>12:00 / STARGLOW Official X</span>
           </div>
           <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式リリースカレンダーを見る">↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-day">
+      <div class="release-date-block">
+        <div class="release-date-main">11.08–12</div>
+        <div class="release-date-day">SUN–THU</div>
+      </div>
+      <div class="release-events">
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Album Mood Film &amp; Photo - Solo</strong>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
@@ -951,6 +991,55 @@ body{font-size:14px}
           </div>
           <a class="release-event-link" href="https://starglow.tokyo/news/media/1516/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
         </div>
+        <div class="release-event media">
+          <span class="release-kind">PHOTO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Album Mood Photo - STARGLOW</strong>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>STAR*STUDIO -SPECIAL EDITION- Digest</strong>
+            <span>18:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-day">
+      <div class="release-date-block">
+        <div class="release-date-main">11.14</div>
+        <div class="release-date-day">SAT</div>
+      </div>
+      <div class="release-events">
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ MV -Teaser Pt1-</strong>
+            <span>20:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-day">
+      <div class="release-date-block">
+        <div class="release-date-main">11.15</div>
+        <div class="release-date-day">SUN</div>
+      </div>
+      <div class="release-events">
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ MV -Teaser Pt2-</strong>
+            <span>20:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
       </div>
     </div>
 
@@ -960,6 +1049,22 @@ body{font-size:14px}
         <div class="release-date-day">TUE</div>
       </div>
       <div class="release-events">
+        <div class="release-event release">
+          <span class="release-kind">RELEASE</span>
+          <div class="release-event-copy">
+            <strong>1st Album ‘Aurora’ 全曲先行配信</strong>
+            <span>0:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ -Album Digest-</strong>
+            <span>20:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
         <div class="release-event goods">
           <span class="release-kind">GOODS</span>
           <div class="release-event-copy">
@@ -967,6 +1072,14 @@ body{font-size:14px}
             <span>20:00〜 / BMSG SHOP</span>
           </div>
           <a class="release-event-link" href="https://starglow.tokyo/news/goods/1495/" target="_blank" rel="noopener noreferrer" aria-label="公式詳細を見る">↗</a>
+        </div>
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Music Video</strong>
+            <span>21:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
@@ -984,6 +1097,80 @@ body{font-size:14px}
             <span>全14曲 / 全6形態</span>
           </div>
           <a class="release-event-link" href="https://starglow-sp.com/Aurora/" target="_blank" rel="noopener noreferrer" aria-label="Aurora公式サイトを見る">↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-day">
+      <div class="release-date-block">
+        <div class="release-date-main">11.19</div>
+        <div class="release-date-day">THU</div>
+      </div>
+      <div class="release-events">
+        <div class="release-event release">
+          <span class="release-kind">AUDIO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Official Audio</strong>
+            <span>0:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event media">
+          <span class="release-kind">STREAM</span>
+          <div class="release-event-copy">
+            <strong>Release Party on YouTube</strong>
+            <span>19:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event media">
+          <span class="release-kind">STREAM</span>
+          <div class="release-event-copy">
+            <strong>Stationhead - RUI, KANON, ADAM</strong>
+            <span>19:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>‘Aurora’ Dance Performance</strong>
+            <span>20:15</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event media">
+          <span class="release-kind">STREAM</span>
+          <div class="release-event-copy">
+            <strong>AWA Lounge - ALL Members</strong>
+            <span>20:30</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-day">
+      <div class="release-date-block">
+        <div class="release-date-main">11.20</div>
+        <div class="release-date-day">FRI</div>
+      </div>
+      <div class="release-events">
+        <div class="release-event release">
+          <span class="release-kind">VIDEO</span>
+          <div class="release-event-copy">
+            <strong>STALOG - ‘Aurora’ Behind The Scenes</strong>
+            <span>18:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
+        </div>
+        <div class="release-event media">
+          <span class="release-kind">STREAM</span>
+          <div class="release-event-copy">
+            <strong>Stationhead - TAIKI, GOICHI</strong>
+            <span>21:00</span>
+          </div>
+          <a class="release-event-link" href="https://x.com/starglow_bmsg/status/2118901260183113920" target="_blank" rel="noopener noreferrer" aria-label="公式情報を見る">↗</a>
         </div>
       </div>
     </div>
