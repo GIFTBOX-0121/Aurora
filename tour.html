@@ -49,6 +49,27 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit;color:in
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 </style>
+
+<style id="tour-title-position-center-fix">
+/* タイトル配置のみ修正：左端〜画像左端側の空間の中央 */
+.tour-hero-copy{
+  justify-self:stretch !important;
+  width:100% !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  text-align:center !important;
+}
+.tour-hero-copy .tour-hero-kicker,
+.tour-hero-copy h1,
+.tour-hero-copy .tour-hero-sub{
+  text-align:center !important;
+}
+.tour-hero-sub{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
