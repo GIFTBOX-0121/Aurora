@@ -3,116 +3,435 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aurora CAFE Design 10</title>
+<title>STARGLOW × TOWER RECORDS CAFE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
+:root{
+  --ink:#f7f7ff;
+  --muted:#aeb5d2;
+  --cyan:#91e8e2;
+  --violet:#c9a7ff;
+  --bg:#050819;
+  --yellow:#ffe100;
+  --red:#e60012;
+  --coffee:#211c1a;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
-  color:#211c1a;
+  background:var(--bg);
+  color:var(--ink);
   font-family:
     -apple-system,
     BlinkMacSystemFont,
+    "Helvetica Neue",
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
     sans-serif;
-  background:
-    radial-gradient(circle at 14% 16%,rgba(173,230,225,.24),transparent 26%),
-    radial-gradient(circle at 86% 18%,rgba(201,167,255,.18),transparent 30%),
-    linear-gradient(180deg,#c7b9aa 0%,#bba896 34%,#b5b7c0 100%);
 }
 
-.page{
-  width:min(100%,760px);
-  margin:auto;
-  padding:28px 14px 64px;
+body:before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  z-index:-2;
+  background:
+    radial-gradient(
+      ellipse at 18% 12%,
+      rgba(74,194,207,.25),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 76% 18%,
+      rgba(143,85,209,.30),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 55% 78%,
+      rgba(63,108,183,.20),
+      transparent 42%
+    );
+  filter:blur(18px);
+}
+
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+.wrap{
+  width:min(calc(100% - 34px),820px);
+  margin:0 auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.cafe-hero{
+  position:relative;
+  display:grid;
+  grid-template-columns:
+    minmax(0,.78fr)
+    minmax(0,1.22fr);
+  align-items:center;
+  gap:clamp(12px,3vw,34px);
+  min-height:330px;
+  padding:34px 0 30px;
+  isolation:isolate;
+}
+
+.cafe-hero-copy{
+  position:relative;
+  z-index:2;
+  width:100%;
+  text-align:center;
+  padding:20px 0 18px;
+}
+
+.cafe-hero-kicker{
+  margin-bottom:12px;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.16em;
+  color:#c8cde5;
+  line-height:1.55;
+}
+
+.cafe-hero h1{
+  margin:0;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-style:italic;
+  font-size:clamp(53px,10.2vw,90px);
+  font-weight:400;
+  line-height:.84;
+  letter-spacing:-.035em;
+  color:#f7f7ff;
+  text-shadow:
+    0 0 9px rgba(145,232,226,.95),
+    0 0 26px rgba(201,167,255,.42);
+}
+
+.cafe-hero-sub{
+  margin:10px 0 0;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.17em;
+  color:#dadbea;
+}
+
+.cafe-hero-art{
+  position:relative;
+  min-width:0;
+  isolation:isolate;
+}
+
+.cafe-hero-art:before{
+  content:"";
+  position:absolute;
+  inset:-7% -5%;
+  z-index:-1;
+  background:
+    radial-gradient(
+      ellipse at 48% 48%,
+      rgba(116,232,225,.13),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 76% 22%,
+      rgba(201,167,255,.14),
+      transparent 50%
+    );
+  filter:blur(22px);
+}
+
+.cafe-hero-art img{
+  display:block;
+  width:100%;
+  aspect-ratio:600/424;
+  object-fit:cover;
+  border:1px solid rgba(228,235,255,.14);
+  clip-path:
+    polygon(
+      7% 0,
+      100% 0,
+      100% 90%,
+      91% 100%,
+      0 100%,
+      0 10%
+    );
+  box-shadow:
+    0 26px 72px rgba(0,0,0,.34),
+    0 0 34px rgba(116,226,220,.08);
+}
+
+
+/* =========================
+   STAR
+========================= */
+
+.star-divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(13px,3.6vw,27px);
+  height:38px;
+  margin:0 0 10px;
+}
+
+.star-divider svg{
+  display:block;
+  width:25px;
+  height:25px;
+  overflow:visible;
+  filter:
+    drop-shadow(
+      0 2px 3px rgba(0,0,0,.45)
+    );
+}
+
+.star-divider .star-core{
+  fill:url(#champagneStar);
+}
+
+
+/* =========================
+   TOWER OFFICIAL
+========================= */
+
+.official-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin:8px 0 28px;
+  padding:15px 16px;
+  color:#151515;
+  text-decoration:none;
+  background:var(--yellow);
+  border-left:6px solid var(--red);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.17);
+}
+
+.official-main small{
+  display:block;
+  margin-bottom:2px;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.15em;
+}
+
+.official-main strong{
+  display:block;
+  font-size:14px;
+}
+
+.official-main span{
+  font-size:18px;
+  font-weight:950;
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.tabs-shell{
+  position:sticky;
+  top:0;
+  z-index:30;
+  padding:8px 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,8,25,.97),
+      rgba(5,8,25,.88)
+    );
+  backdrop-filter:blur(12px);
+}
+
+.tabs{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+}
+
+.tab-btn{
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.045);
+  color:#dce0f0;
+  min-height:39px;
+  padding:7px 2px;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.05em;
+  cursor:pointer;
+}
+
+.tab-btn[aria-selected="true"]{
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255,225,0,.95),
+      rgba(255,229,88,.9)
+    );
+  border-color:#ffe100;
+  color:#17120e;
+  box-shadow:
+    0 0 18px rgba(255,225,0,.13);
+}
+
+
+/* =========================
+   CAFE BODY
+========================= */
+
+.cafe-zone{
+  position:relative;
+  color:var(--coffee);
+  padding:18px 0 58px;
+}
+
+.cafe-zone:before{
+  content:"";
+  position:absolute;
+  inset:
+    0
+    calc((100vw - 100%)/-2);
+  z-index:-1;
+  background:
+    radial-gradient(
+      circle at 14% 14%,
+      rgba(173,230,225,.23),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 87% 16%,
+      rgba(201,167,255,.20),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #c9b9aa 0%,
+      #bca997 33%,
+      #b8bac4 100%
+    );
 }
 
 .panel{
-  background:rgba(243,236,229,.78);
-  border-top:6px solid #e60012;
-  border-bottom:6px solid #ffe100;
-  padding:24px 18px 20px;
-  box-shadow:0 16px 44px rgba(46,33,25,.12);
+  background:rgba(243,236,229,.82);
+  border-top:6px solid var(--red);
+  border-bottom:6px solid var(--yellow);
+  padding:22px 18px 24px;
+  box-shadow:
+    0 16px 44px rgba(46,33,25,.12);
 }
 
-.num{
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.24em;
-  opacity:.72;
+.tab-panel[hidden]{
+  display:none!important;
 }
 
-h1{
-  margin:7px 0 5px;
-  font-size:clamp(32px,8vw,54px);
-  line-height:1.03;
+.section-kicker{
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.18em;
+  color:#a70d1f;
+}
+
+.section-title{
+  margin:4px 0 6px;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size:27px;
   font-weight:400;
-  font-family:Georgia,serif;
-  font-style:italic;
-  color:#231a27;
+  color:#251d24;
 }
 
-.lead{
-  margin:0 0 22px;
+.section-desc{
+  margin:0 0 17px;
   font-size:10px;
-  letter-spacing:.08em;
-  color:#5a4f4f;
+  line-height:1.75;
+  color:#665b57;
 }
 
-.cards{
+
+/* =========================
+   CARDS
+========================= */
+
+.store-list,
+.stack{
   display:grid;
   gap:12px;
 }
 
 .card{
   position:relative;
-  padding:19px 16px;
+  padding:18px 16px;
+  background:
+    rgba(255,250,245,.64);
+  border:
+    1px solid rgba(35,26,39,.14);
   overflow:hidden;
-  background:rgba(255,250,245,.6);
-  border:1px solid rgba(35,26,39,.14);
 }
 
-.card-top{
+.card-head{
   display:flex;
-  justify-content:space-between;
   align-items:flex-start;
-  gap:12px;
+  justify-content:space-between;
+  gap:10px;
 }
 
 .city{
-  font-size:10px;
-  font-weight:900;
+  font-size:9px;
+  font-weight:950;
   letter-spacing:.18em;
-  color:#a70d1f;
+  color:#aa1021;
 }
 
-.card h2{
-  margin:4px 0 8px;
-  font-size:16px;
-  line-height:1.45;
-}
-
-.store-link{
+.store-name{
+  display:inline-block;
+  margin:4px 0 7px;
   color:#211c1a;
   text-decoration:none;
+  font-size:16px;
+  font-weight:850;
+  line-height:1.42;
 }
 
-.store-link:hover{
+.store-name:hover{
   text-decoration:underline;
 }
 
 .period{
   font-size:10px;
-  opacity:.76;
+  line-height:1.65;
+  color:#5f5551;
 }
 
-.takeout-time{
-  margin-top:5px;
+.phase{
+  display:block;
+  margin-top:2px;
   font-size:9px;
-  font-weight:800;
-  color:#61534f;
+  opacity:.82;
 }
 
 .badges{
@@ -125,30 +444,35 @@ h1{
 
 .badge{
   display:inline-block;
-  font-size:8px;
-  font-weight:900;
-  letter-spacing:.12em;
   padding:5px 8px;
+  white-space:nowrap;
   background:#211c1a;
   color:#ffe86d;
-  white-space:nowrap;
+  font-size:7.5px;
+  font-weight:950;
+  letter-spacing:.10em;
 }
 
-.badge.takeout-badge{
+.badge.takeout{
   background:#b9e0dc;
   color:#211c1a;
 }
 
-.badge.takeout-only{
+.badge.only{
   background:#ffe86d;
   color:#211c1a;
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .actions{
   display:flex;
   flex-wrap:wrap;
   gap:7px;
-  margin-top:14px;
+  margin-top:13px;
 }
 
 .btn{
@@ -156,239 +480,1664 @@ h1{
   align-items:center;
   justify-content:center;
   min-height:35px;
-  padding:7px 11px;
-  text-decoration:none;
-  font-size:9px;
-  font-weight:900;
-  border:1px solid rgba(33,28,26,.2);
+  padding:7px 10px;
   color:#211c1a;
+  text-decoration:none;
+  border:
+    1px solid rgba(33,28,26,.22);
+  background:
+    rgba(255,255,255,.16);
+  font-size:8.5px;
+  font-weight:900;
 }
 
-.btn.primary{
+.btn.x{
   background:#211c1a;
   color:#fff;
 }
 
-.note{
-  margin-top:16px;
+.btn.reserve{
+  background:#f0e7df;
+}
+
+.btn.resale{
+  background:#fff6bf;
+  border-color:#b59b2a;
+}
+
+.btn.tower{
+  background:#ffe100;
+  border-color:#d9bd00;
+  color:#191500;
+}
+
+
+/* =========================
+   MEDIA
+========================= */
+
+.media-card{
+  display:grid;
+  grid-template-columns:
+    minmax(115px,.75fr)
+    minmax(0,1.25fr);
+  gap:14px;
+  align-items:center;
+  margin-bottom:14px;
+  padding:11px;
+  background:
+    rgba(255,250,245,.58);
+  border:
+    1px solid rgba(35,26,39,.14);
+}
+
+.media-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:600/424;
+  object-fit:cover;
+}
+
+.media-copy strong{
+  display:block;
+  margin-bottom:5px;
+  font-family:Georgia,serif;
+  font-size:18px;
+  font-weight:400;
+}
+
+.media-copy p{
+  margin:0 0 9px;
+  font-size:9px;
+  line-height:1.65;
+  color:#695e59;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-group{
+  margin-top:12px;
+}
+
+.menu-group-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:8px;
+  margin:0 0 7px;
+  padding-bottom:7px;
+  border-bottom:
+    1px solid rgba(33,28,26,.14);
+}
+
+.menu-group-title b{
+  font-family:Georgia,serif;
+  font-size:19px;
+  font-weight:400;
+}
+
+.menu-group-title span{
+  font-size:9px;
+  font-weight:900;
+  color:#7d655a;
+}
+
+.menu-item{
+  padding:11px 0;
+  border-bottom:
+    1px solid rgba(33,28,26,.09);
+}
+
+.producer{
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.11em;
+  color:#a70d1f;
+}
+
+.menu-item h3{
+  margin:3px 0 5px;
+  font-size:13px;
+  line-height:1.45;
+}
+
+.menu-item p{
+  margin:0;
+  font-size:9px;
+  line-height:1.65;
+  color:#71645e;
+}
+
+
+/* =========================
+   FEATURE
+========================= */
+
+.feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.feature .card h3{
+  margin:4px 0 6px;
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:400;
+}
+
+.price{
+  display:inline-block;
+  margin-bottom:8px;
   font-size:10px;
-  color:#5a4f4f;
+  font-weight:950;
+  color:#7a2b2d;
+}
+
+.notice{
+  margin-top:10px;
+  padding:10px 11px;
+  background:
+    rgba(255,225,0,.19);
+  border-left:
+    3px solid var(--red);
+  font-size:9px;
   line-height:1.7;
 }
 
-@media(max-width:520px){
-  .card h2{font-size:15px}
-  .btn{font-size:8.5px;padding:7px 9px}
-  .badges{gap:4px}
+.small{
+  font-size:9px;
+  line-height:1.72;
+  color:#695e59;
+}
+
+.photo-link{
+  display:block;
+  margin-top:10px;
+  padding:10px 12px;
+  background:#211c1a;
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  font-size:9px;
+  font-weight:900;
+}
+
+.updated{
+  margin-top:18px;
+  font-size:8px;
+  line-height:1.65;
+  color:#766a65;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:560px){
+
+  .wrap{
+    width:min(calc(100% - 26px),820px);
+  }
+
+  .cafe-hero{
+    grid-template-columns:
+      minmax(0,.74fr)
+      minmax(0,1.26fr);
+    gap:12px;
+    padding:25px 0 23px;
+    min-height:auto;
+  }
+
+  .cafe-hero-copy{
+    padding:14px 0 12px;
+  }
+
+  .cafe-hero-kicker{
+    font-size:6.2px;
+    letter-spacing:.10em;
+  }
+
+  .cafe-hero h1{
+    font-size:13vw;
+  }
+
+  .cafe-hero-sub{
+    font-size:6.4px;
+    letter-spacing:.11em;
+  }
+
+  .cafe-hero-art img{
+    min-height:155px;
+  }
+
+  .star-divider{
+    gap:16px;
+    height:34px;
+  }
+
+  .tab-btn{
+    font-size:7px;
+    padding:6px 1px;
+  }
+
+  .panel{
+    padding:19px 13px 22px;
+  }
+
+  .section-title{
+    font-size:24px;
+  }
+
+  .store-name{
+    font-size:14px;
+  }
+
+  .btn{
+    font-size:7.8px;
+    padding:7px 8px;
+  }
+
+  .media-card{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .media-card img{
+    max-height:210px;
+  }
+
+  .feature{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<main class="page">
-<section class="panel">
+<header class="wrap">
 
-<div class="num">STARGLOW × TOWER RECORDS CAFE</div>
-<h1>Aurora / Café Guide</h1>
-<p class="lead">TOWER RECORDS CAFE × AURORA</p>
+  <section class="cafe-hero">
 
-<div class="cards">
+    <div class="cafe-hero-copy">
 
-<!-- 表参道 -->
-<article class="card">
-  <div class="card-top">
+      <div class="cafe-hero-kicker">
+        STARGLOW × TOWER RECORDS CAFE
+      </div>
+
+      <h1>CAFE</h1>
+
+      <div class="cafe-hero-sub">
+        1st Album “Aurora” Collaboration
+      </div>
+
+    </div>
+
+
+    <div class="cafe-hero-art">
+
+      <img
+        src="https://collabo-cafe.com/wp-content/uploads/starglow-cafe-tower-records-cafe-omotesando-osaka-2026-eyecatch.jpg"
+        alt="STARGLOW × TOWER RECORDS CAFE キービジュアル"
+      >
+
+    </div>
+
+  </section>
+
+
+  <div
+    class="star-divider"
+    aria-hidden="true"
+  >
+
+    <svg viewBox="0 0 48 48">
+
+      <defs>
+
+        <linearGradient
+          id="champagneStar"
+          x1="0"
+          y1="0"
+          x2="1"
+          y2="1"
+        >
+
+          <stop
+            offset="0"
+            stop-color="#fff7e9"
+          />
+
+          <stop
+            offset=".52"
+            stop-color="#e7d5bd"
+          />
+
+          <stop
+            offset="1"
+            stop-color="#b9a58f"
+          />
+
+        </linearGradient>
+
+      </defs>
+
+      <path
+        class="star-core"
+        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
+      />
+
+    </svg>
+
+
+    <svg viewBox="0 0 48 48">
+
+      <path
+        class="star-core"
+        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
+      />
+
+    </svg>
+
+
+    <svg viewBox="0 0 48 48">
+
+      <path
+        class="star-core"
+        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
+      />
+
+    </svg>
+
+
+    <svg viewBox="0 0 48 48">
+
+      <path
+        class="star-core"
+        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
+      />
+
+    </svg>
+
+
+    <svg viewBox="0 0 48 48">
+
+      <path
+        class="star-core"
+        d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"
+      />
+
+    </svg>
+
+  </div>
+
+
+  <a
+    class="official-main"
+    href="https://tower.jp/article/news/2026/08/02/c101"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+
     <div>
-      <div class="city">TOKYO — OMOTESANDO</div>
-      <h2>
-        <a class="store-link"
-           href="https://tower.jp/restaurants/cafe/omotesando"
-           target="_blank"
-           rel="noopener noreferrer">
-          TOWER RECORDS CAFE 表参道店 ↗
-        </a>
-      </h2>
-      <div class="period">開催期間：2026.11.12 — 12.06</div>
-      <div class="takeout-time">TAKEOUT：12:30 — 20:00</div>
+
+      <small>
+        TOWER RECORDS OFFICIAL
+      </small>
+
+      <strong>
+        タワーレコードサイト
+      </strong>
+
     </div>
 
-    <div class="badges">
-      <span class="badge">CAFE</span>
-      <span class="badge takeout-badge">TAKEOUT</span>
-    </div>
+    <span>
+      ↗
+    </span>
+
+  </a>
+
+</header>
+
+
+<div class="tabs-shell">
+
+  <div
+    class="wrap tabs"
+    role="tablist"
+    aria-label="CAFE information"
+  >
+
+    <button
+      class="tab-btn"
+      role="tab"
+      aria-selected="true"
+      aria-controls="shop"
+      id="tab-shop"
+    >
+      SHOP
+    </button>
+
+    <button
+      class="tab-btn"
+      role="tab"
+      aria-selected="false"
+      aria-controls="menu"
+      id="tab-menu"
+    >
+      MENU
+    </button>
+
+    <button
+      class="tab-btn"
+      role="tab"
+      aria-selected="false"
+      aria-controls="takeout"
+      id="tab-takeout"
+    >
+      TAKEOUT
+    </button>
+
+    <button
+      class="tab-btn"
+      role="tab"
+      aria-selected="false"
+      aria-controls="benefit"
+      id="tab-benefit"
+    >
+      BENEFIT
+    </button>
+
+    <button
+      class="tab-btn"
+      role="tab"
+      aria-selected="false"
+      aria-controls="goods"
+      id="tab-goods"
+    >
+      GOODS
+    </button>
+
   </div>
-
-  <div class="actions">
-    <a class="btn primary"
-       href="https://tower.jp/restaurants/cafe/omotesando"
-       target="_blank"
-       rel="noopener noreferrer">
-      店舗詳細 ↗
-    </a>
-
-    <a class="btn"
-       href="https://t.pia.jp/pia/events/starglow-cafe"
-       target="_blank"
-       rel="noopener noreferrer">
-      一般予約 ↗
-    </a>
-
-    <a class="btn"
-       href="https://t.pia.jp/pia/artist/artists.do?artistsCd=Q2190002"
-       target="_blank"
-       rel="noopener noreferrer">
-      リセール ↗
-    </a>
-
-    <a class="btn"
-       href="https://x.com/TRC_Omotesando"
-       target="_blank"
-       rel="noopener noreferrer">
-      当日券・空席 ↗
-    </a>
-  </div>
-</article>
-
-<!-- 大阪 -->
-<article class="card">
-  <div class="card-top">
-    <div>
-      <div class="city">OSAKA</div>
-      <h2>
-        <a class="store-link"
-           href="https://tower.jp/restaurants/cafe/oosakastationcity"
-           target="_blank"
-           rel="noopener noreferrer">
-          TOWER RECORDS CAFE 大阪ステーションシティ店 ↗
-        </a>
-      </h2>
-      <div class="period">開催期間：2026.11.18 — 11.29</div>
-      <div class="takeout-time">TAKEOUT：13:20 — 20:50</div>
-    </div>
-
-    <div class="badges">
-      <span class="badge">CAFE</span>
-      <span class="badge takeout-badge">TAKEOUT</span>
-    </div>
-  </div>
-
-  <div class="actions">
-    <a class="btn primary"
-       href="https://tower.jp/restaurants/cafe/oosakastationcity"
-       target="_blank"
-       rel="noopener noreferrer">
-      店舗詳細 ↗
-    </a>
-
-    <a class="btn"
-       href="https://t.pia.jp/pia/events/starglow-cafe"
-       target="_blank"
-       rel="noopener noreferrer">
-      一般予約 ↗
-    </a>
-
-    <a class="btn"
-       href="https://t.pia.jp/pia/artist/artists.do?artistsCd=Q2190002"
-       target="_blank"
-       rel="noopener noreferrer">
-      リセール ↗
-    </a>
-
-    <a class="btn"
-       href="https://x.com/TRC_osaka_SC"
-       target="_blank"
-       rel="noopener noreferrer">
-      当日券・空席 ↗
-    </a>
-  </div>
-</article>
-
-<!-- 愛知 -->
-<article class="card">
-  <div class="card-top">
-    <div>
-      <div class="city">AICHI — NAGOYA</div>
-      <h2>
-        <a class="store-link"
-           href="https://tower.jp/restaurants/cafe/nagoyasakaeskyle"
-           target="_blank"
-           rel="noopener noreferrer">
-          TOWER RECORDS CAFE 名古屋栄スカイル店 ↗
-        </a>
-      </h2>
-      <div class="period">開催期間：2026.11.12 — 11.18</div>
-    </div>
-
-    <div class="badges">
-      <span class="badge takeout-only">TAKEOUT ONLY</span>
-    </div>
-  </div>
-
-  <div class="actions">
-    <a class="btn primary"
-       href="https://tower.jp/restaurants/cafe/nagoyasakaeskyle"
-       target="_blank"
-       rel="noopener noreferrer">
-      店舗詳細 ↗
-    </a>
-
-    <a class="btn"
-       href="https://x.com/TRC_nagoya"
-       target="_blank"
-       rel="noopener noreferrer">
-      店舗X ↗
-    </a>
-  </div>
-</article>
-
-<!-- 福岡 -->
-<article class="card">
-  <div class="card-top">
-    <div>
-      <div class="city">FUKUOKA</div>
-      <h2>
-        <a class="store-link"
-           href="https://tower.jp/restaurants/cafe/fukuoka"
-           target="_blank"
-           rel="noopener noreferrer">
-          TOWER RECORDS CAFE 福岡店 ↗
-        </a>
-      </h2>
-      <div class="period">開催期間：2026.11.12 — 11.18</div>
-    </div>
-
-    <div class="badges">
-      <span class="badge takeout-only">TAKEOUT ONLY</span>
-    </div>
-  </div>
-
-  <div class="actions">
-    <a class="btn primary"
-       href="https://tower.jp/restaurants/cafe/fukuoka"
-       target="_blank"
-       rel="noopener noreferrer">
-      店舗詳細 ↗
-    </a>
-
-    <a class="btn"
-       href="https://x.com/TRC_fukuoka"
-       target="_blank"
-       rel="noopener noreferrer">
-      店舗X ↗
-    </a>
-  </div>
-</article>
 
 </div>
 
-<div class="note">
-※表参道・大阪はカフェ利用に加え、予約なしでもテイクアウト商品の購入が可能です。<br>
-※名古屋・福岡はテイクアウトコラボのみの開催です。<br>
-※一般予約・リセールはチケットぴあ、当日券・空席情報は各店舗Xをご確認ください。
+
+<main class="wrap cafe-zone">
+
+<div class="panel">
+
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<section
+  class="tab-panel"
+  id="shop"
+  role="tabpanel"
+  aria-labelledby="tab-shop"
+>
+
+<div class="section-kicker">
+  LOCATION / TICKET
+</div>
+
+<h2 class="section-title">
+  SHOP
+</h2>
+
+<p class="section-desc">
+  開催店舗・予約・リセール・各店舗の最新情報はこちら。
+</p>
+
+
+<div class="store-list">
+
+
+<!-- 表参道 -->
+
+<article class="card">
+
+<div class="card-head">
+
+<div>
+
+<div class="city">
+  TOKYO — OMOTESANDO
+</div>
+
+<a
+  class="store-name"
+  href="https://tower.jp/restaurants/cafe/omotesando"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  TOWER RECORDS CAFE 表参道店 ↗
+</a>
+
+<div class="period">
+
+  2026.11.12 — 12.06
+
+  <span class="phase">
+    前期：11.12 — 11.24
+    /
+    後期：11.25 — 12.06
+  </span>
+
+  <span class="phase">
+    CAFE：10:30 — 21:00（80分制）
+  </span>
+
+  <span class="phase">
+    TAKEOUTのみ：12:30 — 20:00
+  </span>
+
+</div>
+
+</div>
+
+
+<div class="badges">
+
+  <span class="badge">
+    CAFE
+  </span>
+
+  <span class="badge takeout">
+    TAKEOUT
+  </span>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<a
+  class="btn x"
+  href="https://x.com/TRC_Omotesando"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  店舗X ↗
+</a>
+
+
+<a
+  class="btn reserve"
+  href="https://t.pia.jp/pia/events/starglow-cafe"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  一般予約 ↗
+</a>
+
+
+<a
+  class="btn resale"
+  href="https://cloak.pia.jp/resale/item/list?eventCd=2630008&acptCliCd=ATM043&acptCliCd=ATM053&acptCliCd=ATM003&acptCliCd=ATM013&acptCliCd=ATM023&acptCliCd=ATM033&acptCliCd=ATM063&acptCliCd=ATM073&_gl=1*1jx3oqq*_gcl_au*MTE0NjY2MjE4NC4xNzkwNTE1NzYw*_ga*MTE2NjA0MzU2Mi4xNzg5NzE1MDYz*_ga_1E0PRWVZ2J*czE3OTQwMzg4NjkkbzEyJGcxJHQxNzk0MDM5NjA1JGo5JGwwJGgw"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  前期リセール ↗
+</a>
+
+
+<a
+  class="btn resale"
+  href="https://cloak.pia.jp/resale/item/list?eventCd=2630012&acptCliCd=ATM043&acptCliCd=ATM053&acptCliCd=ATM003&acptCliCd=ATM013&acptCliCd=ATM023&acptCliCd=ATM033&acptCliCd=ATM063&acptCliCd=ATM073&_gl=1*1mg8g3o*_gcl_au*MTE0NjY2MjE4NC4xNzkwNTE1NzYw*_ga*MTE2NjA0MzU2Mi4xNzg5NzE1MDYz*_ga_1E0PRWVZ2J*czE3OTQwMzg4NjkkbzEyJGcxJHQxNzk0MDM5NDc4JGo2MCRsMCRoMA.."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  後期リセール ↗
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 大阪 -->
+
+<article class="card">
+
+<div class="card-head">
+
+<div>
+
+<div class="city">
+  OSAKA
+</div>
+
+<a
+  class="store-name"
+  href="https://tower.jp/restaurants/cafe/oosakastationcity"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  TOWER RECORDS CAFE 大阪ステーションシティ店 ↗
+</a>
+
+<div class="period">
+
+  2026.11.18 — 11.29
+
+  <span class="phase">
+    前期：11.18 — 11.23
+    /
+    後期：11.24 — 11.29
+  </span>
+
+  <span class="phase">
+    CAFE：10:30 — 21:00（80分制）
+  </span>
+
+  <span class="phase">
+    TAKEOUTのみ：13:20 — 20:50
+  </span>
+
+</div>
+
+</div>
+
+
+<div class="badges">
+
+  <span class="badge">
+    CAFE
+  </span>
+
+  <span class="badge takeout">
+    TAKEOUT
+  </span>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<a
+  class="btn x"
+  href="https://x.com/TRC_osaka_SC"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  店舗X ↗
+</a>
+
+
+<a
+  class="btn reserve"
+  href="https://t.pia.jp/pia/events/starglow-cafe"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  一般予約 ↗
+</a>
+
+
+<a
+  class="btn resale"
+  href="https://cloak.pia.jp/resale/item/list?eventCd=2630018&acptCliCd=ATM043&acptCliCd=ATM053&acptCliCd=ATM003&acptCliCd=ATM013&acptCliCd=ATM023&acptCliCd=ATM033&acptCliCd=ATM063&acptCliCd=ATM073&_gl=1*12fb1ps*_gcl_au*MTE0NjY2MjE4NC4xNzkwNTE1NzYw*_ga*MTE2NjA0MzU2Mi4xNzg5NzE1MDYz*_ga_1E0PRWVZ2J*czE3OTQwMzg4NjkkbzEyJGcxJHQxNzk0MDM5NTcyJGo0MiRsMCRoMA.."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  前期リセール ↗
+</a>
+
+
+<a
+  class="btn resale"
+  href="https://cloak.pia.jp/resale/item/list?eventCd=2630023&acptCliCd=ATM043&acptCliCd=ATM053&acptCliCd=ATM003&acptCliCd=ATM013&acptCliCd=ATM023&acptCliCd=ATM033&acptCliCd=ATM063&acptCliCd=ATM073&_gl=1*1lkg0rw*_gcl_au*MTE0NjY2MjE4NC4xNzkwNTE1NzYw*_ga*MTE2NjA0MzU2Mi4xNzg5NzE1MDYz*_ga_1E0PRWVZ2J*czE3OTQwMzg4NjkkbzEyJGcxJHQxNzk0MDM5NTU0JGo2MCRsMCRoMA.."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  後期リセール ↗
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 愛知 -->
+
+<article class="card">
+
+<div class="card-head">
+
+<div>
+
+<div class="city">
+  AICHI — NAGOYA
+</div>
+
+<div class="store-name">
+  TOWER RECORDS CAFE 名古屋栄スカイル店
+</div>
+
+<div class="period">
+  2026.11.12 — 11.18
+</div>
+
+</div>
+
+
+<div class="badges">
+
+  <span class="badge only">
+    TAKEOUT ONLY
+  </span>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<a
+  class="btn x"
+  href="https://x.com/TRC_nagoya"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  店舗X ↗
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 福岡 -->
+
+<article class="card">
+
+<div class="card-head">
+
+<div>
+
+<div class="city">
+  FUKUOKA
+</div>
+
+<div class="store-name">
+  TOWER RECORDS CAFE 福岡店
+</div>
+
+<div class="period">
+  2026.11.12 — 11.18
+</div>
+
+</div>
+
+
+<div class="badges">
+
+  <span class="badge only">
+    TAKEOUT ONLY
+  </span>
+
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<a
+  class="btn x"
+  href="https://x.com/TRC_fukuoka"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  店舗X ↗
+</a>
+
+</div>
+
+</article>
+
+
 </div>
 
 </section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section
+  class="tab-panel"
+  id="menu"
+  role="tabpanel"
+  aria-labelledby="tab-menu"
+  hidden
+>
+
+<div class="section-kicker">
+  MEMBER PRODUCED
+</div>
+
+<h2 class="section-title">
+  MENU
+</h2>
+
+<p class="section-desc">
+  メンバー5人がプロデュースした
+  コラボメニュー。
+  全期間共通で提供。
+</p>
+
+
+<div class="media-card">
+
+<img
+  src="https://collabo-cafe.com/wp-content/uploads/starglow-cafe-tower-records-cafe-omotesando-osaka-2026-eyecatch.jpg"
+  alt="STARGLOW × TOWER RECORDS CAFE official visual"
+>
+
+<div class="media-copy">
+
+<strong>
+  OFFICIAL PHOTO / MENU
+</strong>
+
+<p>
+  タワーレコードカフェ公式投稿には、
+  メニュー・スーベニア・
+  テイクアウト・特典の
+  公式画像が掲載されています。
+</p>
+
+<a
+  class="btn tower"
+  href="https://pic.x.com/0hAD88eezC"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  公式メニュー画像を見る ↗
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+
+<!-- FOOD -->
+
+<div class="menu-group">
+
+<div class="menu-group-title">
+
+<b>
+  FOOD
+</b>
+
+<span>
+  ALL ¥1,990
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  RUI PRODUCE
+</div>
+
+<h3>
+  カルボナーラ
+</h3>
+
+<p>
+  スパゲッティ /
+  カルボナーラソース /
+  ベーコン /
+  温泉卵 /
+  パルメザンチーズ /
+  ブラックペッパー /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  KANON PRODUCE
+</div>
+
+<h3>
+  あのKANONが作ったタコライス
+</h3>
+
+<p>
+  白米 /
+  サニーレタス /
+  アボカド /
+  ミニトマト /
+  タコミート /
+  シュレッドチーズ /
+  トルティーヤチップス /
+  マヨネーズ /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  ADAM PRODUCE
+</div>
+
+<h3>
+  アボカドチキンベーグル
+</h3>
+
+<p>
+  ベーグル /
+  サニーレタス /
+  チキン /
+  アボカド /
+  クリームチーズ /
+  スクランブルエッグ /
+  玉ねぎ /
+  照り焼きマヨネーズ /
+  ポテトチップス /
+  モナカ
+</p>
+
+</div>
+
+</div>
+
+
+<!-- SWEETS -->
+
+<div class="menu-group">
+
+<div class="menu-group-title">
+
+<b>
+  SWEETS
+</b>
+
+<span>
+  ALL ¥1,790
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  TAIKI PRODUCE
+</div>
+
+<h3>
+  筋トレマスターによる
+  チョコっとチートデイ
+</h3>
+
+<p>
+  ホワイトチョコソース /
+  チョコシリアル /
+  ホイップクリーム /
+  ブラウニー /
+  クレープシート /
+  バニラアイス /
+  バナナ /
+  チョコレートソース /
+  ミント /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  GOICHI PRODUCE
+</div>
+
+<h3>
+  一護ちゃん
+</h3>
+
+<p>
+  ショートケーキ /
+  いちご /
+  ホイップクリーム /
+  ストロベリーソース /
+  ミックスベリー /
+  ミント /
+  アラザン /
+  モナカ
+</p>
+
+</div>
+
+</div>
+
+
+<!-- DRINK -->
+
+<div class="menu-group">
+
+<div class="menu-group-title">
+
+<b>
+  DRINK
+</b>
+
+<span>
+  ¥990 /
+  SOUVENIR ¥1,690
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  RUI PRODUCE
+</div>
+
+<h3>
+  カフェラテ
+</h3>
+
+<p>
+  牛乳 /
+  コーヒーゼリー /
+  コーヒーベース /
+  ホイップクリーム /
+  ビスケット /
+  アラザン /
+  ミント /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  TAIKI PRODUCE
+</div>
+
+<h3>
+  筋トレマスターによる
+  3:00PM Chill Time baby
+</h3>
+
+<p>
+  低脂肪牛乳 /
+  濃縮紅茶 /
+  ミント /
+  ホイップクリーム /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  KANON PRODUCE
+</div>
+
+<h3>
+  茶をしばきたい時に飲む
+  ほうじ茶ラテ
+</h3>
+
+<p>
+  ほうじ茶ラテ /
+  ホイップクリーム /
+  ホワイトチョコレートコポー /
+  アラザン /
+  ミント /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  GOICHI PRODUCE
+</div>
+
+<h3>
+  パリピラムネブリンブリン
+  サマーナイトプールパーティー
+</h3>
+
+<p>
+  瓶ラムネ /
+  ブルーゼリー /
+  さくらシロップ /
+  エディブルフラワー /
+  ミント /
+  ホイップクリーム /
+  モナカ
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<div class="producer">
+  ADAM PRODUCE
+</div>
+
+<h3>
+  まるでハワイ、
+  時差ボケトロピカルティー
+</h3>
+
+<p>
+  紅茶 /
+  マンゴージュース /
+  はちみつ /
+  マンゴー /
+  パイン /
+  ナタデココ /
+  ホイップクリーム /
+  モナカ
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+  店内利用は、
+  1人につき
+
+  「フード or スイーツ1品
+  ＋
+  ドリンク1品以上」
+
+  の注文が必要です。
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TAKEOUT
+========================= -->
+
+<section
+  class="tab-panel"
+  id="takeout"
+  role="tabpanel"
+  aria-labelledby="tab-takeout"
+  hidden
+>
+
+<div class="section-kicker">
+  NO RESERVATION REQUIRED
+</div>
+
+<h2 class="section-title">
+  TAKEOUT
+</h2>
+
+<p class="section-desc">
+
+  表参道・大阪に加え、
+  名古屋・福岡でも
+  テイクアウトコラボを開催。
+
+</p>
+
+
+<div class="feature">
+
+
+<article class="card">
+
+<div class="city">
+  TAKEOUT BOTTLE
+</div>
+
+<h3>
+  キャラメルポップコーン
+</h3>
+
+<span class="price">
+  税込 ¥980
+</span>
+
+<p class="small">
+
+  予約やカフェ店内利用の有無を問わず購入可能。
+
+  おひとり様6点まで。
+
+  1点購入につき
+  メニュー注文特典を
+  ランダムで1枚。
+
+</p>
+
+
+<a
+  class="photo-link"
+  href="https://pic.x.com/0hAD88eezC"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  公式テイクアウト画像を見る ↗
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="city">
+  AVAILABLE SHOP
+</div>
+
+<h3>
+  4店舗で販売
+</h3>
+
+<p class="small">
+
+  <b>表参道</b>
+  12:30–20:00
+
+  <br>
+
+  <b>大阪</b>
+  13:20–20:50
+
+  <br>
+
+  <b>名古屋栄スカイル</b>
+  11/12–11/18
+
+  <br>
+
+  <b>福岡</b>
+  11/12–11/18
+
+</p>
+
+
+<div class="notice">
+
+  数量限定。
+
+  テイクアウト商品の
+  ラストオーダーは
+  各店舗閉店1時間前。
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BENEFIT
+========================= -->
+
+<section
+  class="tab-panel"
+  id="benefit"
+  role="tabpanel"
+  aria-labelledby="tab-benefit"
+  hidden
+>
+
+<div class="section-kicker">
+  SPECIAL BENEFIT
+</div>
+
+<h2 class="section-title">
+  BENEFIT
+</h2>
+
+<p class="section-desc">
+
+  メニュー注文特典と、
+  事前予約来場特典の2種類。
+
+</p>
+
+
+<div class="feature">
+
+
+<article class="card">
+
+<div class="city">
+  MENU ORDER BENEFIT
+</div>
+
+<h3>
+  チケット風カード
+</h3>
+
+<p class="small">
+
+  コラボメニュー1点につき、
+
+  <b>
+    複製メッセージ＆サイン入り
+    チケット風カード
+    （全5種）
+  </b>
+
+  をランダムで1枚。
+
+  テイクアウトボトルも対象。
+
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="city">
+  RESERVATION BENEFIT
+</div>
+
+<h3>
+  ミニステッカー
+</h3>
+
+<p class="small">
+
+  事前予約で来店すると
+  予約席数分をプレゼント。
+
+  <br><br>
+
+  前期：
+  ロゴデザイン
+
+  <br>
+
+  後期：
+  アーティスト写真KVデザイン
+
+</p>
+
+
+<div class="notice">
+
+  当日券での入場には
+  予約来場特典は付きません。
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<a
+  class="photo-link"
+  href="https://pic.x.com/0hAD88eezC"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  公式特典画像を見る ↗
+</a>
+
+</section>
+
+
+<!-- =========================
+     GOODS
+========================= -->
+
+<section
+  class="tab-panel"
+  id="goods"
+  role="tabpanel"
+  aria-labelledby="tab-goods"
+  hidden
+>
+
+<div class="section-kicker">
+  STARGLOW OFFICIAL GOODS
+</div>
+
+<h2 class="section-title">
+  GOODS
+</h2>
+
+<p class="section-desc">
+
+  コラボカフェ開催店舗で
+  STARGLOWオフィシャルグッズを販売。
+
+</p>
+
+
+<div class="card">
+
+<div class="city">
+  SALES LOCATION
+</div>
+
+
+<div class="menu-item">
+
+<h3>
+  表参道店
+</h3>
+
+<p>
+  11月12日（木）
+  開店時より
+</p>
+
+</div>
+
+
+<div class="menu-item">
+
+<h3>
+  大阪ステーションシティ店
+</h3>
+
+<p>
+  11月18日（水）
+  開店時より
+</p>
+
+</div>
+
+
+<div class="notice">
+
+  <b>
+    店内で飲食した
+    当日のお客様のみ購入可能。
+  </b>
+
+  <br>
+
+  「テイクアウト＋グッズ」
+
+  「グッズのみ」
+
+  は不可。
+
+  購入は1人1回まで。
+
+</div>
+
+
+<p class="small">
+
+  グッズラインナップ・
+  購入上限数は、
+
+  現在タワーレコード公式ページでは
+
+  「後日公開」
+
+  と案内されています。
+
+</p>
+
+
+<a
+  class="photo-link"
+  href="https://tower.jp/article/news/2026/08/02/c101"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  グッズ最新情報をタワレコで確認 ↗
+</a>
+
+</div>
+
+</section>
+
+
+<div class="updated">
+
+  ※掲載内容は
+  TOWER RECORDS公式案内をもとに整理しています。
+
+  販売状況・空席・在庫などの最新情報は、
+  各公式ページ・店舗Xをご確認ください。
+
+</div>
+
+
+</div>
+
 </main>
+
+
+<script>
+
+(() => {
+
+  const buttons =
+    [...document.querySelectorAll('.tab-btn')];
+
+  const panels =
+    [...document.querySelectorAll('.tab-panel')];
+
+
+  function openTab(button){
+
+    const id =
+      button.getAttribute('aria-controls');
+
+
+    buttons.forEach(btn => {
+
+      btn.setAttribute(
+        'aria-selected',
+        btn === button
+          ? 'true'
+          : 'false'
+      );
+
+    });
+
+
+    panels.forEach(panel => {
+
+      panel.hidden =
+        panel.id !== id;
+
+    });
+
+
+    history.replaceState(
+      null,
+      '',
+      '#' + id
+    );
+
+  }
+
+
+  buttons.forEach(btn => {
+
+    btn.addEventListener(
+      'click',
+      () => openTab(btn)
+    );
+
+  });
+
+
+  const hash =
+    location.hash.replace('#','');
+
+
+  const initial =
+    buttons.find(
+      btn =>
+        btn.getAttribute(
+          'aria-controls'
+        ) === hash
+    );
+
+
+  if(initial){
+
+    openTab(initial);
+
+  }
+
+})();
+
+</script>
 
 </body>
 </html>
