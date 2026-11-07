@@ -888,6 +888,83 @@ body{font-size:14px}
   }
 }
 
+
+
+/* ===== SCHEDULE TAG / FILTER FINAL FIX ===== */
+/* 実際の予定タグ：種類色を約60%の透明度に調整 */
+.release-kind[data-kind="VIDEO"]{background:rgba(15,118,110,.60)!important;border-color:rgba(45,212,191,.78)!important;color:#fff!important}
+.release-kind[data-kind="PHOTO"]{background:rgba(190,24,93,.60)!important;border-color:rgba(244,114,182,.78)!important;color:#fff!important}
+.release-kind[data-kind="RELEASE"]{background:rgba(180,83,9,.60)!important;border-color:rgba(251,191,36,.82)!important;color:#fff!important}
+.release-kind[data-kind="AUDIO"]{background:rgba(29,78,216,.60)!important;border-color:rgba(96,165,250,.80)!important;color:#fff!important}
+.release-kind[data-kind="STREAM"]{background:rgba(109,40,217,.60)!important;border-color:rgba(167,139,250,.80)!important;color:#fff!important}
+.release-kind[data-kind="TV"]{background:rgba(185,28,28,.60)!important;border-color:rgba(248,113,113,.80)!important;color:#fff!important}
+.release-kind[data-kind="RADIO"]{background:rgba(194,65,12,.60)!important;border-color:rgba(251,146,60,.80)!important;color:#fff!important}
+.release-kind[data-kind="MAGAZINE"]{background:rgba(63,98,18,.60)!important;border-color:rgba(132,204,22,.80)!important;color:#fff!important}
+.release-kind[data-kind="GOODS"]{background:rgba(124,45,18,.60)!important;border-color:rgba(253,186,116,.80)!important;color:#fff!important}
+.release-kind[data-kind="INFO"]{background:rgba(71,85,105,.60)!important;border-color:rgba(148,163,184,.78)!important;color:#fff!important}
+
+/* フィルターボタン：必ず2段（6列×2段） */
+.release-filter-bar{
+  display:grid!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:9px!important;
+  width:100%!important;
+  margin:0 0 20px!important;
+}
+.release-filter-btn{
+  width:100%!important;
+  min-width:0!important;
+  min-height:42px!important;
+  padding:10px 5px!important;
+  border-radius:5px!important;
+  font-size:9px!important;
+  line-height:1.1!important;
+  letter-spacing:.035em!important;
+  background:rgba(7,12,30,.56)!important;
+  color:#eef2ff!important;
+  border-width:1.5px!important;
+  border-style:solid!important;
+}
+/* ボタンの枠線も種類色に合わせる */
+.release-filter-btn[data-schedule-filter="ALL"]{border-color:rgba(255,255,255,.62)!important}
+.release-filter-btn[data-schedule-filter="VIDEO"]{border-color:rgba(45,212,191,.90)!important}
+.release-filter-btn[data-schedule-filter="PHOTO"]{border-color:rgba(244,114,182,.90)!important}
+.release-filter-btn[data-schedule-filter="RELEASE"]{border-color:rgba(251,191,36,.92)!important}
+.release-filter-btn[data-schedule-filter="AUDIO"]{border-color:rgba(96,165,250,.92)!important}
+.release-filter-btn[data-schedule-filter="STREAM"]{border-color:rgba(167,139,250,.92)!important}
+.release-filter-btn[data-schedule-filter="TV"]{border-color:rgba(248,113,113,.92)!important}
+.release-filter-btn[data-schedule-filter="RADIO"]{border-color:rgba(251,146,60,.92)!important}
+.release-filter-btn[data-schedule-filter="MAGAZINE"]{border-color:rgba(132,204,22,.92)!important}
+.release-filter-btn[data-schedule-filter="GOODS"]{border-color:rgba(253,186,116,.92)!important}
+.release-filter-btn[data-schedule-filter="INFO"]{border-color:rgba(148,163,184,.90)!important}
+
+/* 選択中は種類色を薄く背景にも反映 */
+.release-filter-btn[data-schedule-filter="ALL"].is-active{background:rgba(255,255,255,.16)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="VIDEO"].is-active{background:rgba(15,118,110,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="PHOTO"].is-active{background:rgba(190,24,93,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="RELEASE"].is-active{background:rgba(180,83,9,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="AUDIO"].is-active{background:rgba(29,78,216,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="STREAM"].is-active{background:rgba(109,40,217,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="TV"].is-active{background:rgba(185,28,28,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="RADIO"].is-active{background:rgba(194,65,12,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="MAGAZINE"].is-active{background:rgba(63,98,18,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="GOODS"].is-active{background:rgba(124,45,18,.60)!important;color:#fff!important}
+.release-filter-btn[data-schedule-filter="INFO"].is-active{background:rgba(71,85,105,.60)!important;color:#fff!important}
+
+@media(max-width:560px){
+  .release-filter-bar{
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;
+    gap:5px!important;
+    margin:0 0 18px!important;
+  }
+  .release-filter-btn{
+    min-height:40px!important;
+    padding:9px 2px!important;
+    font-size:7px!important;
+    letter-spacing:0!important;
+  }
+}
+
 </style>
 </head>
 <body class="serial-layout-a">
