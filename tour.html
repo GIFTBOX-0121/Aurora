@@ -70,6 +70,19 @@ a{color:inherit;text-decoration:none}button,input,textarea{font:inherit;color:in
 }
 </style>
 
+
+<style id="tour-title-visual-center-final">
+/* TOURタイトルのみ：実際の画像左端との間で見た目の中央へ右補正 */
+.tour-hero-copy{
+  transform:translateX(clamp(10px,2.1vw,18px)) !important;
+}
+@media(max-width:680px){
+  .tour-hero-copy{
+    transform:translateX(clamp(7px,2vw,12px)) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
