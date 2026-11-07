@@ -6,9 +6,7 @@
 <title>Aurora CAFE Design 10</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -19,24 +17,10 @@ body{
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
     sans-serif;
-
   background:
-    radial-gradient(
-      circle at 14% 16%,
-      rgba(173,230,225,.24),
-      transparent 26%
-    ),
-    radial-gradient(
-      circle at 86% 18%,
-      rgba(201,167,255,.18),
-      transparent 30%
-    ),
-    linear-gradient(
-      180deg,
-      #c7b9aa 0%,
-      #bba896 34%,
-      #b5b7c0 100%
-    );
+    radial-gradient(circle at 14% 16%,rgba(173,230,225,.24),transparent 26%),
+    radial-gradient(circle at 86% 18%,rgba(201,167,255,.18),transparent 30%),
+    linear-gradient(180deg,#c7b9aa 0%,#bba896 34%,#b5b7c0 100%);
 }
 
 .page{
@@ -110,19 +94,54 @@ h1{
   line-height:1.45;
 }
 
+.store-link{
+  color:#211c1a;
+  text-decoration:none;
+}
+
+.store-link:hover{
+  text-decoration:underline;
+}
+
 .period{
   font-size:10px;
   opacity:.76;
 }
 
-.badge{
+.takeout-time{
+  margin-top:5px;
+  font-size:9px;
+  font-weight:800;
+  color:#61534f;
+}
+
+.badges{
   flex:0 0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:5px;
+}
+
+.badge{
+  display:inline-block;
   font-size:8px;
   font-weight:900;
   letter-spacing:.12em;
   padding:5px 8px;
   background:#211c1a;
   color:#ffe86d;
+  white-space:nowrap;
+}
+
+.badge.takeout-badge{
+  background:#b9e0dc;
+  color:#211c1a;
+}
+
+.badge.takeout-only{
+  background:#ffe86d;
+  color:#211c1a;
 }
 
 .actions{
@@ -150,10 +169,6 @@ h1{
   color:#fff;
 }
 
-.takeout .actions .ticket{
-  display:none;
-}
-
 .note{
   margin-top:16px;
   font-size:10px;
@@ -162,14 +177,9 @@ h1{
 }
 
 @media(max-width:520px){
-  .card h2{
-    font-size:15px;
-  }
-
-  .btn{
-    font-size:8.5px;
-    padding:7px 9px;
-  }
+  .card h2{font-size:15px}
+  .btn{font-size:8.5px;padding:7px 9px}
+  .badges{gap:4px}
 }
 </style>
 </head>
@@ -177,205 +187,207 @@ h1{
 <body>
 
 <main class="page">
-
 <section class="panel">
 
-<div class="num">
-STARGLOW × TOWER RECORDS CAFE
-</div>
-
+<div class="num">STARGLOW × TOWER RECORDS CAFE</div>
 <h1>Aurora / Café Guide</h1>
-
-<p class="lead">
-TOWER RECORDS CAFE × AURORA
-</p>
+<p class="lead">TOWER RECORDS CAFE × AURORA</p>
 
 <div class="cards">
 
 <!-- 表参道 -->
 <article class="card">
+  <div class="card-top">
+    <div>
+      <div class="city">TOKYO — OMOTESANDO</div>
+      <h2>
+        <a class="store-link"
+           href="https://tower.jp/restaurants/cafe/omotesando"
+           target="_blank"
+           rel="noopener noreferrer">
+          TOWER RECORDS CAFE 表参道店 ↗
+        </a>
+      </h2>
+      <div class="period">開催期間：2026.11.12 — 12.06</div>
+      <div class="takeout-time">TAKEOUT：12:30 — 20:00</div>
+    </div>
 
-<div class="card-top">
+    <div class="badges">
+      <span class="badge">CAFE</span>
+      <span class="badge takeout-badge">TAKEOUT</span>
+    </div>
+  </div>
 
-<div>
+  <div class="actions">
+    <a class="btn primary"
+       href="https://tower.jp/restaurants/cafe/omotesando"
+       target="_blank"
+       rel="noopener noreferrer">
+      店舗詳細 ↗
+    </a>
 
-<div class="city">
-TOKYO — OMOTESANDO
-</div>
+    <a class="btn"
+       href="https://t.pia.jp/pia/events/starglow-cafe"
+       target="_blank"
+       rel="noopener noreferrer">
+      一般予約 ↗
+    </a>
 
-<h2>
-TOWER RECORDS CAFE 表参道店
-</h2>
+    <a class="btn"
+       href="https://t.pia.jp/pia/artist/artists.do?artistsCd=Q2190002"
+       target="_blank"
+       rel="noopener noreferrer">
+      リセール ↗
+    </a>
 
-<div class="period">
-開催期間：2026.11.12 — 12.06
-</div>
-
-</div>
-
-<span class="badge">
-CAFE
-</span>
-
-</div>
-
-<div class="actions">
-
-<a class="btn primary" href="#">
-店舗詳細 ↗
-</a>
-
-<a class="btn ticket" href="#">
-一般予約 ↗
-</a>
-
-<a class="btn ticket" href="#">
-リセール ↗
-</a>
-
-<a class="btn ticket" href="#">
-当日券・空席 ↗
-</a>
-
-</div>
-
+    <a class="btn"
+       href="https://x.com/TRC_Omotesando"
+       target="_blank"
+       rel="noopener noreferrer">
+      当日券・空席 ↗
+    </a>
+  </div>
 </article>
-
 
 <!-- 大阪 -->
 <article class="card">
+  <div class="card-top">
+    <div>
+      <div class="city">OSAKA</div>
+      <h2>
+        <a class="store-link"
+           href="https://tower.jp/restaurants/cafe/oosakastationcity"
+           target="_blank"
+           rel="noopener noreferrer">
+          TOWER RECORDS CAFE 大阪ステーションシティ店 ↗
+        </a>
+      </h2>
+      <div class="period">開催期間：2026.11.18 — 11.29</div>
+      <div class="takeout-time">TAKEOUT：13:20 — 20:50</div>
+    </div>
 
-<div class="card-top">
+    <div class="badges">
+      <span class="badge">CAFE</span>
+      <span class="badge takeout-badge">TAKEOUT</span>
+    </div>
+  </div>
 
-<div>
+  <div class="actions">
+    <a class="btn primary"
+       href="https://tower.jp/restaurants/cafe/oosakastationcity"
+       target="_blank"
+       rel="noopener noreferrer">
+      店舗詳細 ↗
+    </a>
 
-<div class="city">
-OSAKA
-</div>
+    <a class="btn"
+       href="https://t.pia.jp/pia/events/starglow-cafe"
+       target="_blank"
+       rel="noopener noreferrer">
+      一般予約 ↗
+    </a>
 
-<h2>
-TOWER RECORDS CAFE 大阪ステーションシティ店
-</h2>
+    <a class="btn"
+       href="https://t.pia.jp/pia/artist/artists.do?artistsCd=Q2190002"
+       target="_blank"
+       rel="noopener noreferrer">
+      リセール ↗
+    </a>
 
-<div class="period">
-開催期間：2026.11.18 — 11.29
-</div>
-
-</div>
-
-<span class="badge">
-CAFE
-</span>
-
-</div>
-
-<div class="actions">
-
-<a class="btn primary" href="#">
-店舗詳細 ↗
-</a>
-
-<a class="btn ticket" href="#">
-一般予約 ↗
-</a>
-
-<a class="btn ticket" href="#">
-リセール ↗
-</a>
-
-<a class="btn ticket" href="#">
-当日券・空席 ↗
-</a>
-
-</div>
-
+    <a class="btn"
+       href="https://x.com/TRC_osaka_SC"
+       target="_blank"
+       rel="noopener noreferrer">
+      当日券・空席 ↗
+    </a>
+  </div>
 </article>
-
 
 <!-- 愛知 -->
-<article class="card takeout">
+<article class="card">
+  <div class="card-top">
+    <div>
+      <div class="city">AICHI — NAGOYA</div>
+      <h2>
+        <a class="store-link"
+           href="https://tower.jp/restaurants/cafe/nagoyasakaeskyle"
+           target="_blank"
+           rel="noopener noreferrer">
+          TOWER RECORDS CAFE 名古屋栄スカイル店 ↗
+        </a>
+      </h2>
+      <div class="period">開催期間：2026.11.12 — 11.18</div>
+    </div>
 
-<div class="card-top">
+    <div class="badges">
+      <span class="badge takeout-only">TAKEOUT ONLY</span>
+    </div>
+  </div>
 
-<div>
+  <div class="actions">
+    <a class="btn primary"
+       href="https://tower.jp/restaurants/cafe/nagoyasakaeskyle"
+       target="_blank"
+       rel="noopener noreferrer">
+      店舗詳細 ↗
+    </a>
 
-<div class="city">
-AICHI
-</div>
-
-<h2>
-TOWER RECORDS CAFE 名古屋栄スカイル店
-</h2>
-
-<div class="period">
-開催期間：2026.11.12 — 11.18
-</div>
-
-</div>
-
-<span class="badge">
-TAKEOUT
-</span>
-
-</div>
-
-<div class="actions">
-
-<a class="btn primary" href="#">
-店舗詳細 ↗
-</a>
-
-</div>
-
+    <a class="btn"
+       href="https://x.com/TRC_nagoya"
+       target="_blank"
+       rel="noopener noreferrer">
+      店舗X ↗
+    </a>
+  </div>
 </article>
 
-
 <!-- 福岡 -->
-<article class="card takeout">
+<article class="card">
+  <div class="card-top">
+    <div>
+      <div class="city">FUKUOKA</div>
+      <h2>
+        <a class="store-link"
+           href="https://tower.jp/restaurants/cafe/fukuoka"
+           target="_blank"
+           rel="noopener noreferrer">
+          TOWER RECORDS CAFE 福岡店 ↗
+        </a>
+      </h2>
+      <div class="period">開催期間：2026.11.12 — 11.18</div>
+    </div>
 
-<div class="card-top">
+    <div class="badges">
+      <span class="badge takeout-only">TAKEOUT ONLY</span>
+    </div>
+  </div>
 
-<div>
+  <div class="actions">
+    <a class="btn primary"
+       href="https://tower.jp/restaurants/cafe/fukuoka"
+       target="_blank"
+       rel="noopener noreferrer">
+      店舗詳細 ↗
+    </a>
 
-<div class="city">
-FUKUOKA
-</div>
-
-<h2>
-TOWER RECORDS CAFE 福岡店
-</h2>
-
-<div class="period">
-開催期間：2026.11.12 — 11.18
-</div>
-
-</div>
-
-<span class="badge">
-TAKEOUT
-</span>
-
-</div>
-
-<div class="actions">
-
-<a class="btn primary" href="#">
-店舗詳細 ↗
-</a>
-
-</div>
-
+    <a class="btn"
+       href="https://x.com/TRC_fukuoka"
+       target="_blank"
+       rel="noopener noreferrer">
+      店舗X ↗
+    </a>
+  </div>
 </article>
 
 </div>
 
 <div class="note">
-※表参道・大阪はカフェ開催、愛知・福岡はテイクアウトのみの案内です。<br>
-※リンク先URLはあとから差し替えられるよう、現在は仮置きです。
+※表参道・大阪はカフェ利用に加え、予約なしでもテイクアウト商品の購入が可能です。<br>
+※名古屋・福岡はテイクアウトコラボのみの開催です。<br>
+※一般予約・リセールはチケットぴあ、当日券・空席情報は各店舗Xをご確認ください。
 </div>
 
 </section>
-
 </main>
 
 </body>
