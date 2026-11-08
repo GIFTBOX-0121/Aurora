@@ -532,7 +532,7 @@ body{font-size:14px}
 
 
 /* ===== FINAL A × C TAB NAVIGATION ===== */
-.aurora-tabs-wrap{margin:34px 0 10px;position:relative;z-index:8}
+.aurora-tabs-wrap{margin:16px 0 10px;position:relative;z-index:8}
 .aurora-tabs{--tab-x:0;position:relative;display:flex;overflow:hidden;border:1px solid rgba(225,231,255,.22);background:rgba(255,255,255,.018);isolation:isolate}
 .aurora-tabs .tab-glow{position:absolute;z-index:0;inset:0 auto 0 0;width:25%;transform:translateX(var(--tab-x));transition:transform .52s cubic-bezier(.2,.78,.2,1);background:linear-gradient(115deg,transparent,rgba(112,228,229,.07),rgba(165,107,255,.15),rgba(255,255,255,.055),transparent);pointer-events:none}
 .aurora-tabs .tab-glow:before{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:linear-gradient(90deg,transparent,#fff,#8deaff,transparent);filter:drop-shadow(0 0 6px rgba(169,140,255,.95))}
@@ -545,7 +545,7 @@ body{font-size:14px}
 .aurora-tab-panel.is-active{display:block;animation:tabPanelIn .36s ease both}
 .aurora-tab-panel.is-active .reveal{opacity:1;transform:none}
 @keyframes tabPanelIn{from{opacity:.18;transform:translateY(4px)}to{opacity:1;transform:none}}
-@media(max-width:560px){.aurora-tabs-wrap{margin:27px 0 6px}.aurora-tab{padding:13px 1px;font-size:9.5px}}
+@media(max-width:560px){.aurora-tabs-wrap{margin:14px 0 6px}.aurora-tab{padding:13px 1px;font-size:9.5px}}
 
 /* ===== FINAL SERIAL / LUXE HOLOGRAM ===== */
 .serial-section .prize-stack{display:grid;gap:14px;border-top:0}
@@ -784,7 +784,7 @@ body{font-size:14px}
 .release-date-day{margin-top:6px;font-size:8.5px;letter-spacing:.16em;color:#8995b4;font-weight:800}
 .release-events{display:grid;gap:8px}
 .release-event{
-  position:relative;display:grid;grid-template-columns:76px minmax(0,1fr) 24px;gap:12px;align-items:center;
+  position:relative;display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;align-items:center;
   min-height:50px;padding:9px 10px;border:1px solid rgba(225,231,255,.08);
   background:rgba(4,8,24,.34)
 }
@@ -836,7 +836,7 @@ body{font-size:14px}
   .release-day{grid-template-columns:61px minmax(0,1fr);gap:10px;padding:11px 10px}
   .release-date-block{padding-right:9px}.release-date-main{font-size:19px}.release-date-day{font-size:7.5px}
   .release-events{gap:7px}
-  .release-event{grid-template-columns:58px minmax(0,1fr) 20px;gap:8px;min-height:47px;padding:8px 7px}
+  .release-event{grid-template-columns:58px minmax(0,1fr);gap:8px;min-height:47px;padding:8px 7px}
   .release-kind{width:58px;min-width:58px;padding:3px 3px;font-size:6.2px}
   .release-kind-wrap{width:58px}.release-filter-bar{gap:5px;margin:-4px 0 14px}.release-filter-btn{padding:6px 7px;font-size:6.8px}
   .release-event-copy strong{font-size:10.5px}.release-event-copy span{font-size:8.5px}
@@ -1066,7 +1066,7 @@ body{font-size:14px}
   gap:clamp(13px,3.6vw,27px) !important;
   width:100% !important;
   height:38px !important;
-  margin:1px 0 3px !important;
+  margin:8px 0 10px !important;
   font-size:0 !important;
 }
 .album-hero .hero-five-stars:before,
@@ -1086,7 +1086,7 @@ body{font-size:14px}
   .album-hero .hero-five-stars{
     gap:clamp(13px,3.6vw,27px) !important;
     height:38px !important;
-    margin:1px 0 3px !important;
+    margin:8px 0 10px !important;
   }
   .album-hero .hero-five-stars svg{width:25px !important;height:25px !important}
 }
@@ -1287,28 +1287,42 @@ body{font-size:14px}
 
 <style id="schedule-x-post-design-orbit-glow-final">
 .schedule-x-post{
-  flex:0 0 auto;align-self:center;justify-self:end;display:grid;place-items:center;
-  width:39px;height:39px;border-radius:50%;border:1px solid rgba(150,210,229,.25);
-  background:rgba(89,147,178,.08);color:#f5fcff;text-decoration:none;
-  font:600 15px/1 Arial,sans-serif;text-shadow:0 0 9px rgba(196,242,255,.85);
-  box-shadow:0 0 17px rgba(91,178,205,.12),inset 0 0 12px rgba(118,187,210,.06);
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  display:grid;place-items:center;
+  width:28px;height:28px;border-radius:50%;
+  border:1px solid rgba(150,210,229,.34);
+  background:linear-gradient(145deg,rgba(89,147,178,.16),rgba(96,123,205,.12));
+  color:#f5fcff;text-decoration:none;
+  font:700 13px/1 Arial,sans-serif;text-shadow:0 0 8px rgba(196,242,255,.72);
+  box-shadow:0 0 14px rgba(91,178,205,.12),inset 0 0 10px rgba(118,187,210,.05);
   -webkit-tap-highlight-color:transparent;transition:.18s ease;
 }
-.schedule-x-post:active{transform:scale(.94)}
+.schedule-x-post:active{transform:translateY(-50%) scale(.94)}
+.release-event:has(.schedule-x-post){padding-right:46px}
 .solo-member{display:block;margin-top:5px;color:#c9a7ff!important;font-size:10px!important;font-weight:700;letter-spacing:.12em}
-</style>
-
-
-<style id="schedule-x-post-right-edge-final">
-.release-event .schedule-x-post{grid-column:3;justify-self:end;margin-left:auto}
 @media(max-width:560px){
-  .release-event .schedule-x-post{grid-column:3;justify-self:end}
+  .schedule-x-post{right:8px;width:24px;height:24px;font-size:11px}
+  .release-event:has(.schedule-x-post){padding-right:38px}
 }
 </style>
 
 
+<style id="album-extra-star-dividers-final">
+.section-five-stars{
+  display:flex;align-items:center;justify-content:center;
+  gap:clamp(13px,3.6vw,27px);
+  width:100%;height:38px;margin:4px 0 10px;font-size:0;
+}
+.section-five-stars svg{display:block;width:25px;height:25px;overflow:visible;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))}
+.section-five-stars .star-core{fill:url(#auroraChampagneStar)}
+@media(max-width:560px){
+  .section-five-stars{height:38px;margin:2px 0 8px;gap:clamp(13px,3.6vw,27px)}
+  .section-five-stars svg{width:25px;height:25px}
+}
+</style>
+
 <style id="dual-countdown-design-02-final">
-.dual-release-countdown{padding:30px 0 42px!important;border-bottom:0!important;text-align:center}
+.dual-release-countdown{padding:18px 0 16px!important;border-bottom:0!important;text-align:center}
 .dual-release-countdown:before{display:none!important}
 .dual-countdown-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;margin:0 auto}
 .dual-countdown-card{position:relative;min-width:0;overflow:hidden;text-align:center;padding:19px 5px 18px;border:1px solid rgba(220,228,241,.16);background:rgba(255,255,255,.012)}
@@ -1358,6 +1372,14 @@ body{font-size:14px}
     </div>
   </div>
 </section>
+
+<div class="section-five-stars" aria-hidden="true">
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+  <svg viewBox="0 0 48 48"><path class="star-core" d="M24 3.5l5.62 11.39 12.57 1.83-9.1 8.87 2.15 12.52L24 32.2l-11.24 5.91 2.15-12.52-9.1-8.87 12.57-1.83L24 3.5z"/></svg>
+</div>
 
 <nav class="aurora-tabs-wrap reveal" aria-label="Aurora contents">
   <div class="aurora-tabs" id="auroraTabs">
