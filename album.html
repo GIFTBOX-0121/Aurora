@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -1284,53 +1285,17 @@ body{font-size:14px}
 </style>
 
 
-<style id="schedule-x-post-design-08">
+<style id="schedule-x-post-design-orbit-glow-final">
 .schedule-x-post{
-  flex:0 0 auto;
-  align-self:center;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height:30px;
-  padding:0 10px;
-  border:1px solid rgba(225,231,255,.16);
-  border-radius:999px;
-  background:rgba(255,255,255,.025);
-  color:#bfc8df;
-  text-decoration:none;
-  white-space:nowrap;
-  font-size:7px;
-  font-weight:700;
-  letter-spacing:.10em;
-  transition:.2s ease;
-}
-.schedule-x-post span{
-  margin-right:5px;
-  color:#91e8e2;
-  font-size:9px;
-}
-.schedule-x-post:hover{
-  color:#fff;
-  border-color:rgba(145,232,226,.34);
-  background:rgba(145,232,226,.045);
+  flex:0 0 auto;align-self:center;justify-self:end;display:grid;place-items:center;
+  width:39px;height:39px;border-radius:50%;border:1px solid rgba(150,210,229,.25);
+  background:rgba(89,147,178,.08);color:#f5fcff;text-decoration:none;
+  font:600 15px/1 Arial,sans-serif;text-shadow:0 0 9px rgba(196,242,255,.85);
+  box-shadow:0 0 17px rgba(91,178,205,.12),inset 0 0 12px rgba(118,187,210,.06);
+  -webkit-tap-highlight-color:transparent;transition:.18s ease;
 }
 .schedule-x-post:active{transform:scale(.94)}
-.solo-member{
-  display:block;
-  margin-top:5px;
-  color:#c9a7ff !important;
-  font-size:10px !important;
-  font-weight:700;
-  letter-spacing:.12em;
-}
-@media(max-width:560px){
-  .schedule-x-post{
-    height:28px;
-    padding:0 8px;
-    font-size:6.6px;
-  }
-  .schedule-x-post span{font-size:8px}
-}
+.solo-member{display:block;margin-top:5px;color:#c9a7ff!important;font-size:10px!important;font-weight:700;letter-spacing:.12em}
 </style>
 
 
@@ -1341,6 +1306,22 @@ body{font-size:14px}
 }
 </style>
 
+
+<style id="dual-countdown-design-02-final">
+.dual-release-countdown{padding:30px 0 42px!important;border-bottom:0!important;text-align:center}
+.dual-release-countdown:before{display:none!important}
+.dual-countdown-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;margin:0 auto}
+.dual-countdown-card{position:relative;min-width:0;overflow:hidden;text-align:center;padding:19px 5px 18px;border:1px solid rgba(220,228,241,.16);background:rgba(255,255,255,.012)}
+.dual-countdown-card:before{content:"";position:absolute;inset:6px;border:1px solid rgba(255,255,255,.05);pointer-events:none}
+.dual-countdown-date{position:relative;font:300 18px/1 Georgia,"Times New Roman",serif;white-space:nowrap;color:#f4f6fa}
+.dual-countdown-label{position:relative;margin:10px 0 14px;font-size:9px;line-height:1.35;font-weight:500;white-space:nowrap;color:#aab3c2;letter-spacing:.015em}
+.dual-countdown-line{position:relative;margin:0 6px;padding:9px 0 8px;border-top:1px solid rgba(204,220,237,.17);border-bottom:1px solid rgba(204,220,237,.17)}
+.dual-countdown-values{display:grid;grid-template-columns:repeat(4,1fr);align-items:start}
+.dual-countdown-unit{min-width:0;text-align:center}
+.dual-countdown-number{display:block;font:300 24px/.95 Georgia,"Times New Roman",serif;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 0 9px rgba(174,235,235,.23),0 0 18px rgba(194,159,244,.13)}
+.dual-countdown-unit-label{display:block;margin-top:5px;font-size:6px;line-height:1;color:#8592a6;white-space:nowrap}
+@media(max-width:360px){.dual-countdown-pair{gap:4px}.dual-countdown-card{padding-left:3px;padding-right:3px}.dual-countdown-date{font-size:16px}.dual-countdown-label{font-size:8px}.dual-countdown-line{margin-left:4px;margin-right:4px}.dual-countdown-number{font-size:21px}.dual-countdown-unit-label{font-size:5.5px}}
+</style>
 </head>
 <body class="serial-layout-a">
 <div class="wrap">
@@ -1363,10 +1344,19 @@ body{font-size:14px}
 </div>
 </section>
 
-<section class="release-center reveal">
-  <div class="release-date">2026.11.18 WED</div>
-  <div class="countdown-kicker">リリースまであと</div>
-  <div id="releaseCountdown" class="countdown-grid" aria-label="発売までのカウントダウン"></div>
+<section class="release-center reveal dual-release-countdown" aria-label="Aurora リリースカウントダウン">
+  <div class="dual-countdown-pair">
+    <div class="dual-countdown-card" data-dual-countdown="digital">
+      <div class="dual-countdown-date">2026.11.16</div>
+      <div class="dual-countdown-label">全曲先行配信まであと</div>
+      <div class="dual-countdown-line"><div class="dual-countdown-values"></div></div>
+    </div>
+    <div class="dual-countdown-card" data-dual-countdown="album">
+      <div class="dual-countdown-date">2026.11.18</div>
+      <div class="dual-countdown-label">アルバムリリースまであと</div>
+      <div class="dual-countdown-line"><div class="dual-countdown-values"></div></div>
+    </div>
+  </div>
 </section>
 
 <nav class="aurora-tabs-wrap reveal" aria-label="Aurora contents">
@@ -1450,7 +1440,7 @@ body{font-size:14px}
           <div class="release-event-copy">
             <strong>‘Aurora’ Album Mood Film - STARGLOW</strong>
           </div>
-          <a class="schedule-x-post" href="https://x.com/starglow_bmsg/status/2118855954649559071" target="_blank" rel="noopener noreferrer" aria-label="11月7日の公式X投稿を見る"><span>𝕏</span>POST</a>
+          <a class="schedule-x-post" href="https://x.com/starglow_bmsg/status/2118855954649559071" target="_blank" rel="noopener noreferrer" aria-label="11月7日の公式X投稿を見る">X</a>
         </div>
       </div>
     </div>
@@ -1989,7 +1979,17 @@ function render(){
  updateGlobalSerialSummary(state);
  showRoundReminder(state);
 }
-function countdown(){const ms=new Date(DATA.releaseAt)-Date.now(),el=$("#releaseCountdown");if(ms<=0){el.innerHTML='<div style="grid-column:1/-1;padding:18px;font-family:Georgia,serif;font-size:24px">Aurora RELEASED</div>';return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4),sec=Math.floor(ms%6e4/1000);const unit=(n,l)=>`<div class="countdown-unit"><span class="countdown-num">${String(n).padStart(2,"0")}</span><span class="countdown-label">${l}</span></div>`;el.innerHTML=unit(d,"日")+unit(h,"時間")+unit(m,"分")+unit(sec,"秒")}
+function countdown(){
+ const targets={digital:new Date("2026-11-16T00:00:00+09:00"),album:new Date("2026-11-18T00:00:00+09:00")};
+ const unit=(n,l)=>`<div class="dual-countdown-unit"><span class="dual-countdown-number">${String(n).padStart(2,"0")}</span><span class="dual-countdown-unit-label">${l}</span></div>`;
+ document.querySelectorAll("[data-dual-countdown]").forEach(card=>{
+  const target=targets[card.dataset.dualCountdown]; if(!target)return;
+  const ms=Math.max(0,target.getTime()-Date.now());
+  const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4),sec=Math.floor(ms%6e4/1000);
+  const values=card.querySelector(".dual-countdown-values");
+  if(values)values.innerHTML=unit(d,"日")+unit(h,"時間")+unit(m,"分")+unit(sec,"秒");
+ });
+}
 $("#benefitImageBtn").addEventListener("click",()=>$("#benefitImageModal").showModal());$("#closeBenefitImage").addEventListener("click",()=>$("#benefitImageModal").close());$("#benefitImageModal").addEventListener("click",e=>{if(e.target===$("#benefitImageModal"))$("#benefitImageModal").close()});
 $("#productImageModal").addEventListener("click",e=>{if(e.target===$("#productImageModal"))$("#productImageModal").close()});$("#closeProductImage").addEventListener("click",()=>$("#productImageModal").close());
 $("#trackBtn").addEventListener("click",()=>$("#trackModal").showModal());$("#closeTrackModal").addEventListener("click",()=>$("#trackModal").close());$("#trackModal").addEventListener("click",e=>{if(e.target===$("#trackModal"))$("#trackModal").close()});
@@ -2126,7 +2126,7 @@ render();countdown();setInterval(countdown,1000);
     a.rel="noopener noreferrer";
     a.href=url;
     a.setAttribute("aria-label",label||"公式X投稿を見る");
-    a.innerHTML="<span>𝕏</span>POST";
+    a.textContent="X";
     return a;
   };
 
@@ -2169,7 +2169,7 @@ render();countdown();setInterval(countdown,1000);
 
       link.href=item.url;
       link.className="schedule-x-post";
-      link.innerHTML="<span>𝕏</span>POST";
+      link.textContent="X";
       link.setAttribute("aria-label","この予定の公式X投稿を見る");
     });
   };
