@@ -1397,12 +1397,101 @@ body{font-size:14px}
   .aurora-tabs-wrap{margin:18px 0 6px!important}
 }
 </style>
-<style id="serial-20261109-official-details">
-/* 各賞の詳細だけ：日時・会場一覧を読みやすくする。既存レイアウトは維持。 */
-.serial-section .prize-body ul{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid rgba(225,231,255,.12)}
-.serial-section .prize-body li{margin:0;padding:8px 2px;border-bottom:1px solid rgba(225,231,255,.095);overflow-wrap:anywhere}
-.serial-section .prize-body li:first-child{color:#eefbf9}
-@media(max-width:560px){.serial-section .prize-body li{padding:9px 1px;line-height:1.8}}
+<style id="aurora-campaign-release-20261110">
+/* 2026.11.10 公開キャンペーン専用。その他のタブには影響しない。 */
+[data-aurora-panel="campaign"] .aurora-campaign-period{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 12px;padding:12px 14px;margin:0 0 14px;border:1px solid rgba(145,232,226,.24);background:linear-gradient(105deg,rgba(145,232,226,.075),rgba(201,167,255,.06));}
+[data-aurora-panel="campaign"] .aurora-campaign-period span{font:700 9px/1.4 Georgia,serif;letter-spacing:.12em;color:#9ce8df}
+[data-aurora-panel="campaign"] .aurora-campaign-period strong{font-size:12px;font-weight:800;color:#f0f4ff;font-variant-numeric:tabular-nums}
+[data-aurora-panel="campaign"] .aurora-campaign-stack{display:grid;gap:10px}
+[data-aurora-panel="campaign"] .aurora-campaign-card{min-width:0;padding:15px;border:1px solid rgba(225,231,255,.16);background:linear-gradient(112deg,rgba(145,232,226,.045),rgba(201,167,255,.06),rgba(5,8,25,.72));}
+[data-aurora-panel="campaign"] .aurora-campaign-card-head{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start}
+[data-aurora-panel="campaign"] .aurora-campaign-prize{display:grid;place-items:center;min-height:46px;border:1px solid rgba(234,221,174,.38);background:rgba(234,221,174,.075);font:500 20px/1 Georgia,serif;color:#eadeb9;white-space:nowrap}
+[data-aurora-panel="campaign"] .aurora-campaign-card h3{margin:1px 0 5px;font-size:13px;font-weight:800;line-height:1.5;color:#f3f6ff}
+[data-aurora-panel="campaign"] .aurora-campaign-card p{margin:4px 0 0;font-size:11px;line-height:1.72;color:#c5cee0}
+[data-aurora-panel="campaign"] .aurora-campaign-subrow{margin:12px 0 0 56px;padding-top:10px;border-top:1px solid rgba(225,231,255,.09);color:#e8ecf6}
+[data-aurora-panel="campaign"] .aurora-campaign-subrow strong{font-size:11px;line-height:1.65;color:#f2f6ff;font-weight:800}
+[data-aurora-panel="campaign"] .aurora-campaign-result{margin:12px 0 0 56px!important}
+[data-aurora-panel="campaign"] .aurora-campaign-highlight{display:inline-block;margin-right:3px;padding:2px 6px;border:1px solid rgba(145,232,226,.26);background:rgba(145,232,226,.095);font-size:10px;font-weight:800;color:#bff8ef;white-space:nowrap}
+[data-aurora-panel="campaign"] .aurora-campaign-stream .aurora-campaign-card-head{grid-template-columns:minmax(105px,.45fr) minmax(0,1fr);gap:14px}
+[data-aurora-panel="campaign"] .aurora-campaign-service{display:block;padding:8px 9px;border-left:2px solid #91e8e2;background:rgba(145,232,226,.07);font-size:12px;font-weight:800;line-height:1.5;color:#e5f6f8;overflow-wrap:anywhere}
+[data-aurora-panel="campaign"] .aurora-campaign-stream:nth-child(2n) .aurora-campaign-service{border-left-color:#c9a7ff;background:rgba(201,167,255,.08);color:#ede0ff}
+[data-aurora-panel="campaign"] .aurora-campaign-when{margin:11px 0 0;padding:8px 10px;border-top:1px solid rgba(225,231,255,.09);font-size:10.5px;font-weight:700;color:#b9c8df;font-variant-numeric:tabular-nums}
+[data-aurora-panel="campaign"] .aurora-campaign-actions{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0 0}
+[data-aurora-panel="campaign"] .aurora-campaign-action{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:9px 13px;border:1px solid rgba(145,232,226,.34);background:linear-gradient(110deg,rgba(145,232,226,.07),rgba(201,167,255,.10));color:#f0f6ff;text-decoration:none;font-size:10px;font-weight:800;letter-spacing:.025em;line-height:1.45;text-align:center;transition:background .2s,border-color .2s;touch-action:manipulation}
+[data-aurora-panel="campaign"] .aurora-campaign-action:active{background:linear-gradient(110deg,rgba(145,232,226,.15),rgba(201,167,255,.18));border-color:rgba(145,232,226,.64)}
+[data-aurora-panel="campaign"] .aurora-campaign-actions-top{margin:-3px 0 17px}
+@media(max-width:560px){
+ [data-aurora-panel="campaign"] .aurora-campaign-period{padding:11px 10px}
+ [data-aurora-panel="campaign"] .aurora-campaign-period strong{font-size:11px}
+ [data-aurora-panel="campaign"] .aurora-campaign-card{padding:12px 11px}
+ [data-aurora-panel="campaign"] .aurora-campaign-card-head{grid-template-columns:37px minmax(0,1fr);gap:10px}
+ [data-aurora-panel="campaign"] .aurora-campaign-prize{min-height:40px;font-size:17px}
+ [data-aurora-panel="campaign"] .aurora-campaign-card h3{font-size:11.8px}
+ [data-aurora-panel="campaign"] .aurora-campaign-card p{font-size:10.5px}
+ [data-aurora-panel="campaign"] .aurora-campaign-subrow{margin-left:47px}
+ [data-aurora-panel="campaign"] .aurora-campaign-subrow strong{font-size:10.5px}
+ [data-aurora-panel="campaign"] .aurora-campaign-result{margin-left:47px!important}
+ [data-aurora-panel="campaign"] .aurora-campaign-highlight{font-size:9px}
+ [data-aurora-panel="campaign"] .aurora-campaign-stream .aurora-campaign-card-head{grid-template-columns:minmax(90px,.43fr) minmax(0,1fr);gap:10px}
+ [data-aurora-panel="campaign"] .aurora-campaign-service{padding:7px 6px;font-size:10.5px}
+ [data-aurora-panel="campaign"] .aurora-campaign-when{font-size:9.5px}
+}
+
+/* 公式詳細（2026.11.10）：CAMPAIGNタブ内限定 */
+[data-aurora-panel="campaign"] .ac-detail{margin:13px 0 0;border-top:1px solid rgba(225,231,255,.14);color:#d8e1f2}
+[data-aurora-panel="campaign"] .ac-detail summary{padding:12px 4px;cursor:pointer;font-size:11px;font-weight:800;color:#bff8ef;list-style-position:inside;touch-action:manipulation}
+[data-aurora-panel="campaign"] .ac-detail-body{padding:0 4px 10px;font-size:11px;line-height:1.85}
+[data-aurora-panel="campaign"] .ac-detail-body p{margin:7px 0;font-size:11px}
+[data-aurora-panel="campaign"] .ac-dates{margin:10px 0;display:grid;gap:5px}
+[data-aurora-panel="campaign"] .ac-dates>div{display:flex;justify-content:space-between;gap:5px 14px;flex-wrap:wrap;padding:8px 10px;background:rgba(145,232,226,.05);border:1px solid rgba(225,231,255,.08);font-size:10px}
+[data-aurora-panel="campaign"] .ac-dates b{color:#f0f4ff}
+[data-aurora-panel="campaign"] .ac-dates span{color:#c7d5e8}
+[data-aurora-panel="campaign"] .ac-notes{padding-left:18px;margin:10px 0;font-size:10.5px;line-height:1.8;color:#c7d5e8}
+[data-aurora-panel="campaign"] .ac-notes li{margin:4px 0}
+[data-aurora-panel="campaign"] .ac-under{margin:10px 0 0!important}
+[data-aurora-panel="campaign"] .ac-source{font-size:10px;line-height:1.8;color:#b8c7db;margin:16px 0}
+[data-aurora-panel="campaign"] .ac-source a{color:#bff8ef}
+/* SlamDunkと同じ3区分の開閉＋応募状況記録。CAMPAIGN内だけに適用。 */
+[data-aurora-panel="campaign"] .ac-check-explainer{margin:0 0 16px;font-size:10.5px;line-height:1.8;color:#aebbd5}
+[data-aurora-panel="campaign"] .ac-folds{display:grid;gap:12px}
+[data-aurora-panel="campaign"] .ac-fold{min-width:0;border:1px solid rgba(225,231,255,.23);background:linear-gradient(105deg,rgba(18,29,52,.92),rgba(8,12,29,.96));}
+[data-aurora-panel="campaign"] .ac-fold>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 16px;min-height:82px;cursor:pointer;list-style:none;touch-action:manipulation}
+[data-aurora-panel="campaign"] .ac-fold>summary::-webkit-details-marker{display:none}
+[data-aurora-panel="campaign"] .ac-fold-head{display:flex;align-items:center;gap:12px;min-width:0}
+[data-aurora-panel="campaign"] .ac-fold-number{font:italic 17px/1 Georgia,serif;color:#91e8e2;flex-shrink:0}
+[data-aurora-panel="campaign"] .ac-fold-heading{display:flex;flex-direction:column;gap:5px;min-width:0}
+[data-aurora-panel="campaign"] .ac-fold-heading strong{font:700 clamp(13px,2.8vw,17px)/1.35 Georgia,serif;letter-spacing:.055em;color:#f3f6ff;overflow-wrap:anywhere}
+[data-aurora-panel="campaign"] .ac-fold-heading small{font-size:10px;font-weight:600;line-height:1.4;color:#acb9d1}
+[data-aurora-panel="campaign"] .ac-fold-meta{display:flex;gap:12px;align-items:center;flex-shrink:0}
+[data-aurora-panel="campaign"] .ac-fold-progress{font-size:10px;color:#aee9df;white-space:nowrap;font-variant-numeric:tabular-nums}
+[data-aurora-panel="campaign"] .ac-fold-plus{position:relative;display:grid;place-items:center;border:1px solid rgba(145,232,226,.4);width:27px;height:27px;flex:0 0 27px;color:#c5f7f0}
+[data-aurora-panel="campaign"] .ac-fold-plus::before{content:"+";font:400 21px/1 Georgia,serif}
+[data-aurora-panel="campaign"] .ac-fold[open] .ac-fold-plus::before{content:"−"}
+[data-aurora-panel="campaign"] .ac-fold[open]>summary{background:linear-gradient(100deg,rgba(145,232,226,.10),rgba(201,167,255,.05))}
+[data-aurora-panel="campaign"] .ac-fold-body{padding:15px;border-top:1px solid rgba(225,231,255,.17)}
+[data-aurora-panel="campaign"] .ac-fold-body>.aurora-campaign-period{margin:0 0 12px}
+[data-aurora-panel="campaign"] .ac-check-heading{font-size:10.5px!important;font-weight:800;color:#d8e2f5!important;margin:15px 0 8px!important}
+[data-aurora-panel="campaign"] .ac-service-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 0 12px}
+[data-aurora-panel="campaign"] .ac-service-check{display:flex;min-width:0;align-items:center;justify-content:space-between;gap:8px;border:1px solid rgba(225,231,255,.11);padding:7px;background:rgba(7,13,30,.48)}
+[data-aurora-panel="campaign"] .ac-service-name{font-size:10.5px;font-weight:700;line-height:1.45;color:#e6eefb;overflow-wrap:anywhere}
+[data-aurora-panel="campaign"] .ac-check-actions{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 2px}
+[data-aurora-panel="campaign"] .ac-check{display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:34px;padding:7px 9px;border:1px solid rgba(203,213,240,.39);border-radius:3px;background:rgba(255,255,255,.035);color:#d4def0;font-family:inherit;font-weight:700;font-size:10.5px;line-height:1.4;text-align:center;cursor:pointer;touch-action:manipulation;transition:background .15s,border-color .15s,color .15s}
+[data-aurora-panel="campaign"] .ac-check-mark{font-weight:800;font-size:15px;line-height:1;color:inherit}
+[data-aurora-panel="campaign"] .ac-check-caption{font-size:10.5px;line-height:1.4}
+[data-aurora-panel="campaign"] .ac-check[aria-pressed="true"]{border-color:rgba(145,232,226,.78);background:rgba(145,232,226,.13);color:#c5fff2}
+[data-aurora-panel="campaign"] .ac-check:focus-visible,[data-aurora-panel="campaign"] .ac-fold>summary:focus-visible{outline:2px solid #91e8e2;outline-offset:3px}
+@media(max-width:530px){
+ [data-aurora-panel="campaign"] .ac-fold>summary{padding:15px 11px;gap:7px;min-height:75px}
+ [data-aurora-panel="campaign"] .ac-fold-head{gap:7px}
+ [data-aurora-panel="campaign"] .ac-fold-number{font-size:14px}
+ [data-aurora-panel="campaign"] .ac-fold-heading strong{font-size:12.5px;letter-spacing:0}
+ [data-aurora-panel="campaign"] .ac-fold-meta{gap:7px}
+ [data-aurora-panel="campaign"] .ac-fold-progress{font-size:9px}
+ [data-aurora-panel="campaign"] .ac-fold-plus{width:23px;height:23px;flex-basis:23px}
+ [data-aurora-panel="campaign"] .ac-fold-body{padding:10px}
+ [data-aurora-panel="campaign"] .ac-service-checks{grid-template-columns:1fr}
+ [data-aurora-panel="campaign"] .ac-check{min-height:36px}
+}
 </style>
 </head>
 <body class="serial-layout-a">
@@ -1771,14 +1860,42 @@ body{font-size:14px}
 
 <div class="aurora-tab-panel" data-aurora-panel="campaign">
 <section class="clean-section reveal">
-  <div class="clean-head"><h2>DOWNLOAD CAMPAIGN</h2><p>デジタルキャンペーン</p></div>
-  <div class="pending-only">随時追加予定</div>
-</section>
-<section class="clean-section reveal">
-  <div class="clean-head"><h2>STREAMING &amp; DOWNLOAD</h2><p>配信・ダウンロード</p></div>
-  <div class="pending-only">随時追加予定</div>
+  <div class="clean-head"><h2>DIGITAL CAMPAIGN</h2><p>Aurora 配信キャンペーン</p></div>
+<div class="aurora-campaign-actions aurora-campaign-actions-top">
+<a class="aurora-campaign-action" href="https://starglow.tokyo/news/music/1524/" rel="noopener noreferrer" target="_blank">公式キャンペーン詳細 ↗</a>
+<a class="aurora-campaign-action" href="https://starglow.lnk.to/STARGLOW_Aurora" rel="noopener noreferrer" target="_blank">配信・ダウンロード ↗</a>
+<a class="aurora-campaign-action" href="https://starglow-sp.com/Aurora/" rel="noopener noreferrer" target="_blank">Aurora特設サイト ↗</a>
+</div>
+  <p class="ac-check-explainer">応募・登録・参加の記録は自分用です。チェックはこの端末のブラウザに保存され、リンクを開いただけでは完了になりません。もう一度押すと取り消せます。</p>
+  <div class="ac-folds">
+<details class="ac-fold" id="aurora-preadd-presave">
+  <summary class="ac-fold-summary">
+    <span class="ac-fold-head"><span class="ac-fold-number">01 /</span><span class="ac-fold-heading"><strong>PRE-ADD / PRE-SAVE</strong><small>事前登録キャンペーン</small></span></span>
+    <span class="ac-fold-meta"><span class="ac-fold-progress" data-ac-progress="pre">0 / 0 記録済み</span><span class="ac-fold-plus" aria-hidden="true"></span></span>
+  </summary>
+  <div class="ac-fold-body"><div class="aurora-campaign-stack"><article class="aurora-campaign-card aurora-campaign-stream"><div class="aurora-campaign-card-head"><span class="aurora-campaign-service">Pre-Add / Pre-Save</span><div><h3>限定コメント動画</h3><p><span class="aurora-campaign-highlight">参加者全員</span> Apple Music・Spotifyそれぞれ限定</p></div></div><div class="aurora-campaign-when">期間　2026.11.10（火）— 11.15（日）23:59</div><div class="aurora-campaign-actions"><a class="aurora-campaign-action" href="https://avex.ffm.to/starglow_aurora" rel="noopener noreferrer" target="_blank">Apple Music Pre-Add ↗</a><a class="aurora-campaign-action" href="https://open.spotify.com/prerelease/5CEmsPBpzNHRNG6VubTvLv" rel="noopener noreferrer" target="_blank">Spotify Pre-Save ↗</a></div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="pre-apple" data-ac-label="Apple Musicで事前登録した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">Apple Musicで事前登録した（未記録）</span></button><button type="button" class="ac-check" data-ac-key="pre-spotify" data-ac-label="Spotifyで事前登録した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">Spotifyで事前登録した（未記録）</span></button></div><details class="ac-detail"><summary>参加手順</summary><div class="ac-detail-body"><p>Apple Music：Pre-Add on Apple Music → COMPLETE → 限定コメント視聴（11/15 23:59まで）。11/16にライブラリへアルバムが追加されます。</p><p>Spotify：Countdown Pagesの「事前登録」をタップ。11/16にマイライブラリへ追加。Countdown Pagesの限定コメントを視聴できます。</p></div></details></article></div></div>
+</details>
+<details class="ac-fold" id="aurora-dl-campaign">
+  <summary class="ac-fold-summary">
+    <span class="ac-fold-head"><span class="ac-fold-number">02 /</span><span class="ac-fold-heading"><strong>DOWNLOAD CAMPAIGN</strong><small>DLキャンペーン</small></span></span>
+    <span class="ac-fold-meta"><span class="ac-fold-progress" data-ac-progress="dl">0 / 0 記録済み</span><span class="ac-fold-plus" aria-hidden="true"></span></span>
+  </summary>
+  <div class="ac-fold-body"><div class="aurora-campaign-period"><span>CAMPAIGN PERIOD / 応募締切</span><strong>2026.11.16（月）— 11.22（日）23:59</strong></div><div class="aurora-campaign-stack"><article class="aurora-campaign-card"><div class="aurora-campaign-card-head"><span class="aurora-campaign-prize">A賞</span><div><h3>ダウンロードキャンペーン</h3><p>「Aurora」単曲DL（全14曲アルバムのバンドル購入も対象）</p></div></div>
+<div class="aurora-campaign-subrow"><strong>iTunes / レコチョク / mora / dミュージック</strong><p><span class="aurora-campaign-highlight">各サービスの応募者全員</span> サービス別限定メンバーメッセージ動画</p></div>
+<div class="aurora-campaign-subrow"><strong>Amazon Music / mu-mo</strong><p><span class="aurora-campaign-highlight">抽選で20名様</span> 限定メンバー手書きサイン入りワイドチェキ</p></div><p class="ac-check-heading">A賞｜サービス別の応募記録</p><div class="ac-service-checks" aria-label="A賞・サービス別の応募記録"><div class="ac-service-check"><span class="ac-service-name">iTunes</span><button type="button" class="ac-check" data-ac-key="dl-itunes" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><div class="ac-service-check"><span class="ac-service-name">レコチョク</span><button type="button" class="ac-check" data-ac-key="dl-recochoku" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><div class="ac-service-check"><span class="ac-service-name">mora</span><button type="button" class="ac-check" data-ac-key="dl-mora" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><div class="ac-service-check"><span class="ac-service-name">dミュージック</span><button type="button" class="ac-check" data-ac-key="dl-dmusic" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><div class="ac-service-check"><span class="ac-service-name">Amazon Music</span><button type="button" class="ac-check" data-ac-key="dl-amazon" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><div class="ac-service-check"><span class="ac-service-name">mu-mo</span><button type="button" class="ac-check" data-ac-key="dl-mumo" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div></div><details class="ac-detail"><summary>応募方法・注意事項</summary><div class="ac-detail-body"><p>専用応募フォームは11/16（月）0:00までに公式サイトで案内予定。公開前のためリンクは未掲載です。</p><ul class="ac-notes"><li>各DLサービスにつき1人1回まで応募可能。</li><li>レコチョクとmoraのハイレゾシングルも対象。</li><li>全14曲アルバムのバンドル購入も対象。</li><li>Googleフォームで応募。送信後「回答を記録しました」の表示で完了。応募完了メールなし。</li><li>登録情報は応募完了後変更不可。</li><li>抽選特典は日本国内のみ発送、2027年1月上旬以降予定。</li></ul></div></details></article><article class="aurora-campaign-card"><div class="aurora-campaign-card-head"><span class="aurora-campaign-prize">B賞</span><div><h3>Talk Show &amp; Greeting</h3><p><span class="aurora-campaign-highlight">抽選で合計100名様</span> 5都市・各日2部</p></div></div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="dl-b" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><details class="ac-detail"><summary>開催日程・応募方法</summary><div class="ac-detail-body"><p>A賞のDLキャンペーンに参加したうえで、B賞専用フォームから応募。希望日程・部を選択します。シリアル応募抽選特典【A賞】と同じ内容。</p><div class="ac-dates"><div><b>2027.1.24（日）　札幌</b><span>1部 13:00〜 ／ 2部 16:30〜　各10名</span></div><div><b>2027.4.3（土）　福岡</b><span>1部 13:00〜 ／ 2部 16:30〜　各10名</span></div><div><b>2027.4.4（日）　名古屋</b><span>1部 13:00〜 ／ 2部 16:30〜　各10名</span></div><div><b>2027.4.24（土）　大阪</b><span>1部 13:00〜 ／ 2部 16:30〜　各10名</span></div><div><b>2027.4.25（日）　東京</b><span>1部 13:00〜 ／ 2部 16:30〜　各10名</span></div></div><p>専用応募フォームは11/16（月）0:00までに公式サイトで案内予定。公開前のためリンクは未掲載です。</p><ul class="ac-notes"><li>期間中、1人複数回応募可能。ただし応募ごとに異なる購入証明画像が必要。</li><li>対象曲のDL購入証明画像と、各DLキャンペーン応募フォームの「応募完了」証明画像が必要。</li><li>1つのDLサービスにつき楽曲購入は1回が上限。iTunesとレコチョクに各1回は可、iTunesに2回以上は不可。</li><li>同一購入情報・画像による複数応募は無効となる場合あり。</li><li>トークとお見送りを予定。日程・内容は変更になる可能性あり。</li><li>当選者にはメールで案内。</li></ul></div></details></article><article class="aurora-campaign-card"><div class="aurora-campaign-card-head"><span class="aurora-campaign-prize">C賞</span><div><h3>レコチョク うたギフト</h3><p><span class="aurora-campaign-highlight">抽選で20名様</span> Aurora 非売品B2ポスター</p></div></div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="dl-c" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><details class="ac-detail"><summary>応募方法・注意事項</summary><div class="ac-detail-body"><p>「Aurora（単曲）」をレコチョクの「うたギフト」で購入し、応募フォームに登録。</p><p>購入にはクラブレコチョクメンバー（無料）の登録が必要です。詳細ページは11/16（月）0:00公開予定。</p><div class="aurora-campaign-actions"><a class="aurora-campaign-action" href="https://recochoku.jp/special/101098/" rel="noopener noreferrer" target="_blank">うたギフト詳細 ↗</a></div></div></details></article><article class="aurora-campaign-card"><div class="aurora-campaign-card-head"><span class="aurora-campaign-prize">S賞</span><div><h3>アルバムDLキャンペーン</h3><p>『Aurora』全14曲入りアルバム／対象ハイレゾアルバム</p></div></div><div class="aurora-campaign-subrow"><p><span class="aurora-campaign-highlight">応募者全員</span> 限定デジタルブックレット</p></div><div class="aurora-campaign-subrow"><p><span class="aurora-campaign-highlight">抽選で50名様</span> 5都市サイン会へご招待</p></div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="dl-s" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><details class="ac-detail"><summary>サイン会日程・応募方法</summary><div class="ac-detail-body"><p>シリアル応募抽選特典【B賞】と同じ内容。</p><div class="ac-dates"><div><b>2027.1.24（日）　札幌</b><span>1部 14:30〜 ／ 2部 18:00〜　各5名</span></div><div><b>2027.4.3（土）　福岡</b><span>1部 14:30〜 ／ 2部 18:00〜　各5名</span></div><div><b>2027.4.4（日）　名古屋</b><span>1部 14:30〜 ／ 2部 18:00〜　各5名</span></div><div><b>2027.4.24（土）　大阪</b><span>1部 14:30〜 ／ 2部 18:00〜　各5名</span></div><div><b>2027.4.25（日）　東京</b><span>1部 14:30〜 ／ 2部 18:00〜　各5名</span></div></div><p>専用応募フォームは11/16（月）0:00までに公式サイトで案内予定。公開前のためリンクは未掲載です。</p><ul class="ac-notes"><li>対象アルバムのDL購入後、専用フォームでの応募が必須。購入のみでは特典対象外。</li><li>単曲購入は対象外。レコチョク・mora・dミュージックのハイレゾアルバムは対象。</li><li>iTunesで既購入曲がある場合、コンプリート・マイ・アルバム等の差額購入も参加可能。</li><li>Googleフォームで応募。日本国内のみ発送、2027年1月上旬以降予定。</li></ul></div></details></article></div></div>
+</details>
+<details class="ac-fold" id="aurora-st-campaign">
+  <summary class="ac-fold-summary">
+    <span class="ac-fold-head"><span class="ac-fold-number">03 /</span><span class="ac-fold-heading"><strong>STREAMING CAMPAIGN</strong><small>ストリーミングキャンペーン</small></span></span>
+    <span class="ac-fold-meta"><span class="ac-fold-progress" data-ac-progress="st">0 / 0 記録済み</span><span class="ac-fold-plus" aria-hidden="true"></span></span>
+  </summary>
+  <div class="ac-fold-body"><div class="aurora-campaign-stack"><article class="aurora-campaign-card aurora-campaign-stream"><div class="aurora-campaign-card-head"><span class="aurora-campaign-service">Apple Music / Spotify</span><div><h3>フォロー＆お気に入り登録</h3><p><span class="aurora-campaign-highlight">抽選で10名様</span> 限定メンバーボイスメッセージ</p></div></div><div class="aurora-campaign-when">期間・応募締切　2026.11.16（月）— 11.22（日）23:59</div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="st-favorite" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><details class="ac-detail"><summary>応募条件</summary><div class="ac-detail-body"><p>STARGLOWのアーティストページをフォローし、「Aurora」をお気に入り登録。両方を確認できるスクリーンショットを用意して応募します。</p><p>専用応募フォームは11/16（月）0:00までに公式サイトで案内予定。公開前のためリンクは未掲載です。</p></div></details></article><article class="aurora-campaign-card aurora-campaign-stream"><div class="aurora-campaign-card-head"><span class="aurora-campaign-service">LINE MUSIC</span><div><h3>「My推しバッジ」キャンペーン</h3><p><span class="aurora-campaign-highlight">バッジ獲得者全員</span> 限定メンバー動画</p><p><span class="aurora-campaign-highlight">上位1%から抽選25名様</span> 5都市サイン会</p></div></div><div class="aurora-campaign-when">期間・応募締切　2026.11.16（月）— 11.29（日）23:59</div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="st-line-badge" data-ac-label="My推しバッジを獲得した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">My推しバッジを獲得した（未記録）</span></button><button type="button" class="ac-check" data-ac-key="st-line-apply" data-ac-label="応募した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">応募した（未記録）</span></button></div><details class="ac-detail"><summary>開催日程・応募方法</summary><div class="ac-detail-body"><p>LINE MUSIC「My推し」からSTARGLOWを推しアーティストに登録し、期間中にバッジを獲得。バッジ画面と、上位1%の場合はその表示画面をスクリーンショットして応募。</p><div class="ac-dates"><div><b>2027.1.24（日）　札幌</b><span>14:30〜　5名</span></div><div><b>2027.4.3（土）　福岡</b><span>14:30〜　5名</span></div><div><b>2027.4.4（日）　名古屋</b><span>14:30〜　5名</span></div><div><b>2027.4.24（土）　大阪</b><span>14:30〜　5名</span></div><div><b>2027.4.25（日）　東京</b><span>14:30〜　5名</span></div></div><p>専用応募フォームは11/16（月）0:00までに公式サイトで案内予定。公開前のためリンクは未掲載です。</p><p>サイン会はシリアル応募抽選特典【B賞】と同じ内容。日本国内のみ発送、2027年1月上旬以降予定。</p></div></details></article><article class="aurora-campaign-card aurora-campaign-stream"><div class="aurora-campaign-card-head"><span class="aurora-campaign-service">AWA LOUNGE</span><div><h3>STARGLOW特集リスニングパーティー</h3><p>11/18（水）20:30〜　メンバー5名で生配信</p></div></div><p class="ac-under">無料で参加可能。AWAアプリがあると交流機能なども利用できます。</p><div class="aurora-campaign-actions"><a class="aurora-campaign-action" href="https://cp.awa.fm/how-to-join/qib71lg0uw-c" rel="noopener noreferrer" target="_blank">AWA LOUNGE 参加方法 ↗</a></div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="st-awa" data-ac-label="参加した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">参加した（未記録）</span></button></div></article><article class="aurora-campaign-card aurora-campaign-stream"><div class="aurora-campaign-card-head"><span class="aurora-campaign-service">Stationhead</span><div><h3>Apple Music &amp; Spotify リスニングパーティー</h3><p>11/19（木）19:00頃〜　RUI / KANON / ADAM</p><p>11/20（金）21:00頃〜　TAIKI / GOICHI</p></div></div><div class="aurora-campaign-actions"><a class="aurora-campaign-action" href="https://share.stationhead.com/osf6ngc8ctql" rel="noopener noreferrer" target="_blank">STARGLOW公式をフォロー ↗</a><a class="aurora-campaign-action" href="https://apps.apple.com/jp/app/stationhead/id1076117681" rel="noopener noreferrer" target="_blank">iPhoneアプリ ↗</a><a class="aurora-campaign-action" href="https://play.google.com/store/apps/details?id=com.stationhead.app&amp;hl=ja&amp;gl=JP" rel="noopener noreferrer" target="_blank">Androidアプリ ↗</a></div><div class="ac-check-actions"><button type="button" class="ac-check" data-ac-key="st-station-1119" data-ac-label="11/19に参加した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">11/19に参加した（未記録）</span></button><button type="button" class="ac-check" data-ac-key="st-station-1120" data-ac-label="11/20に参加した" aria-pressed="false"><span class="ac-check-mark" aria-hidden="true">○</span><span class="ac-check-caption">11/20に参加した（未記録）</span></button></div><details class="ac-detail"><summary>参加条件・注意事項</summary><div class="ac-detail-body"><p>Apple Music有料会員またはSpotify Premium会員が必要です。Stationheadアカウントを作成し、公式アカウント「starglowbmsg」をフォローしてください。</p><ul class="ac-notes"><li>Android端末はSpotify Premium会員のみ参加可能。</li><li>イヤホン・ヘッドホンの利用を推奨。</li><li>開始時刻は状況により変更される場合があります。</li></ul><div class="aurora-campaign-actions"><a class="aurora-campaign-action" href="https://www.apple.com/jp/apple-music/" rel="noopener noreferrer" target="_blank">Apple Music ↗</a><a class="aurora-campaign-action" href="https://www.spotify.com/jp/premium/" rel="noopener noreferrer" target="_blank">Spotify Premium ↗</a></div></div></details></article></div></div>
+</details>
+  </div>
+<p class="ac-source">※応募フォームは11/16（月）0:00までに公式から案内予定です。詳細・注意事項は<a href="https://starglow.tokyo/news/music/1524/" rel="noopener noreferrer" target="_blank">公式キャンペーン記事</a>をご確認ください。お問い合わせ：<a href="https://supportform.jp/avexportal/" rel="noopener noreferrer" target="_blank">エイベックス・カスタマーサポート</a>（平日11:00〜18:00）</p>
 </section>
 </div>
+
 <div class="aurora-tab-panel" data-aurora-panel="serial">
 <section class="clean-section serial-section reveal">
   <div class="clean-head serial-campaign-head"><h2>SERIAL CAMPAIGN</h2><p>シリアル特典</p><a class="serial-jump-btn" href="#serialRounds">応募期間・シリアル管理へ</a></div>
@@ -1867,7 +1984,7 @@ const DATA={
   {key:"C",name:"Arena Tour リハーサル観覧",count:"合計1,300名",body:"『STARGLOW 1st Arena Tour 2027 Aurora – The Dawn -』のリハーサル観覧へご招待。開演前に実施。全13公演・各公演100名。公演チケットをお持ちでない方も参加できます。",points:["2027/1/17（日）【新潟】朱鷺メッセ","2027/1/30（土）・1/31（日）【愛知】AICHI SKY EXPO HALL A","2027/2/6（土）・2/7（日）【福岡】マリンメッセ福岡 B館","2027/2/27（土）・2/28（日）【北海道】北海きたえーる","2027/3/13（土）・3/14（日）【広島】広島グリーンアリーナ","2027/3/27（土）・3/28（日）【兵庫】GLION ARENA KOBE","2027/4/10（土）・4/11（日）【東京】有明アリーナ","全13公演・各公演100名／合計1,300名","1/16（土）の新潟公演は対象外です","公演チケット不要／開演前の実施","対象公演・招待人数は変更となる場合があります"]},
   {key:"D",name:"Arena Tour オフィシャル出待ち",count:"合計700名",body:"『STARGLOW 1st Arena Tour 2027 Aurora – The Dawn -』のオフィシャル出待ちへご招待。終演後に実施。全14公演・各公演50名。公演チケットをお持ちでない方も参加できます。",points:["2027/1/16（土）・1/17（日）【新潟】朱鷺メッセ","2027/1/30（土）・1/31（日）【愛知】AICHI SKY EXPO HALL A","2027/2/6（土）・2/7（日）【福岡】マリンメッセ福岡 B館","2027/2/27（土）・2/28（日）【北海道】北海きたえーる","2027/3/13（土）・3/14（日）【広島】広島グリーンアリーナ","2027/3/27（土）・3/28（日）【兵庫】GLION ARENA KOBE","2027/4/10（土）・4/11（日）【東京】有明アリーナ","全14公演・各公演50名／合計700名","公演チケット不要／終演後の実施","対象公演・招待人数は変更となる場合があります"]},
   {key:"E",name:"直筆サイン入りジャケットサイズフォトカード",count:"50名",body:"直筆サイン入りジャケットサイズフォトカードを50名様にプレゼント。",points:[]},
-  {key:"ALL",name:"オリジナル動画コメント",count:"応募者全員",body:"シリアル応募者全員への特典。",points:["応募者全員が対象"]}
+  {key:"ALL",name:"オリジナル動画コメント",count:"応募者全員",body:"シリアル応募者全員への特典。",points:["視聴期間：2026.11.17 12:00 ～ 2026.12.21 12:00"]}
  ],
  rounds:[
   {name:"第1弾",period:"2026.11.17 12:00 ～ 11.20 12:00",result:"当落発表：11.24 18:00頃"},
@@ -1980,7 +2097,7 @@ function prizeSummary(p){
 function allocationOptions(key){
  if(key==="S")return ["RUI・TAIKI・ADAM","KANON・GOICHI"];
  if(key==="A"||key==="B")return ["札幌・1部","札幌・2部","東京・1部","東京・2部","名古屋・1部","名古屋・2部","大阪・1部","大阪・2部","福岡・1部","福岡・2部"];
- if(key==="C")return DATA.tourShows.slice(1).map(x=>x+"（対象公演未確定）"); // 旧保存キーを維持して1/16のみ対象外
+ if(key==="C")return DATA.tourShows.map(x=>x+"（対象公演未確定）");
  if(key==="D")return DATA.tourShows.slice();
  if(key==="E")return ["フォトカード"];
  return [];
@@ -2014,11 +2131,8 @@ function openRoundManager(roundIndex,state,key){
  const cityGroups=(prize)=>["札幌","東京","名古屋","大阪","福岡"].map(city=>`<div class="alloc-city"><div class="alloc-city-name">${city}</div><div class="alloc-city-parts">${controlRow(prize,city+"・1部","1部")}${controlRow(prize,city+"・2部","2部")}</div></div>`).join("");
  $("#serialRoundRows").innerHTML=prizes.map(p=>{
   const options=allocationOptions(p.key);
-  const oldExcluded="1/16 新潟・朱鷺メッセ（対象公演未確定）";
-  const hadOldExcluded=p.key==="C"&&cleanNumber(roundState[allocationId("C",oldExcluded)]||0)>0;
-  const note=p.key==="C"?'<div class="alloc-official-note">公式発表の対象13公演を表示（1/16 新潟は対象外）。以前の入力内容は保持しています。</div>':"";
-  const normalRows=(p.key==="A"||p.key==="B")?cityGroups(p.key):options.map(opt=>controlRow(p.key,opt,p.key==="C"?opt.replace("（対象公演未確定）",""):opt)).join("");
-  const rows=normalRows+(hadOldExcluded?'<div class="alloc-official-note">※1/16 新潟はC賞の対象外です。旧入力の数字を0へ修正してください。</div>'+controlRow("C",oldExcluded,"1/16 新潟（対象外／旧入力の修正のみ）"):"");
+  const note=p.key==="C"?'<div class="alloc-official-note">対象13公演の内訳が不明のため、現時点では予定として管理が可能<br>（確定次第更新します）</div>':"";
+  const rows=(p.key==="A"||p.key==="B")?cityGroups(p.key):options.map(opt=>controlRow(p.key,opt,opt)).join("");
   return `<details class="alloc-prize"><summary><strong>${safe(p.key)}賞　${safe(p.name)}</strong><span class="alloc-count">${safe(p.count)}</span><span class="alloc-toggle"><span class="when-closed">開く</span><span class="when-open">閉じる</span><i aria-hidden="true"></i></span></summary><div class="alloc-options">${note}${rows}</div></details>`;
  }).join("");
  const refresh=()=>{
@@ -2383,6 +2497,40 @@ render();countdown();setInterval(countdown,1000);
   document.addEventListener("visibilitychange",()=>{
     if(!document.hidden)loadLinks();
   });
+})();
+</script>
+
+<script id="aurora-campaign-checks-v1">
+/* 応募記録はブラウザごとに保持（公式応募フォームとは連動しない）。 */
+(()=>{
+  const panel=document.querySelector('[data-aurora-panel="campaign"]');
+  if(!panel)return;
+  const prefix='aurora_campaign_v1_';
+  const buttons=[...panel.querySelectorAll('.ac-check[data-ac-key]')];
+  const paint=(button,done)=>{
+    button.setAttribute('aria-pressed',String(done));
+    button.querySelector('.ac-check-mark').textContent=done?'✓':'○';
+    button.querySelector('.ac-check-caption').textContent=button.dataset.acLabel+(done?'（記録済み）':'（未記録）');
+  };
+  const refresh=()=>{
+    panel.querySelectorAll('.ac-fold').forEach(fold=>{
+      const checks=[...fold.querySelectorAll('.ac-check')];
+      const count=checks.filter(button=>button.getAttribute('aria-pressed')==='true').length;
+      const out=fold.querySelector('.ac-fold-progress');
+      if(out)out.textContent=count+' / '+checks.length+' 記録済み';
+    });
+  };
+  buttons.forEach(button=>{
+    const key=prefix+button.dataset.acKey;
+    try{paint(button,localStorage.getItem(key)==='1');}
+    catch(_){paint(button,false);}
+    button.addEventListener('click',()=>{
+      const done=button.getAttribute('aria-pressed')!=='true';
+      try{localStorage.setItem(key,done?'1':'0');paint(button,done);refresh();}
+      catch(_){alert('このブラウザでは応募記録を保存できません。');}
+    });
+  });
+  refresh();
 })();
 </script>
 </body>
