@@ -2325,6 +2325,22 @@ render();countdown();setInterval(countdown,1000);
     "2026-11-12-solo"
   ];
 
+  /* 公開済みで個別URLが確認できた投稿は、Workerに関係なく固定表示する。 */
+  const SOLO_FIXED_POSTS={
+    "2026-11-08-solo":{
+      member:"RUI",
+      filmUrl:"https://x.com/starglow_bmsg/status/2119218424144683431",
+      filmPhotoUrl:"https://x.com/starglow_bmsg/status/2119361847203955097"
+    },
+    "2026-11-09-solo":{
+      member:"ADAM",
+      filmUrl:"https://x.com/starglow_bmsg/status/2119580728539123741",
+      filmPhotoUrl:"https://x.com/starglow_bmsg/status/2119724176462299559"
+    },
+    "2026-11-10-solo":{member:"KANON"},
+    "2026-11-11-solo":{member:"TAIKI"}
+  };
+
   const makeXPostButton=(url,label)=>{
     const a=document.createElement("a");
     a.className="schedule-x-post";
@@ -2426,32 +2442,69 @@ render();countdown();setInterval(countdown,1000);
     return button;
   };
 
-  const updateSoloRows=schedule=>{
+  /* 各端末に保存した投稿を、Workerへの再接続より先に復元する。
+     以前の版の保存情報も取り込み、2本そろったリンクは再取得で消さない。 */
+  const SOLO_CACHE_KEY="aurora_solo_x_posts_v2";
+  const SOLO_OLD_CACHE_KEY="aurora_solo_x_posts_v1";
+  const soloLinkCache={};
+  for(const cacheKey of [SOLO_OLD_CACHE_KEY,SOLO_CACHE_KEY]){
+    try{
+      const saved=JSON.parse(localStorage.getItem(cacheKey)||"{}");
+      SOLO_KEYS.forEach(key=>{
+        const x=saved?.[key];
+        if(!x||typeof x!=="object")return;
+        const old=soloLinkCache[key]||{};
+        soloLinkCache[key]={
+          member:((typeof x.member==="string"&&x.member.trim()!=="?????")?x.member.trim():"")||old.member||"",
+          filmUrl:officialUrl(x.filmUrl)||officialUrl(old.filmUrl),
+          filmPhotoUrl:officialUrl(x.filmPhotoUrl)||officialUrl(old.filmPhotoUrl)
+        };
+      });
+    }catch(_){/* 保存領域がない環境では固定URLとWorkerの結果を使う */}
+  }
+  const saveSoloCache=()=>{
+    try{localStorage.setItem(SOLO_CACHE_KEY,JSON.stringify(soloLinkCache))}catch(_){}
+  };
+
+  const updateSoloRows=(schedule={})=>{
     SOLO_KEYS.forEach(key=>{
       const row=list.querySelector(`[data-schedule-key="${CSS.escape(key)}"]`);
       if(!row)return;
-
       const item=schedule[key]||{};
-      const date=key.replace(/-solo$/,"");
+      const date=key.replace(/-solo$/,'');
       const related=[
         item,
         schedule[`${date}-film`],schedule[`${date}-mood-film`],schedule[`${date}-solo-film`],
         schedule[`${date}-film-photo`],schedule[`${date}-filmphoto`],schedule[`${date}-mood-film-photo`],schedule[`${date}-solo-film-photo`]
       ].filter(Boolean);
 
-      const member=row.querySelector("[data-solo-member]");
-      const memberValue=related.map(v=>v?.member).find(v=>v && String(v).trim());
-      if(member)member.textContent=memberValue ? String(memberValue).trim() : "?????";
+      const old=soloLinkCache[key]||{};
+      const fixed=SOLO_FIXED_POSTS[key]||{};
+      const found=extractSoloPosts(schedule,key,item);
+      const incomingMember=related.map(v=>v?.member).find(v=>typeof v==="string"&&v.trim()&&v.trim()!=="?????");
 
-      row.querySelectorAll(".schedule-x-post").forEach(el=>el.remove());
+      /* 固定URL ＞ 既存の保存済みURL ＞ 新規取得URL。欠けた情報で上書きしない。 */
+      const memberName=fixed.member||old.member||(incomingMember?incomingMember.trim():"");
+      const filmUrl=officialUrl(fixed.filmUrl)||officialUrl(old.filmUrl)||officialUrl(found.filmUrl);
+      let filmPhotoUrl=officialUrl(fixed.filmPhotoUrl)||officialUrl(old.filmPhotoUrl)||officialUrl(found.filmPhotoUrl);
+      if(filmPhotoUrl===filmUrl)filmPhotoUrl=""; // 同じ投稿を2種類として表示しない
+      soloLinkCache[key]={member:memberName,filmUrl,filmPhotoUrl};
 
-      const {filmUrl,filmPhotoUrl}=extractSoloPosts(schedule,key,item);
+      const nameEl=row.querySelector('[data-solo-member]');
+      if(nameEl)nameEl.textContent=memberName||"?????";
       const links=[];
       if(filmUrl)links.push({label:"Mood Film",url:filmUrl});
       if(filmPhotoUrl)links.push({label:"Mood Film & Photo",url:filmPhotoUrl});
 
-      if(links.length)row.appendChild(makeSoloXPopupButton(links));
+      /* 同じ内容なら既存のXボタンを一切作り直さない。 */
+      const signature=links.map(x=>x.label+"|"+x.url).join(";");
+      if(row.dataset.soloLinkSignature!==signature){
+        row.querySelectorAll('.schedule-x-post').forEach(el=>el.remove());
+        if(links.length)row.appendChild(makeSoloXPopupButton(links));
+        row.dataset.soloLinkSignature=signature;
+      }
     });
+    saveSoloCache();
   };
 
   const updateFixedLinks=schedule=>{
@@ -2491,11 +2544,11 @@ render();countdown();setInterval(countdown,1000);
   };
 
   applyFilter("ALL");
+  /* 保存済みの名前と2リンクを先に表示。Workerの取得結果を待たない。 */
+  updateSoloRows({});
+  /* SCHEDULE自体はページを開いた際に1回だけ更新する。
+     タブ切替・別アプリから戻る操作で再取得したりボタンを減らしたりしない。 */
   loadLinks();
-
-  document.addEventListener("visibilitychange",()=>{
-    if(!document.hidden)loadLinks();
-  });
 })();
 </script>
 
